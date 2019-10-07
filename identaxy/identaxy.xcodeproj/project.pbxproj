@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBA23440E4A00CCDBB3 /* Main.storyboard */; };
 		AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */; };
 		AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */; };
+		AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */; };
+		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
+		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB688CC023440E4B00CCDBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB688CC223440E4B00CCDBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +54,6 @@
 				FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */,
 				9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +86,9 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				AB730DB2234BFF37002EF58D /* Fonts */,
+				ABD2CB8F234BAA2B001161FD /* UIConstants.swift */,
+				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
 				AB688CB823440E4A00CCDBB3 /* ViewController.swift */,
@@ -90,6 +98,14 @@
 				AB688CC223440E4B00CCDBB3 /* Info.plist */,
 			);
 			path = identaxy;
+			sourceTree = "<group>";
+		};
+		AB730DB2234BFF37002EF58D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +170,7 @@
 			files = (
 				AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */,
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
+				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* ViewController.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
+				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
