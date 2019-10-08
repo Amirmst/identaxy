@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
+		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
 		AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */; };
-		AB688CB923440E4A00CCDBB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB823440E4A00CCDBB3 /* ViewController.swift */; };
+		AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */; };
 		AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBA23440E4A00CCDBB3 /* Main.storyboard */; };
 		AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */; };
 		AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */; };
@@ -22,10 +23,11 @@
 /* Begin PBXFileReference section */
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
+		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
 		AB688CB123440E4A00CCDBB3 /* identaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = identaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB688CB823440E4A00CCDBB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		AB688CBB23440E4A00CCDBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB688CC023440E4B00CCDBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
+				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
+			);
+			path = "Custom UI Elements";
+			sourceTree = "<group>";
+		};
 		AB688CA823440E4A00CCDBB3 = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +99,10 @@
 			children = (
 				AB730DB2234BFF37002EF58D /* Fonts */,
 				ABD2CB8F234BAA2B001161FD /* UIConstants.swift */,
-				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
+				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
-				AB688CB823440E4A00CCDBB3 /* ViewController.swift */,
+				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
@@ -225,7 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
-				AB688CB923440E4A00CCDBB3 /* ViewController.swift in Sources */,
+				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
+				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,

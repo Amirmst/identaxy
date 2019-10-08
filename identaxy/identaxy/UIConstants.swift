@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Class for the golabal static constants used in the UI.
 struct UIConstants {
     // Constant colors
     static let IDENTAXY_PINK: UIColor = UIColor(

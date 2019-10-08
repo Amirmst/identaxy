@@ -8,17 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LandingPageVC: UIViewController {
 
-    @IBOutlet weak var signupButton: RoundedCornerButton!
+    @IBOutlet weak var signupButton: PillShapedButton!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         overrideUserInterfaceStyle = .dark
         super.viewDidLoad()
-        signupButtonSetup()
-        loginButtonSetup()
         // Do any additional setup after loading the view.
+        loginButtonSetup()
     }
     
     private func loginButtonSetup() {
@@ -26,11 +25,6 @@ class ViewController: UIViewController {
         loginButton.setTitleColor(UIConstants.IDENTAXY_PINK, for: .normal)
         loginButton.setTitleColor(UIConstants.IDENTAXY_LIGHT_PINK, for: .selected)
         loginButton.setTitleColor(UIConstants.IDENTAXY_LIGHT_PINK, for: .highlighted)
-    }
-    
-    private func signupButtonSetup() {
-        signupButton.setTitle("Sign up", for: .normal)
-        signupButton.layer.cornerRadius = 20 // override the radius. Make it pill shaped.
     }
 }
 
