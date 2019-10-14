@@ -26,5 +26,6 @@ class LandingPageVC: UIViewController {
         loginButton.setTitleColor(UIConstants.IDENTAXY_LIGHT_PINK, for: .selected)
         loginButton.setTitleColor(UIConstants.IDENTAXY_LIGHT_PINK, for: .highlighted)
     }
+    
 }
 

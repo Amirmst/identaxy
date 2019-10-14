@@ -18,7 +18,6 @@ class IdentaxyTextField: UITextField {
         self.text = ""
         self.placeholder = ""
         self.textAlignment = .center
-
     }
     
     // Use this function to change the placeholder text from screen to screen.

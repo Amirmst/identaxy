@@ -11,6 +11,9 @@
 		A2D8A31A2354C75B00A6E97D /* IdentaxyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8A3192354C75B00A6E97D /* IdentaxyTextField.swift */; };
 		A2D8A31D2354D08500A6E97D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2D8A31C2354D08500A6E97D /* Roboto-Regular.ttf */; };
 		A2D8A31F2354D09800A6E97D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2D8A31E2354D09800A6E97D /* Roboto-Bold.ttf */; };
+		A2D8A3282355269800A6E97D /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D8A3272355269800A6E97D /* AlertStoryboard.storyboard */; };
+		A2D8A32A235526E500A6E97D /* IdentaxyAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8A329235526E500A6E97D /* IdentaxyAlertViewController.swift */; };
+		A2D8A32C23552A4C00A6E97D /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8A32B23552A4C00A6E97D /* AlertService.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
 		AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */; };
@@ -28,6 +31,9 @@
 		A2D8A3192354C75B00A6E97D /* IdentaxyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyTextField.swift; sourceTree = "<group>"; };
 		A2D8A31C2354D08500A6E97D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A2D8A31E2354D09800A6E97D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		A2D8A3272355269800A6E97D /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
+		A2D8A329235526E500A6E97D /* IdentaxyAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyAlertViewController.swift; sourceTree = "<group>"; };
+		A2D8A32B23552A4C00A6E97D /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
 		AB688CB123440E4A00CCDBB3 /* identaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = identaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,9 +77,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2D8A3262355264900A6E97D /* IdentaxyAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				A2D8A3272355269800A6E97D /* AlertStoryboard.storyboard */,
+				A2D8A329235526E500A6E97D /* IdentaxyAlertViewController.swift */,
+				A2D8A32B23552A4C00A6E97D /* AlertService.swift */,
+			);
+			path = IdentaxyAlertView;
+			sourceTree = "<group>";
+		};
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				A2D8A3262355264900A6E97D /* IdentaxyAlertView */,
 				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
 				A2D8A3192354C75B00A6E97D /* IdentaxyTextField.swift */,
@@ -189,6 +206,7 @@
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
 				A2D8A31F2354D09800A6E97D /* Roboto-Bold.ttf in Resources */,
 				A2D8A31D2354D08500A6E97D /* Roboto-Regular.ttf in Resources */,
+				A2D8A3282355269800A6E97D /* AlertStoryboard.storyboard in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,10 +262,12 @@
 			files = (
 				A2D8A31A2354C75B00A6E97D /* IdentaxyTextField.swift in Sources */,
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
+				A2D8A32A235526E500A6E97D /* IdentaxyAlertViewController.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
+				A2D8A32C23552A4C00A6E97D /* AlertService.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
