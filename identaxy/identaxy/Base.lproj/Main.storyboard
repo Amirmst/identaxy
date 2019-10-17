@@ -27,6 +27,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <state key="normal" title="Log in"/>
+                                <connections>
+                                    <segue destination="vor-Ia-HDz" kind="presentation" id="8a2-RM-V0C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-UK-QaT" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
                                 <rect key="frame" x="40" y="553" width="295" height="40"/>
@@ -65,8 +68,79 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
+        <!--Sign InVC-->
+        <scene sceneID="zoa-CR-vae">
+            <objects>
+                <viewController interfaceStyle="dark" id="vor-Ia-HDz" customClass="SignInVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jB6-Fl-IKY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-9E-B6E">
+                                <rect key="frame" x="121.5" y="600" width="132" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Forgot your password?">
+                                            <attributes>
+                                                <color key="NSColor" red="0.92151176929473877" green="0.33270913362503052" blue="0.91376858949661255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="13" name="Roboto-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-scale-logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-sE-mbD">
+                                <rect key="frame" x="130" y="90" width="115" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UtK-sE-mbD" secondAttribute="height" multiplier="115:66" id="G38-LL-gMa"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-Mk-PqQ">
+                                <rect key="frame" x="43" y="244" width="289" height="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-UA-VcH">
+                                <rect key="frame" x="43" y="196" width="289" height="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-Be-vOo" customClass="RoundedCornerButton" customModule="identaxy" customModuleProvider="target">
+                                <rect key="frame" x="166" y="552" width="42" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log in"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HIV-Mk-PqQ" firstAttribute="top" secondItem="OOM-UA-VcH" secondAttribute="bottom" constant="30" id="4qj-rK-mL5"/>
+                            <constraint firstItem="5TA-bJ-yx5" firstAttribute="trailing" secondItem="HIV-Mk-PqQ" secondAttribute="trailing" constant="43" id="6kd-Tx-CQh"/>
+                            <constraint firstItem="OOM-UA-VcH" firstAttribute="leading" secondItem="5TA-bJ-yx5" secondAttribute="leading" constant="43" id="MN3-8p-jCS"/>
+                            <constraint firstItem="UtK-sE-mbD" firstAttribute="top" secondItem="5TA-bJ-yx5" secondAttribute="top" constant="90" id="Reo-Pz-Laj"/>
+                            <constraint firstItem="HIV-Mk-PqQ" firstAttribute="leading" secondItem="5TA-bJ-yx5" secondAttribute="leading" constant="43" id="VbD-5i-lM7"/>
+                            <constraint firstItem="UtK-sE-mbD" firstAttribute="centerX" secondItem="jB6-Fl-IKY" secondAttribute="centerX" id="Y1w-v0-hMz"/>
+                            <constraint firstItem="5TA-bJ-yx5" firstAttribute="trailing" secondItem="OOM-UA-VcH" secondAttribute="trailing" constant="43" id="lcK-ei-ave"/>
+                            <constraint firstItem="OOM-UA-VcH" firstAttribute="top" secondItem="UtK-sE-mbD" secondAttribute="bottom" constant="40" id="xUb-gq-Rr1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5TA-bJ-yx5"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailAddressTextField" destination="OOM-UA-VcH" id="RMe-zp-Lob"/>
+                        <outlet property="loginButton" destination="1VW-Be-vOo" id="Zfg-Lg-glm"/>
+                        <outlet property="passwordTextField" destination="HIV-Mk-PqQ" id="1qy-hY-MHP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3NK-za-sqJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="136.28185907046478"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gray-scale-logo" width="115" height="66"/>
         <image name="logo-text" width="209" height="143"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
+		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
 		AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
+		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
 		AB688CB123440E4A00CCDBB3 /* identaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = identaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
+				AB1AD21B234C4243003742FC /* SignInVC.swift */,
 				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
@@ -239,6 +242,7 @@
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
+				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
 			);
