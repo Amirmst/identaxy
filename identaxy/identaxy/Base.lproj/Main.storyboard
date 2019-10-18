@@ -68,68 +68,8 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="AWX-NO-DKc">
-            <objects>
-                <viewController id="poV-hj-dgh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o4S-hE-D8W">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="gk5-1V-vhM">
-                                <rect key="frame" x="0.0" y="27" width="100" height="16"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="identaxy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POQ-Hm-npc">
-                                <rect key="frame" x="146" y="22" width="83" height="26"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Pic" translatesAutoresizingMaskIntoConstraints="NO" id="fPn-xJ-thH">
-                                <rect key="frame" x="179.5" y="69" width="16" height="16"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gear" translatesAutoresizingMaskIntoConstraints="NO" id="6te-Z0-s9Z">
-                                <rect key="frame" x="275" y="27" width="100" height="16"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Yep" translatesAutoresizingMaskIntoConstraints="NO" id="ajI-ux-iL8">
-                                <rect key="frame" x="196" y="561" width="190.00000000000003" height="106"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Nope" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-f3-IEO">
-                                <rect key="frame" x="-12" y="561" width="200" height="106"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Undo" translatesAutoresizingMaskIntoConstraints="NO" id="BLJ-UD-mcE">
-                                <rect key="frame" x="147" y="568" width="90" height="93"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dYJ-f3-IEO" firstAttribute="centerY" secondItem="BLJ-UD-mcE" secondAttribute="centerY" id="05n-Cs-eUy"/>
-                            <constraint firstItem="6te-Z0-s9Z" firstAttribute="centerY" secondItem="POQ-Hm-npc" secondAttribute="centerY" id="3kW-42-mWQ"/>
-                            <constraint firstItem="POQ-Hm-npc" firstAttribute="top" secondItem="uPo-t2-51w" secondAttribute="top" constant="2" id="9AS-cH-xAl"/>
-                            <constraint firstItem="POQ-Hm-npc" firstAttribute="centerX" secondItem="o4S-hE-D8W" secondAttribute="centerX" id="JN8-i5-rl2"/>
-                            <constraint firstItem="fPn-xJ-thH" firstAttribute="top" secondItem="POQ-Hm-npc" secondAttribute="bottom" constant="21" id="KvZ-YV-CJZ"/>
-                            <constraint firstItem="ajI-ux-iL8" firstAttribute="centerY" secondItem="BLJ-UD-mcE" secondAttribute="centerY" id="MDE-yA-8mb"/>
-                            <constraint firstItem="BLJ-UD-mcE" firstAttribute="top" secondItem="ajI-ux-iL8" secondAttribute="bottom" constant="-99" id="Ntw-h5-m7o"/>
-                            <constraint firstItem="fPn-xJ-thH" firstAttribute="centerX" secondItem="o4S-hE-D8W" secondAttribute="centerX" id="Qu2-H5-tNi"/>
-                            <constraint firstItem="gk5-1V-vhM" firstAttribute="centerY" secondItem="POQ-Hm-npc" secondAttribute="centerY" id="gYr-q9-dPr"/>
-                            <constraint firstItem="BLJ-UD-mcE" firstAttribute="top" secondItem="fPn-xJ-thH" secondAttribute="bottom" constant="18" id="jXY-Be-tjz"/>
-                            <constraint firstItem="BLJ-UD-mcE" firstAttribute="centerX" secondItem="o4S-hE-D8W" secondAttribute="centerX" id="sgU-mE-2Vf"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uPo-t2-51w"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bAf-Fb-nff" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2269.5999999999999" y="136.28185907046478"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Nope" width="105" height="106"/>
-        <image name="Undo" width="90" height="93"/>
-        <image name="User Pic" width="354" height="490"/>
-        <image name="Yep" width="103" height="106"/>
-        <image name="gear" width="19" height="19"/>
-        <image name="info" width="24" height="24"/>
         <image name="logo-text" width="209" height="143"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
