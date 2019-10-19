@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +15,7 @@
         <!--Landing PageVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LandingPageVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="LandingPageVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,13 +40,13 @@
                                 <state key="normal" title="Sign up"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-text" translatesAutoresizingMaskIntoConstraints="NO" id="1Gi-Bn-b7n">
-                                <rect key="frame" x="83" y="80" width="209" height="143"/>
+                                <rect key="frame" x="83" y="60" width="209" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Gi-Bn-b7n" secondAttribute="height" multiplier="19:13" id="4nw-Fn-noZ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qxj-UK-QaT" secondAttribute="trailing" constant="40" id="9Z5-s8-VUw"/>
                             <constraint firstItem="Qxj-UK-QaT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="KAL-ev-ezb"/>
@@ -80,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-9E-B6E">
-                                <rect key="frame" x="121.5" y="600" width="132" height="27"/>
+                                <rect key="frame" x="121.5" y="601" width="132" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -94,46 +91,39 @@
                                     </attributedString>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-scale-logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-sE-mbD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="gray-scale-logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-sE-mbD">
                                 <rect key="frame" x="130" y="90" width="115" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="UtK-sE-mbD" secondAttribute="height" multiplier="115:66" id="G38-LL-gMa"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-Mk-PqQ">
-                                <rect key="frame" x="43" y="244" width="289" height="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-UA-VcH">
-                                <rect key="frame" x="43" y="196" width="289" height="18"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-UA-VcH">
+                                <rect key="frame" x="45" y="196" width="285" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-Be-vOo" customClass="RoundedCornerButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="166" y="552" width="42" height="40"/>
+                                <rect key="frame" x="166" y="559" width="49" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <state key="normal" title="Log in"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-Mk-PqQ">
+                                <rect key="frame" x="45" y="244" width="285" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="HIV-Mk-PqQ" firstAttribute="top" secondItem="OOM-UA-VcH" secondAttribute="bottom" constant="30" id="4qj-rK-mL5"/>
-                            <constraint firstItem="5TA-bJ-yx5" firstAttribute="trailing" secondItem="HIV-Mk-PqQ" secondAttribute="trailing" constant="43" id="6kd-Tx-CQh"/>
-                            <constraint firstItem="OOM-UA-VcH" firstAttribute="leading" secondItem="5TA-bJ-yx5" secondAttribute="leading" constant="43" id="MN3-8p-jCS"/>
-                            <constraint firstItem="UtK-sE-mbD" firstAttribute="top" secondItem="5TA-bJ-yx5" secondAttribute="top" constant="90" id="Reo-Pz-Laj"/>
-                            <constraint firstItem="HIV-Mk-PqQ" firstAttribute="leading" secondItem="5TA-bJ-yx5" secondAttribute="leading" constant="43" id="VbD-5i-lM7"/>
-                            <constraint firstItem="UtK-sE-mbD" firstAttribute="centerX" secondItem="jB6-Fl-IKY" secondAttribute="centerX" id="Y1w-v0-hMz"/>
-                            <constraint firstItem="5TA-bJ-yx5" firstAttribute="trailing" secondItem="OOM-UA-VcH" secondAttribute="trailing" constant="43" id="lcK-ei-ave"/>
-                            <constraint firstItem="OOM-UA-VcH" firstAttribute="top" secondItem="UtK-sE-mbD" secondAttribute="bottom" constant="40" id="xUb-gq-Rr1"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5TA-bJ-yx5"/>
                     </view>
                     <connections>
                         <outlet property="emailAddressTextField" destination="OOM-UA-VcH" id="RMe-zp-Lob"/>
+                        <outlet property="forgotPasswordButton" destination="UWg-9E-B6E" id="Qv4-mF-hjl"/>
                         <outlet property="loginButton" destination="1VW-Be-vOo" id="Zfg-Lg-glm"/>
+                        <outlet property="logo" destination="UtK-sE-mbD" id="nTr-9X-3P7"/>
                         <outlet property="passwordTextField" destination="HIV-Mk-PqQ" id="1qy-hY-MHP"/>
                     </connections>
                 </viewController>
