@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
+		73EC9F84235CFA7600D7673F /* CustomKoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EC9F83235CFA7600D7673F /* CustomKoladaView.swift */; };
+		73EC9F8A235CFBE400D7673F /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EC9F89235CFBE400D7673F /* BackgroundKolodaAnimator.swift */; };
+		73EC9F8E235CFF6100D7673F /* SwipingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EC9F81235CEFA700D7673F /* SwipingVC.swift */; };
+		73EC9F95235D085200D7673F /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EC9F94235D085200D7673F /* CustomOverlayView.xib */; };
+		73EC9F97235D088300D7673F /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EC9F96235D088300D7673F /* CustomOverlayView.swift */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
@@ -23,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EC9F81235CEFA700D7673F /* SwipingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingVC.swift; sourceTree = "<group>"; };
+		73EC9F83235CFA7600D7673F /* CustomKoladaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKoladaView.swift; sourceTree = "<group>"; };
+		73EC9F89235CFBE400D7673F /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		73EC9F94235D085200D7673F /* CustomOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
+		73EC9F96235D088300D7673F /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
@@ -69,6 +79,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		73EC9F86235CFAA100D7673F /* Kolada */ = {
+			isa = PBXGroup;
+			children = (
+				73EC9F89235CFBE400D7673F /* BackgroundKolodaAnimator.swift */,
+				73EC9F83235CFA7600D7673F /* CustomKoladaView.swift */,
+				73EC9F81235CEFA700D7673F /* SwipingVC.swift */,
+				73EC9F94235D085200D7673F /* CustomOverlayView.xib */,
+				73EC9F96235D088300D7673F /* CustomOverlayView.swift */,
+			);
+			path = Kolada;
+			sourceTree = "<group>";
+		};
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +121,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				73EC9F86235CFAA100D7673F /* Kolada */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
 				ABD2CB8F234BAA2B001161FD /* UIConstants.swift */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
@@ -184,6 +207,7 @@
 			files = (
 				AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */,
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
+				73EC9F95235D085200D7673F /* CustomOverlayView.xib in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
 			);
@@ -241,7 +265,11 @@
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
+				73EC9F8A235CFBE400D7673F /* BackgroundKolodaAnimator.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
+				73EC9F8E235CFF6100D7673F /* SwipingVC.swift in Sources */,
+				73EC9F84235CFA7600D7673F /* CustomKoladaView.swift in Sources */,
+				73EC9F97235D088300D7673F /* CustomOverlayView.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,

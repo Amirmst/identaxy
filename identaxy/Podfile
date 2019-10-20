@@ -8,4 +8,6 @@ target 'identaxy' do
   # Pods for identaxy
   pod 'Shuffle-iOS'
   pod 'PopBounceButton'
+  pod 'pop', '~> 1.0'
+  pod "Koloda"
 end
