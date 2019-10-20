@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		295CED3C235D047000F2363E /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295CED3B235D047000F2363E /* AlertStoryboard.storyboard */; };
+		295CED3E235D047A00F2363E /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CED3D235D047A00F2363E /* AlertService.swift */; };
+		295CED40235D048200F2363E /* IdentaxyAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CED3F235D048100F2363E /* IdentaxyAlertViewController.swift */; };
+		295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CED41235D048E00F2363E /* IdentaxyTextField.swift */; };
+		295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 295CED43235D04FD00F2363E /* Roboto-Bold.ttf */; };
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		295CED3B235D047000F2363E /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
+		295CED3D235D047A00F2363E /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		295CED3F235D048100F2363E /* IdentaxyAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyAlertViewController.swift; sourceTree = "<group>"; };
+		295CED41235D048E00F2363E /* IdentaxyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyTextField.swift; sourceTree = "<group>"; };
+		295CED43235D04FD00F2363E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -52,6 +62,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		295CED3A235D044300F2363E /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				295CED3F235D048100F2363E /* IdentaxyAlertViewController.swift */,
+				295CED3B235D047000F2363E /* AlertStoryboard.storyboard */,
+				295CED3D235D047A00F2363E /* AlertService.swift */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		5A33E865855BC02AFE3CCE08 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +92,8 @@
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				295CED3A235D044300F2363E /* CustomAlert */,
+				295CED41235D048E00F2363E /* IdentaxyTextField.swift */,
 				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
 			);
@@ -118,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */,
+				295CED43235D04FD00F2363E /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -184,8 +207,10 @@
 			files = (
 				AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */,
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
+				295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
+				295CED3C235D047000F2363E /* AlertStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,8 +268,11 @@
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
+				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
+				295CED3E235D047A00F2363E /* AlertService.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
+				295CED40235D048200F2363E /* IdentaxyAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

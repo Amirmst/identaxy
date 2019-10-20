@@ -11,8 +11,8 @@ import UIKit
 class SignInVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var emailAddressTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailAddressTextField: IdentaxyTextField!
+    @IBOutlet weak var passwordTextField: IdentaxyTextField!
     @IBOutlet weak var loginButton: RoundedCornerButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
@@ -35,6 +35,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         emailAddressTextField.delegate = self
         passwordTextField.delegate = self
+        
+        emailAddressTextField.setPlaceholder(placeholder: "Email address")
+        passwordTextField.setPlaceholder(placeholder: "Password")
         
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
