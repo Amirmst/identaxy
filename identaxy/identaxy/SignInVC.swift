@@ -16,9 +16,13 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: RoundedCornerButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
-    var buttonConstraint: NSLayoutConstraint!
-    var initialY: CGFloat!
-    var aboveKeyboardY: CGFloat!
+    var loginButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var loginButtonInitialY: CGFloat!
+    var loginButtonAboveKeyboardY: CGFloat!
+    
+    var forgotButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var forgotButtonInitialY: CGFloat!
+    var forgotButtonAboveKeyboardY: CGFloat!
         
     override func loadView() {
         super.loadView()
@@ -48,6 +52,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
+    // MARK: - UI Methods
+    
+    // MARK: moving buttons above keyboard
     @objc func keyboardWillchange(notification: NSNotification) {
         let currentButtonFrame = loginButton.frame
         print("keyboard will show \(notification.name.rawValue)")
@@ -58,25 +65,35 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         if (notification.name == UIResponder.keyboardWillShowNotification
             || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
             // move up
-            if let buttonConstraint = buttonConstraint {
-                if let aboveKeyboardY = aboveKeyboardY {
-                    loginButton.frame.origin.y = aboveKeyboardY
+            if let loginButtonBottomAnchorConstraint = loginButtonBottomAnchorConstraint,
+                let forgotButtonBottomAnchorConstraint = forgotButtonBottomAnchorConstraint {
+                if let loginButtonAboveKeyboardY = loginButtonAboveKeyboardY, let forgotButtonAboveKeyboardY = forgotButtonAboveKeyboardY {
+                    loginButton.frame.origin.y = loginButtonAboveKeyboardY
+                    forgotPasswordButton.frame.origin.y = forgotButtonAboveKeyboardY
                 }
-                buttonConstraint.isActive = false
+                loginButtonBottomAnchorConstraint.isActive = false
+                forgotButtonBottomAnchorConstraint.isActive = false
             }
-            buttonConstraint = loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
+            loginButtonBottomAnchorConstraint = loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
                 -keyboardRect.height - 50)
-            buttonConstraint.isActive = true
+            forgotButtonBottomAnchorConstraint = forgotPasswordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -keyboardRect.height - 10)
+            loginButtonBottomAnchorConstraint.isActive = true
+            forgotButtonBottomAnchorConstraint.isActive = true
             if (notification.name == UIResponder.keyboardWillShowNotification) {
-                 aboveKeyboardY = loginButton.frame.origin.y
+                loginButtonAboveKeyboardY = loginButton.frame.origin.y
+                forgotButtonAboveKeyboardY = forgotPasswordButton.frame.origin.y
             }
         } else {
-            if let buttonConstraint = buttonConstraint {
-                loginButton.frame.origin.y = initialY
-                buttonConstraint.isActive = false
+            if let loginButtonBottomAnchorConstraint = loginButtonBottomAnchorConstraint, let forgotButtonBottomAnchorConstraint = forgotButtonBottomAnchorConstraint {
+                loginButton.frame.origin.y = loginButtonInitialY
+                forgotPasswordButton.frame.origin.y = forgotButtonInitialY
+                loginButtonBottomAnchorConstraint.isActive = false
+                forgotButtonBottomAnchorConstraint.isActive = false
             }
-            buttonConstraint = loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
-            buttonConstraint.isActive = true
+            loginButtonBottomAnchorConstraint = loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            forgotButtonBottomAnchorConstraint = forgotPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            loginButtonBottomAnchorConstraint.isActive = true
+            forgotButtonBottomAnchorConstraint.isActive = true
         }
     }
     
@@ -88,7 +105,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         
-        buttonConstraint = loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+        loginButtonBottomAnchorConstraint = loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+        forgotButtonBottomAnchorConstraint = forgotPasswordButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        
         NSLayoutConstraint.activate([
             // MARK: - Logo constraints
             logo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -111,13 +130,14 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             loginButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
             loginButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             loginButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            loginButton.heightAnchor.constraint(equalToConstant: 40),
             
             // MARK: - Forgot password button constraints
-            loginButton.heightAnchor.constraint(equalToConstant: 40),
-            forgotPasswordButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             forgotPasswordButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        buttonConstraint.isActive = true
-        initialY = loginButton.frame.origin.y
+        loginButtonBottomAnchorConstraint.isActive = true
+        forgotButtonBottomAnchorConstraint.isActive = true
+        loginButtonInitialY = loginButton.frame.origin.y
+        forgotButtonInitialY = forgotPasswordButton.frame.origin.y
     }
 }
