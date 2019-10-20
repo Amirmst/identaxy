@@ -16,9 +16,13 @@ class SettingsTableViewCell: UITableViewCell {
         didSet {
             guard let settingItem = setting else {return}
             if let name = settingItem.name {
-                leftImageView.image = UIImage(named: name) // Left image.
+                //leftImageView.image = UIImage(named: name) // Left image.
                 nameLabel.text = name                      // Name of setting.
                 rightButtonView.titleLabel?.text = ">"
+            }
+            if let img = settingItem.img {
+                leftImageView.image = UIImage(named: img)
+                
             }
         }
     }

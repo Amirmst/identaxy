@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  SettingsVC.swift
 //  identaxy
 //
 //  Created by Ailyn Aguirre on 10/20/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: IdentaxyHeader, UITableViewDataSource {
+class SettingsVC: IdentaxyHeader, UITableViewDataSource {
     
     let settingsTableView = UITableView()
 

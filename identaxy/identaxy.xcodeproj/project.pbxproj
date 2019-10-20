@@ -19,7 +19,7 @@
 		AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
-		C9E79BC5235CE79600C898AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC1235CE79600C898AA /* SettingsViewController.swift */; };
+		C9E79BC5235CE79600C898AA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC1235CE79600C898AA /* SettingsVC.swift */; };
 		C9E79BC6235CE79600C898AA /* SettingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC2235CE79600C898AA /* SettingAPI.swift */; };
 		C9E79BC7235CE79600C898AA /* IdentaxyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC3235CE79600C898AA /* IdentaxyHeader.swift */; };
 		C9E79BC8235CE79600C898AA /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */; };
@@ -41,7 +41,7 @@
 		AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
-		C9E79BC1235CE79600C898AA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C9E79BC1235CE79600C898AA /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		C9E79BC2235CE79600C898AA /* SettingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingAPI.swift; sourceTree = "<group>"; };
 		C9E79BC3235CE79600C898AA /* IdentaxyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyHeader.swift; sourceTree = "<group>"; };
 		C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 				C9E79BC3235CE79600C898AA /* IdentaxyHeader.swift */,
 				C9E79BC2235CE79600C898AA /* SettingAPI.swift */,
 				C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */,
-				C9E79BC1235CE79600C898AA /* SettingsViewController.swift */,
 			);
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
@@ -117,6 +116,7 @@
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
 				AB1AD21B234C4243003742FC /* SignInVC.swift */,
+				C9E79BC1235CE79600C898AA /* SettingsVC.swift */,
 				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
@@ -260,7 +260,7 @@
 				C9E79BC6235CE79600C898AA /* SettingAPI.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
-				C9E79BC5235CE79600C898AA /* SettingsViewController.swift in Sources */,
+				C9E79BC5235CE79600C898AA /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
