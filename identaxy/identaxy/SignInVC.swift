@@ -16,6 +16,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: RoundedCornerButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    var buttonConstraint: NSLayoutConstraint!
+    var initialY: CGFloat!
+    var aboveKeyboardY: CGFloat!
+        
     override func loadView() {
         super.loadView()
         overrideUserInterfaceStyle = .dark
@@ -45,15 +49,35 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillchange(notification: NSNotification) {
+        let currentButtonFrame = loginButton.frame
         print("keyboard will show \(notification.name.rawValue)")
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            loginButton.frame.origin.y = currentButtonFrame.origin.y
             return
         }
-        
-        // TODO -- Fix this logic
-        let loginButtonHeight = loginButton.frame.height
-        loginButton.frame.origin.y = view.frame.height - keyboardRect.height - loginButtonHeight - 40
-        forgotPasswordButton.frame.origin.y = loginButton.frame.origin.y + loginButtonHeight + 10
+        if (notification.name == UIResponder.keyboardWillShowNotification
+            || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
+            // move up
+            if let buttonConstraint = buttonConstraint {
+                if let aboveKeyboardY = aboveKeyboardY {
+                    loginButton.frame.origin.y = aboveKeyboardY
+                }
+                buttonConstraint.isActive = false
+            }
+            buttonConstraint = loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
+                -keyboardRect.height - 50)
+            buttonConstraint.isActive = true
+            if (notification.name == UIResponder.keyboardWillShowNotification) {
+                 aboveKeyboardY = loginButton.frame.origin.y
+            }
+        } else {
+            if let buttonConstraint = buttonConstraint {
+                loginButton.frame.origin.y = initialY
+                buttonConstraint.isActive = false
+            }
+            buttonConstraint = loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            buttonConstraint.isActive = true
+        }
     }
     
     func activateintialConstraints() {
@@ -64,6 +88,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         
+        buttonConstraint = loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         NSLayoutConstraint.activate([
             // MARK: - Logo constraints
             logo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -83,7 +108,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             
             // MARK: - Login button constraints
             loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
             loginButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
             loginButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             loginButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
@@ -93,5 +117,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             forgotPasswordButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             forgotPasswordButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
+        buttonConstraint.isActive = true
+        initialY = loginButton.frame.origin.y
     }
 }
