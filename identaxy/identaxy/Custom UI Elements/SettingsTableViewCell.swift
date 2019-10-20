@@ -16,14 +16,13 @@ class SettingsTableViewCell: UITableViewCell {
         didSet {
             guard let settingItem = setting else {return}
             if let name = settingItem.name {
-                //leftImageView.image = UIImage(named: name) // Left image.
                 nameLabel.text = name                      // Name of setting.
                 rightButtonView.titleLabel?.text = ">"
             }
             if let img = settingItem.img {
                 leftImageView.image = UIImage(named: img)
-                
             }
+
         }
     }
     
@@ -56,9 +55,16 @@ class SettingsTableViewCell: UITableViewCell {
     // Right button.
     let rightButtonView:UIButton = {
         let btn = UIButton()
-        btn.titleLabel?.text = ">"
-        btn.backgroundColor = UIColor.white
+        btn.setTitle(">", for: .normal)
+        btn.setTitleColor(UIConstants.IDENTAXY_GRAY, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
+    }()
+    
+    // Right switch.
+    let rightSwitchView:UISwitch = {
+        let swtch = UISwitch()
+        return swtch
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -70,17 +76,18 @@ class SettingsTableViewCell: UITableViewCell {
         self.contentView.addSubview(containerView)
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(rightButtonView)
+//        self.contentView.addSubview(rightSwitchView)
         
         // Auto constraints for each view.
         leftImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        leftImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
+        leftImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:25).isActive = true
         leftImageView.widthAnchor.constraint(equalToConstant:30).isActive = true
         leftImageView.heightAnchor.constraint(equalToConstant:30).isActive = true
         
         // Container view constraints.
         containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo:self.leftImageView.trailingAnchor, constant:10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
+        containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-70).isActive = true
         containerView.heightAnchor.constraint(equalToConstant:50).isActive = true
         
         // Name label constraints.
@@ -89,10 +96,18 @@ class SettingsTableViewCell: UITableViewCell {
         nameLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
         
         // Right button constraints.
-        rightButtonView.widthAnchor.constraint(equalToConstant:26).isActive = true
-        rightButtonView.heightAnchor.constraint(equalToConstant:26).isActive = true
-        rightButtonView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-20).isActive = true
+        rightButtonView.widthAnchor.constraint(equalToConstant:20).isActive = true
+        rightButtonView.heightAnchor.constraint(equalToConstant:20).isActive = true
+        rightButtonView.leadingAnchor.constraint(equalTo:self.containerView.trailingAnchor, constant: 10).isActive = true
+        rightButtonView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-25).isActive = true
         rightButtonView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
+        
+        // Right switch constraints.
+//        rightSwitchView.widthAnchor.constraint(equalToConstant:20).isActive = true
+//        rightSwitchView.heightAnchor.constraint(equalToConstant:20).isActive = true
+//        rightSwitchView.leadingAnchor.constraint(equalTo:self.containerView.trailingAnchor, constant: 10).isActive = true
+//        rightSwitchView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-25).isActive = true
+//        rightSwitchView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         
     }
      required init?(coder aDecoder: NSCoder) {
