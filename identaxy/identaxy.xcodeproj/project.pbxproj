@@ -19,6 +19,10 @@
 		AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
+		C9E79BC5235CE79600C898AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC1235CE79600C898AA /* SettingsViewController.swift */; };
+		C9E79BC6235CE79600C898AA /* SettingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC2235CE79600C898AA /* SettingAPI.swift */; };
+		C9E79BC7235CE79600C898AA /* IdentaxyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC3235CE79600C898AA /* IdentaxyHeader.swift */; };
+		C9E79BC8235CE79600C898AA /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		C9E79BC1235CE79600C898AA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C9E79BC2235CE79600C898AA /* SettingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingAPI.swift; sourceTree = "<group>"; };
+		C9E79BC3235CE79600C898AA /* IdentaxyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyHeader.swift; sourceTree = "<group>"; };
+		C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +82,10 @@
 			children = (
 				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
+				C9E79BC3235CE79600C898AA /* IdentaxyHeader.swift */,
+				C9E79BC2235CE79600C898AA /* SettingAPI.swift */,
+				C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */,
+				C9E79BC1235CE79600C898AA /* SettingsViewController.swift */,
 			);
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
@@ -242,9 +254,13 @@
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
+				C9E79BC7235CE79600C898AA /* IdentaxyHeader.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
+				C9E79BC8235CE79600C898AA /* SettingsTableViewCell.swift in Sources */,
+				C9E79BC6235CE79600C898AA /* SettingAPI.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
+				C9E79BC5235CE79600C898AA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

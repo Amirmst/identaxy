@@ -9,7 +9,7 @@ DEPENDENCIES:
   - Shuffle-iOS
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - pop
     - PopBounceButton
     - Shuffle-iOS
@@ -21,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d9c8b3e08ac332cf0fb76d0f742362eed8be4ae1
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.7.5
