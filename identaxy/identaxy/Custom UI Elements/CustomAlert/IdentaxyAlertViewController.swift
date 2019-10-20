@@ -28,7 +28,7 @@ class IdentaxyAlertViewController: UIViewController {
         titleLabel.text = popupTitle
         messageLabel.text = popupMessage
         alertButton.setTitle(buttonText, for: .normal)
-        popup.layer.cornerRadius = 6
+        popup.layer.cornerRadius = 10
     }
     
     @IBAction func btnPressed(_ sender: Any) {

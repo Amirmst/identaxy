@@ -11,9 +11,9 @@ class AlertService {
     
         
     /*
-        To use the custom alert, initialize an AlertService in your ViewController class
-        and invode the alert function with the title, message, and word you want to appear
-        for the button. Usage example below.
+    To use the custom alert, initialize an AlertService in your ViewController class
+    and invoke the alert function with the title, message, and word you want to appear
+    for the button. Usage example below.
      
      let alertService = AlertService()
      @IBAction func btnExample(_ sender: Any) {

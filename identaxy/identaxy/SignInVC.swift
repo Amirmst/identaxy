@@ -10,6 +10,8 @@ import UIKit
 
 class SignInVC: UIViewController, UITextFieldDelegate {
     
+    let alertService = AlertService()
+    
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var emailAddressTextField: IdentaxyTextField!
     @IBOutlet weak var passwordTextField: IdentaxyTextField!
@@ -53,6 +55,22 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        if let emailAddress = emailAddressTextField.text, let password = passwordTextField.text {
+            if (emailAddress == "" || password == "") {
+                print("ALERT!!!")
+                let alertVC = alertService.alert(title: "Error", message: "Unable to log in with provided credentials.", button: "Dismiss")
+                present(alertVC, animated: true, completion: nil)
+            }
+            print("SUCCESS! Go to Firebase with email: \(emailAddress), password \(password)")
+        } else {
+            print("ALERT!!!")
+            let alertVC = alertService.alert(title: "Error", message: "Unable to log in with provided credentials.", button: "Dismiss")
+            present(alertVC, animated: true, completion: nil)
+        }
     }
     
     // MARK: - UI Methods
