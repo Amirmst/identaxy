@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmy-jp-4ob">
-                                <rect key="frame" x="50" y="153" width="273" height="128"/>
+                                <rect key="frame" x="51.5" y="153" width="272" height="121"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5o-d1-sTe">
-                                        <rect key="frame" x="23" y="81" width="228" height="32"/>
+                                        <rect key="frame" x="23" y="74" width="227" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="miW-7B-cTl"/>
                                         </constraints>
@@ -32,29 +32,29 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaf-op-wze">
-                                        <rect key="frame" x="23" y="8" width="228" height="19.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                        <rect key="frame" x="23" y="19" width="227" height="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5N-RO-lt0">
-                                        <rect key="frame" x="8" y="35.5" width="257" height="19.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <rect key="frame" x="8" y="42" width="256" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="E5N-RO-lt0" firstAttribute="top" secondItem="oaf-op-wze" secondAttribute="bottom" constant="8" id="0Ch-ab-gym"/>
-                                    <constraint firstItem="oaf-op-wze" firstAttribute="top" secondItem="Nmy-jp-4ob" secondAttribute="top" constant="8" id="2dp-wP-wow"/>
+                                    <constraint firstItem="E5N-RO-lt0" firstAttribute="top" secondItem="oaf-op-wze" secondAttribute="bottom" constant="5" id="0Ch-ab-gym"/>
+                                    <constraint firstAttribute="width" secondItem="Nmy-jp-4ob" secondAttribute="height" multiplier="272:121" id="24G-9Z-UF6"/>
+                                    <constraint firstItem="oaf-op-wze" firstAttribute="top" secondItem="Nmy-jp-4ob" secondAttribute="top" constant="19" id="2dp-wP-wow"/>
                                     <constraint firstItem="E5N-RO-lt0" firstAttribute="leading" secondItem="Nmy-jp-4ob" secondAttribute="leading" constant="8" id="7LJ-dx-f0y"/>
-                                    <constraint firstAttribute="height" constant="128" id="CdE-23-45U"/>
+                                    <constraint firstAttribute="height" constant="121" id="CdE-23-45U"/>
                                     <constraint firstItem="oaf-op-wze" firstAttribute="leading" secondItem="Nmy-jp-4ob" secondAttribute="leading" constant="23" id="F3A-Zr-w9W"/>
                                     <constraint firstAttribute="trailing" secondItem="H5o-d1-sTe" secondAttribute="trailing" constant="22" id="OeM-RI-8qh"/>
                                     <constraint firstAttribute="trailing" secondItem="E5N-RO-lt0" secondAttribute="trailing" constant="8" id="Smt-rT-dBe"/>
                                     <constraint firstAttribute="trailing" secondItem="oaf-op-wze" secondAttribute="trailing" constant="22" id="asq-uE-QJE"/>
-                                    <constraint firstAttribute="width" constant="273" id="bLk-5P-wsB"/>
                                     <constraint firstItem="H5o-d1-sTe" firstAttribute="leading" secondItem="Nmy-jp-4ob" secondAttribute="leading" constant="23" id="r7g-Dk-eJW"/>
                                     <constraint firstAttribute="bottom" secondItem="H5o-d1-sTe" secondAttribute="bottom" constant="15" id="tEG-or-j9w"/>
                                 </constraints>
@@ -62,8 +62,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="Nmy-jp-4ob" firstAttribute="top" secondItem="hsX-va-HmC" secondAttribute="topMargin" constant="153" id="5Uo-E4-ZRh"/>
-                            <constraint firstItem="Nmy-jp-4ob" firstAttribute="leading" secondItem="hsX-va-HmC" secondAttribute="leadingMargin" constant="34" id="jGc-ly-Ru9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nmy-jp-4ob" secondAttribute="trailing" constant="36" id="sVA-WH-vfW"/>
+                            <constraint firstItem="Nmy-jp-4ob" firstAttribute="centerX" secondItem="hsX-va-HmC" secondAttribute="centerX" id="pG4-Ru-vvV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ofr-gR-RoO"/>
                     </view>

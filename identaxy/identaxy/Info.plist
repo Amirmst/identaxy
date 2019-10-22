@@ -55,6 +55,9 @@
 	<array>
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Bold.ttf</string>
+		<string>AvenirNext-Bold.ttf</string>
+		<string>AvenirNext-Regular.ttf</string>
+		<string>AvenirNext-DemiBold.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

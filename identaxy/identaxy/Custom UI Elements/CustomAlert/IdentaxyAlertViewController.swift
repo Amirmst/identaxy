@@ -24,7 +24,7 @@ class IdentaxyAlertViewController: UIViewController {
     }
     
     private func setup() {
-        alertButton.setTitleColor(UIConstants.IDENTAXY_LIGHT_PINK, for: .normal)
+        alertButton.setTitleColor(UIConstants.IDENTAXY_PINK, for: .normal)
         titleLabel.text = popupTitle
         messageLabel.text = popupMessage
         alertButton.setTitle(buttonText, for: .normal)
