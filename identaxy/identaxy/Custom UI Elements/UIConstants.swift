@@ -36,4 +36,6 @@ struct UIConstants {
     // Constant fonts
     static let ROBOTO_REGULAR = UIFont(name: "Roboto-Regular", size: 18)
     static let ROBOTO_BOLD = UIFont(name: "Roboto-Bold", size: 18)
+    static let AVENIR_NEXT_REGULAR_20 = UIFont(name: "AvenirNext-Regular", size: 20)
+    static let AVENIR_NEXT_REGULAR_15 = UIFont(name: "AvenirNext-Regular", size: 15)
 }

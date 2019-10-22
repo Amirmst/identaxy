@@ -129,7 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="eZa-Mv-NT6"/>
                     </view>
                     <navigationItem key="navigationItem" id="utz-B1-UZS">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="nMM-rw-0Da">
+                        <barButtonItem key="leftBarButtonItem" image="Close" id="nMM-rw-0Da">
                             <color key="tintColor" red="0.92151176930000001" green="0.33270913359999998" blue="0.91376858949999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onClose:" destination="ZBc-C3-3Un" id="I0W-If-hau"/>
@@ -258,6 +258,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="t5N-CN-5H1" kind="show" identifier="ForgotPasswordSegue" id="Bnf-ag-EQk"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="gray-scale-logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-sE-mbD">
                                 <rect key="frame" x="130" y="90" width="115" height="66"/>
@@ -322,9 +325,94 @@
             </objects>
             <point key="canvasLocation" x="1016.8" y="-551.87406296851577"/>
         </scene>
+        <!--Forgot Password-->
+        <scene sceneID="EVz-nw-HeA">
+            <objects>
+                <viewController interfaceStyle="dark" id="oYB-h4-Sb1" userLabel="Forgot Password" customClass="ForgotPasswordVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OXm-mx-RiD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDy-49-hLC">
+                                <rect key="frame" x="16" y="50" width="343" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="1MY-oj-YnY"/>
+                                    <constraint firstAttribute="height" constant="56" id="EfN-DS-SAo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWU-Fl-bla">
+                                <rect key="frame" x="16" y="111" width="343" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="OTj-io-MnL"/>
+                                    <constraint firstAttribute="width" constant="343" id="ZbF-fW-c7c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHQ-2b-CPH" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
+                                <rect key="frame" x="16" y="217" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uWU-Fl-bla" firstAttribute="top" secondItem="lDy-49-hLC" secondAttribute="bottom" constant="5" id="DTY-9M-LVh"/>
+                            <constraint firstItem="OHQ-2b-CPH" firstAttribute="top" secondItem="uWU-Fl-bla" secondAttribute="bottom" constant="50" id="FWF-cp-T1d"/>
+                            <constraint firstItem="OHQ-2b-CPH" firstAttribute="leading" secondItem="Xqh-fn-amn" secondAttribute="leading" constant="16" id="PS2-m7-T1e"/>
+                            <constraint firstItem="lDy-49-hLC" firstAttribute="top" secondItem="Xqh-fn-amn" secondAttribute="top" constant="50" id="Vry-z8-hCn"/>
+                            <constraint firstItem="lDy-49-hLC" firstAttribute="centerX" secondItem="OXm-mx-RiD" secondAttribute="centerX" id="YZB-Fr-ud0"/>
+                            <constraint firstItem="OHQ-2b-CPH" firstAttribute="centerX" secondItem="OXm-mx-RiD" secondAttribute="centerX" id="hta-QM-y21"/>
+                            <constraint firstItem="uWU-Fl-bla" firstAttribute="centerX" secondItem="OXm-mx-RiD" secondAttribute="centerX" id="j2W-aq-Onp"/>
+                            <constraint firstItem="Xqh-fn-amn" firstAttribute="trailing" secondItem="OHQ-2b-CPH" secondAttribute="trailing" constant="16" id="uQO-qn-8JQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xqh-fn-amn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vh3-ta-agg">
+                        <barButtonItem key="leftBarButtonItem" image="chevron-left" id="QHk-XT-Pta">
+                            <connections>
+                                <action selector="onBackPressed:" destination="oYB-h4-Sb1" id="GRq-oa-WH3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bottomLabel" destination="uWU-Fl-bla" id="6yg-iO-Ep9"/>
+                        <outlet property="emailTextField" destination="OHQ-2b-CPH" id="Uh2-4f-YxN"/>
+                        <outlet property="topLabel" destination="lDy-49-hLC" id="AVd-kY-xPB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdX-94-8Hq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="841.52923538230891"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8c8-uQ-rTN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t5N-CN-5H1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="KH9-pm-LVE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Gii-ef-D6p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1098593101" green="0.1096622124" blue="0.11764831100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oYB-h4-Sb1" kind="relationship" relationship="rootViewController" id="Ivq-sj-RnZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qby-ce-dAb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="841.52923538230891"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="close" width="14" height="14"/>
+        <image name="Close" width="14" height="14"/>
+        <image name="chevron-left" width="24" height="24"/>
         <image name="gray-scale-logo" width="115" height="66"/>
         <image name="logo" width="146" height="85"/>
         <image name="logo-text" width="209" height="143"/>
