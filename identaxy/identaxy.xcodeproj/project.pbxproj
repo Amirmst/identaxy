@@ -22,6 +22,10 @@
 		AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */; };
 		AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */; };
 		AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */; };
+		AB8822DF235ED2A20096FEAE /* AvenirNext-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8822DD235ED2A20096FEAE /* AvenirNext-Bold.ttf */; };
+		AB8822E0235ED2A20096FEAE /* AvenirNext-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */; };
+		AB8822E2235ED32D0096FEAE /* SignupVC_EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8822E1235ED32D0096FEAE /* SignupVC_EmailAddress.swift */; };
+		AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8822E3235ED37E0096FEAE /* SignupVC_Password.swift */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +49,10 @@
 		AB688CC023440E4B00CCDBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB688CC223440E4B00CCDBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		AB8822DD235ED2A20096FEAE /* AvenirNext-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Bold.ttf"; sourceTree = "<group>"; };
+		AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Regular.ttf"; sourceTree = "<group>"; };
+		AB8822E1235ED32D0096FEAE /* SignupVC_EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC_EmailAddress.swift; sourceTree = "<group>"; };
+		AB8822E3235ED37E0096FEAE /* SignupVC_Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC_Password.swift; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				295CED3A235D044300F2363E /* CustomAlert */,
+				ABD2CB8F234BAA2B001161FD /* UIConstants.swift */,
 				295CED41235D048E00F2363E /* IdentaxyTextField.swift */,
 				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
@@ -121,9 +130,8 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
-				AB730DB2234BFF37002EF58D /* Fonts */,
-				ABD2CB8F234BAA2B001161FD /* UIConstants.swift */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
+				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
 				AB1AD21B234C4243003742FC /* SignInVC.swift */,
@@ -132,6 +140,7 @@
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
 				AB688CC223440E4B00CCDBB3 /* Info.plist */,
+				AB730DB2234BFF37002EF58D /* Fonts */,
 			);
 			path = identaxy;
 			sourceTree = "<group>";
@@ -141,8 +150,19 @@
 			children = (
 				AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */,
 				295CED43235D04FD00F2363E /* Roboto-Bold.ttf */,
+				AB8822DD235ED2A20096FEAE /* AvenirNext-Bold.ttf */,
+				AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AB8822E5235ED3EE0096FEAE /* SignupViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB8822E1235ED32D0096FEAE /* SignupVC_EmailAddress.swift */,
+				AB8822E3235ED37E0096FEAE /* SignupVC_Password.swift */,
+			);
+			path = SignupViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +230,9 @@
 				295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
+				AB8822E0235ED2A20096FEAE /* AvenirNext-Regular.ttf in Resources */,
 				295CED3C235D047000F2363E /* AlertStoryboard.storyboard in Resources */,
+				AB8822DF235ED2A20096FEAE /* AvenirNext-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +292,8 @@
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
+				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
+				AB8822E2235ED32D0096FEAE /* SignupVC_EmailAddress.swift in Sources */,
 				295CED3E235D047A00F2363E /* AlertService.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
 				295CED40235D048200F2363E /* IdentaxyAlertViewController.swift in Sources */,
