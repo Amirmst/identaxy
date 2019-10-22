@@ -15,6 +15,8 @@
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
+		AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */; };
+		AB66CC11235F854E00EF71C6 /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66CC10235F854E00EF71C6 /* SwipeVC.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
 		AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */; };
 		AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */; };
@@ -40,6 +42,8 @@
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
+		AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-DemiBold.ttf"; sourceTree = "<group>"; };
+		AB66CC10235F854E00EF71C6 /* SwipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		AB688CB123440E4A00CCDBB3 /* identaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = identaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,25 @@
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
 		};
+		AB66CC0E235F817E00EF71C6 /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */,
+				295CED43235D04FD00F2363E /* Roboto-Bold.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		AB66CC0F235F818E00EF71C6 /* AvenirNext */ = {
+			isa = PBXGroup;
+			children = (
+				AB8822DD235ED2A20096FEAE /* AvenirNext-Bold.ttf */,
+				AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */,
+				AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */,
+			);
+			path = AvenirNext;
+			sourceTree = "<group>";
+		};
 		AB688CA823440E4A00CCDBB3 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +157,7 @@
 				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
+				AB66CC10235F854E00EF71C6 /* SwipeVC.swift */,
 				AB1AD21B234C4243003742FC /* SignInVC.swift */,
 				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
@@ -148,10 +172,8 @@
 		AB730DB2234BFF37002EF58D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */,
-				295CED43235D04FD00F2363E /* Roboto-Bold.ttf */,
-				AB8822DD235ED2A20096FEAE /* AvenirNext-Bold.ttf */,
-				AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */,
+				AB66CC0E235F817E00EF71C6 /* Roboto */,
+				AB66CC0F235F818E00EF71C6 /* AvenirNext */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -226,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */,
+				AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */,
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
 				295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
@@ -288,6 +311,7 @@
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
+				AB66CC11235F854E00EF71C6 /* SwipeVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
