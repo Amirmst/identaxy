@@ -1,24 +1,26 @@
 PODS:
+  - Koloda (5.0):
+    - pop (~> 1.0)
   - pop (1.0.12)
   - PopBounceButton (1.2.2):
     - pop (~> 1.0)
-  - Shuffle-iOS (0.1.0)
 
 DEPENDENCIES:
+  - Koloda
+  - pop (~> 1.0)
   - PopBounceButton
-  - Shuffle-iOS
 
 SPEC REPOS:
   trunk:
+    - Koloda
     - pop
     - PopBounceButton
-    - Shuffle-iOS
 
 SPEC CHECKSUMS:
+  Koloda: 75302d21882cc3e274c1561b1155805ea5919dab
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PopBounceButton: 34105a012678222f058f8d2621672724a3d5c9fb
-  Shuffle-iOS: d1b64066af844e075e97619f80cda10b9c0a04b0
 
-PODFILE CHECKSUM: d9c8b3e08ac332cf0fb76d0f742362eed8be4ae1
+PODFILE CHECKSUM: 75adde745c3ae37e9ce03f43c0100d6a99a6d9bc
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.4

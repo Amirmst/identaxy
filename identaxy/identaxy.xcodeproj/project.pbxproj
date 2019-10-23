@@ -13,6 +13,11 @@
 		295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CED41235D048E00F2363E /* IdentaxyTextField.swift */; };
 		295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 295CED43235D04FD00F2363E /* Roboto-Bold.ttf */; };
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
+		7360A7862360144900EA960F /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7812360144900EA960F /* BackgroundKolodaAnimator.swift */; };
+		7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7822360144900EA960F /* CustomOverlayView.swift */; };
+		7360A7882360144900EA960F /* SwipingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7832360144900EA960F /* SwipingVC.swift */; };
+		7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7842360144900EA960F /* CustomKoladaView.swift */; };
+		7360A78A2360144900EA960F /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7360A7852360144900EA960F /* CustomOverlayView.xib */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */; };
@@ -40,6 +45,11 @@
 		295CED41235D048E00F2363E /* IdentaxyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyTextField.swift; sourceTree = "<group>"; };
 		295CED43235D04FD00F2363E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7360A7812360144900EA960F /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		7360A7822360144900EA960F /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		7360A7832360144900EA960F /* SwipingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipingVC.swift; sourceTree = "<group>"; };
+		7360A7842360144900EA960F /* CustomKoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKoladaView.swift; sourceTree = "<group>"; };
+		7360A7852360144900EA960F /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
@@ -103,6 +113,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7360A7802360143300EA960F /* Koloda */ = {
+			isa = PBXGroup;
+			children = (
+				7360A7812360144900EA960F /* BackgroundKolodaAnimator.swift */,
+				7360A7842360144900EA960F /* CustomKoladaView.swift */,
+				7360A7832360144900EA960F /* SwipingVC.swift */,
+				7360A7852360144900EA960F /* CustomOverlayView.xib */,
+				7360A7822360144900EA960F /* CustomOverlayView.swift */,
+			);
+			path = Koloda;
+			sourceTree = "<group>";
+		};
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +177,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				7360A7802360143300EA960F /* Koloda */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
 				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
 				AB1AD21B234C4243003742FC /* SignInVC.swift */,
@@ -252,6 +275,7 @@
 			files = (
 				AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */,
 				AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */,
+				7360A78A2360144900EA960F /* CustomOverlayView.xib in Resources */,
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
 				295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
@@ -311,16 +335,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7360A7862360144900EA960F /* BackgroundKolodaAnimator.swift in Sources */,
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB66CC11235F854E00EF71C6 /* SwipeVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
+				7360A7882360144900EA960F /* SwipingVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */,
+				7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */,
 				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
+				7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */,
 				AB8822E2235ED32D0096FEAE /* SignupVC_EmailAddress.swift in Sources */,
 				295CED3E235D047A00F2363E /* AlertService.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,

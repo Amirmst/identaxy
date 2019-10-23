@@ -63,7 +63,7 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
     
      func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipeVC
+        let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingVC
         
         let rightToLeft = CATransition()
         rightToLeft.duration = 0.5

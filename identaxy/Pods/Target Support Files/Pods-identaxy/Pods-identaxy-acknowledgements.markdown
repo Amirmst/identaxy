@@ -1,11 +1,11 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## PopBounceButton
+## Koloda
 
-MIT License
+The MIT License (MIT)
 
-Copyright (c) 2018 Mac Gallagher
+Copyright (c) 2017 Yalantis
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,11 +26,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## Shuffle-iOS
+
+## PopBounceButton
 
 MIT License
 
-Copyright (c) 2019 Mac Gallagher
+Copyright (c) 2018 Mac Gallagher
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
