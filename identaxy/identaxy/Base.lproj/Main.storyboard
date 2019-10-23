@@ -1,136 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="72T-Ic-j8E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Landing PageVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="LandingPageVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-Cf-ihj">
-                                <rect key="frame" x="153.5" y="614" width="68" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="Msi-TF-Kl3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="Log in"/>
-                                <connections>
-                                    <segue destination="vor-Ia-HDz" kind="presentation" id="8a2-RM-V0C"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-UK-QaT" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="40" y="554" width="295" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="394" id="AL4-6h-iY5"/>
-                                    <constraint firstAttribute="height" constant="40" id="f3x-A7-dXc"/>
-                                </constraints>
-                                <state key="normal" title="Sign up"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-text" translatesAutoresizingMaskIntoConstraints="NO" id="1Gi-Bn-b7n">
-                                <rect key="frame" x="-21.5" y="60" width="418" height="286"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Gi-Bn-b7n" secondAttribute="height" multiplier="19:13" id="4nw-Fn-noZ"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qxj-UK-QaT" secondAttribute="trailing" constant="40" id="9Z5-s8-VUw"/>
-                            <constraint firstItem="Qxj-UK-QaT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="KAL-ev-ezb"/>
-                            <constraint firstItem="wfc-Cf-ihj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TiQ-Nd-Q1E"/>
-                            <constraint firstItem="1Gi-Bn-b7n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="U7i-A0-hWF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wfc-Cf-ihj" secondAttribute="bottom" constant="20" id="V11-3M-WvV"/>
-                            <constraint firstItem="1Gi-Bn-b7n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gcz-6t-kyS"/>
-                            <constraint firstItem="Qxj-UK-QaT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jm9-GF-ncq"/>
-                            <constraint firstItem="wfc-Cf-ihj" firstAttribute="top" secondItem="Qxj-UK-QaT" secondAttribute="bottom" constant="20" id="vbr-tv-dfQ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="loginButton" destination="wfc-Cf-ihj" id="RTb-ve-CoO"/>
-                        <outlet property="signupButton" destination="Qxj-UK-QaT" id="6fI-uB-rrv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
-        </scene>
-        <!--Sign InVC-->
-        <scene sceneID="zoa-CR-vae">
-            <objects>
-                <viewController interfaceStyle="dark" id="vor-Ia-HDz" customClass="SignInVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jB6-Fl-IKY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-9E-B6E">
-                                <rect key="frame" x="121.5" y="601" width="132" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Forgot your password?">
-                                            <attributes>
-                                                <color key="NSColor" red="0.92151176929473877" green="0.33270913362503052" blue="0.91376858949661255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <font key="NSFont" metaFont="system"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="gray-scale-logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-sE-mbD">
-                                <rect key="frame" x="130" y="90" width="115" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-UA-VcH">
-                                <rect key="frame" x="45" y="196" width="285" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-Be-vOo" customClass="RoundedCornerButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="166" y="559" width="49" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="Log in"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-Mk-PqQ">
-                                <rect key="frame" x="45" y="244" width="285" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="5TA-bJ-yx5"/>
-                    </view>
-                    <connections>
-                        <outlet property="emailAddressTextField" destination="OOM-UA-VcH" id="RMe-zp-Lob"/>
-                        <outlet property="forgotPasswordButton" destination="UWg-9E-B6E" id="Qv4-mF-hjl"/>
-                        <outlet property="loginButton" destination="1VW-Be-vOo" id="Zfg-Lg-glm"/>
-                        <outlet property="logo" destination="UtK-sE-mbD" id="nTr-9X-3P7"/>
-                        <outlet property="passwordTextField" destination="HIV-Mk-PqQ" id="1qy-hY-MHP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3NK-za-sqJ" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1016.8" y="136.28185907046478"/>
-        </scene>
         <!--SwipingVC-->
         <scene sceneID="7e4-eb-IDR">
             <objects>
@@ -226,9 +102,7 @@
         <image name="Undo" width="90" height="93"/>
         <image name="Yep" width="103" height="106"/>
         <image name="gear" width="19" height="19"/>
-        <image name="gray-scale-logo" width="115" height="66"/>
         <image name="info" width="24" height="24"/>
-        <image name="logo-text" width="209" height="143"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
 </document>
