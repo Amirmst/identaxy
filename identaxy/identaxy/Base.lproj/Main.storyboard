@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-Cf-ihj">
-                                <rect key="frame" x="153.5" y="613" width="68" height="34"/>
+                                <rect key="frame" x="153.5" y="614" width="68" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Msi-TF-Kl3"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-UK-QaT" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="40" y="553" width="295" height="40"/>
+                                <rect key="frame" x="40" y="554" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="394" id="AL4-6h-iY5"/>
                                     <constraint firstAttribute="height" constant="40" id="f3x-A7-dXc"/>
@@ -40,7 +40,7 @@
                                 <state key="normal" title="Sign up"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-text" translatesAutoresizingMaskIntoConstraints="NO" id="1Gi-Bn-b7n">
-                                <rect key="frame" x="83" y="60" width="209" height="143"/>
+                                <rect key="frame" x="-21.5" y="60" width="418" height="286"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Gi-Bn-b7n" secondAttribute="height" multiplier="19:13" id="4nw-Fn-noZ"/>
                                 </constraints>
@@ -152,40 +152,39 @@
                                 <rect key="frame" x="16" y="39" width="46" height="24"/>
                                 <state key="normal" image="info"/>
                                 <connections>
-                                    <action selector="informationButtonPressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="n89-01-cVs"/>
+                                    <action selector="infoButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="wTB-Am-x98"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-Yr-7OU" userLabel="Settings Button">
                                 <rect key="frame" x="313" y="39" width="46" height="22"/>
                                 <state key="normal" image="gear"/>
                                 <connections>
-                                    <action selector="settingsButtonPressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="KPg-9y-8x5"/>
+                                    <action selector="settingsButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="ZTj-da-k6v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIG-Cj-Ifg" userLabel="Fake Button">
                                 <rect key="frame" x="16" y="551" width="105" height="106"/>
                                 <state key="normal" image="Nope"/>
                                 <connections>
-                                    <action selector="leftButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="ajH-R7-Bls"/>
+                                    <action selector="leftButtonTapped" destination="72T-Ic-j8E" eventType="touchUpInside" id="Oza-ZP-uEc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFU-xk-GSv" userLabel="Undo Button">
                                 <rect key="frame" x="142.5" y="558" width="90" height="93"/>
                                 <state key="normal" image="Undo"/>
                                 <connections>
-                                    <action selector="undoButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="7hC-WP-awJ"/>
+                                    <action selector="undoButtonTapped" destination="72T-Ic-j8E" eventType="touchUpInside" id="Fg5-F0-VEt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-Rq-FUO" userLabel="Real Button">
                                 <rect key="frame" x="256" y="551" width="103" height="106"/>
                                 <state key="normal" image="Yep"/>
                                 <connections>
-                                    <action selector="rightButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="ck0-oB-adQ"/>
+                                    <action selector="rightButtonTapped" destination="72T-Ic-j8E" eventType="touchUpInside" id="3ai-nB-NIp"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-WZ-MtX" customClass="CustomKolodaView" customModule="identaxy" customModuleProvider="target">
                                 <rect key="frame" x="16" y="110" width="343" height="416"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <constraints>
@@ -213,8 +212,8 @@
                         <viewLayoutGuide key="safeArea" id="acW-f6-2hU"/>
                     </view>
                     <connections>
-                        <outlet property="identaxyLabel" destination="GGA-lc-QPI" id="SUt-D1-ui0"/>
-                        <outlet property="kolodaView" destination="b6g-WZ-MtX" id="aWf-fK-ChB"/>
+                        <outlet property="identaxyLabel" destination="GGA-lc-QPI" id="7IM-ga-5ok"/>
+                        <outlet property="kolodaView" destination="b6g-WZ-MtX" id="2vp-qW-Jur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHx-Qq-Z7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
