@@ -8,37 +8,60 @@
 
 import UIKit
 
-class SettingsVC: IdentaxyHeader, UITableViewDataSource {
+
+
+class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var settingsTableView: UITableView!
-    @IBOutlet weak var logoutButton: PillShapedButton!
-    private let settings = SettingAPI.getSettings()
     let emailSegueIdentifier = "emailSegue"
     let passwordSegueIdentifier = "passwordSegue"
     let helpSegueIdentifier = "helpSegue"
     let aboutSegueIdentifier = "aboutSegue"
+    
+    @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var logoutButton: PillShapedButton!
+    private let settings = SettingAPI.getSettings()
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingsTableViewCell
-        cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
-        cell.setting = settings[indexPath.row]
-        
         if(indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "darkModeCell", for: indexPath) as! SettingsTableViewCell
+            cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
+            cell.setting = settings[indexPath.row]
             let switchView = UISwitch(frame: .zero)
             switchView.setOn(true, animated: true)
             switchView.tag = indexPath.row // for detect which row switch Changed
             switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
             cell.accessoryView = switchView
             cell.rightButtonView.setTitle(" ", for: .normal)
+            cell.selectionStyle = .none
+            return cell
+        } else if(indexPath.row == 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emailCell", for: indexPath) as! SettingsTableViewCell
+            cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
+            cell.setting = settings[indexPath.row]
+            return cell
+        } else if(indexPath.row == 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "passwordCell", for: indexPath) as! SettingsTableViewCell
+            cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
+            cell.setting = settings[indexPath.row]
+            return cell
+        } else if(indexPath.row == 3) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "helpCell", for: indexPath) as! SettingsTableViewCell
+            cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
+            cell.setting = settings[indexPath.row]
+            return cell
+        } else if(indexPath.row == 4) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "aboutCell", for: indexPath) as! SettingsTableViewCell
+            cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
+            cell.setting = settings[indexPath.row]
+            return cell
         }
         
-        
-
-        return cell
+        return tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingsTableViewCell
     }
     
     // To set dark/light mode.
@@ -52,6 +75,8 @@ class SettingsVC: IdentaxyHeader, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsTableView.delegate = self
+        settingsTableView.dataSource = self
         overrideUserInterfaceStyle = .dark
         
         // Create Logout button and view it will go in.
@@ -106,32 +131,43 @@ class SettingsVC: IdentaxyHeader, UITableViewDataSource {
         settingsTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
         settingsTableView.bottomAnchor.constraint(equalTo:buttonView.topAnchor, constant: -10).isActive = true
         settingsTableView.dataSource = self
+        
+        // Register Static cell names for segue to different VC's
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "settingCell")
+        settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "darkModeCell")
+        settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "emailCell")
+        settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "passwordCell")
+        settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "helpCell")
+        settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "aboutCell")
+        
         settingsTableView.alwaysBounceVertical = false  // No scroll
         
         self.setHeaderTitle(title: "Settings")
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let setting = settings[indexPath.row]
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        switch indexPath.row {
-        case 1:
-            performSegue(withIdentifier: emailSegueIdentifier, sender: indexPath.row)
-        case 2:
-            performSegue(withIdentifier: passwordSegueIdentifier, sender: indexPath.row)
-        case 3:
-            performSegue(withIdentifier: helpSegueIdentifier, sender: indexPath.row)
-        case 4:
-            performSegue(withIdentifier: aboutSegueIdentifier, sender: indexPath.row)
-        default:
-            print("")
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if let cell = tableView.cellForRow(at: indexPath), let identifier = cell.reuseIdentifier {
+            var segueID = ""
+            switch identifier {
+                case "emailCell":
+                    segueID = "emailSegue"
+                case "passwordCell":
+                    segueID = "passwordSegue"
+                case "helpCell":
+                    segueID = "helpSegue"
+                case "aboutCell":
+                    segueID = "aboutSegue"
+                default:
+                    print("Should not ever reach here")
+                    return
+            }
+            performSegue(withIdentifier: segueID, sender: self)
+        }
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == emailSegueIdentifier {
             let nextVC = segue.destination as! UpdateEmailVC
             nextVC.delegate = self
@@ -147,9 +183,6 @@ class SettingsVC: IdentaxyHeader, UITableViewDataSource {
         } else if segue.identifier == aboutSegueIdentifier {
             let nextVC = segue.destination as! AboutVC
             nextVC.delegate = self
-
         }
-        
     }
-
 }
