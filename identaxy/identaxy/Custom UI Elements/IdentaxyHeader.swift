@@ -14,8 +14,6 @@ class IdentaxyHeader: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.tintColor = UIConstants.IDENTAXY_PINK
         setBackButton()
     }
@@ -27,9 +25,8 @@ class IdentaxyHeader: UIViewController {
     
     // Sets header title. Not sure why Roboto font won't work...
     func setHeaderTitle(title: String) {
-        self.title = title
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIConstants.ROBOTO_REGULAR]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes as [NSAttributedString.Key : Any]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIConstants.AVENIR_NEXT_REGULAR_20!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationItem.title = title
     }
 
 }

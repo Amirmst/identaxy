@@ -35,23 +35,15 @@ class HelpOptTableViewCell: UITableViewCell {
       return view
     }()
     
-    // Right button.
-    let rightButtonView:UIButton = {
-        let btn = UIButton()
-        btn.setTitle(">", for: .normal)
-        btn.setTitleColor(UIConstants.IDENTAXY_GRAY, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
-            
+        titleLabel.font = UIConstants.AVENIR_NEXT_REGULAR_15
+        self.tintColor = UIConstants.IDENTAXY_LIGHT_PINK
+            self.accessoryType = .disclosureIndicator
             // Add the views to the cell.
             containerView.addSubview(titleLabel)
             self.contentView.addSubview(containerView)
             self.contentView.addSubview(titleLabel)
-            self.contentView.addSubview(rightButtonView)
             
             // Container view constraints.
             containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
@@ -63,14 +55,6 @@ class HelpOptTableViewCell: UITableViewCell {
             titleLabel.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
             titleLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
             titleLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
-            
-            // Right button constraints.
-            rightButtonView.widthAnchor.constraint(equalToConstant:20).isActive = true
-            rightButtonView.heightAnchor.constraint(equalToConstant:20).isActive = true
-            rightButtonView.leadingAnchor.constraint(equalTo:self.containerView.trailingAnchor, constant: 10).isActive = true
-            rightButtonView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-25).isActive = true
-            rightButtonView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-
             
         }
          required init?(coder aDecoder: NSCoder) {

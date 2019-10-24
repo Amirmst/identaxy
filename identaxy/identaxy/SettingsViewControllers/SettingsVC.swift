@@ -38,7 +38,6 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             switchView.tag = indexPath.row // for detect which row switch Changed
             switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
             cell.accessoryView = switchView
-            cell.rightButtonView.setTitle(" ", for: .normal)
             cell.selectionStyle = .none
             return cell
         } else if(indexPath.row == 1) {
@@ -81,6 +80,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
+        settingsTableView.separatorColor = UIConstants.IDENTAXY_LIGHT_PINK
         overrideUserInterfaceStyle = .dark
         
         // Create Logout button and view it will go in.

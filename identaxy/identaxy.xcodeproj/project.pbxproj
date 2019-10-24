@@ -31,7 +31,6 @@
 		AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */; };
 		AB2FF7282361FFFD0022D6E9 /* IdentaxyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */; };
 		AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */; };
-		AB66CC11235F854E00EF71C6 /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66CC10235F854E00EF71C6 /* SwipeVC.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
 		AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */; };
 		AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */; };
@@ -76,7 +75,6 @@
 		AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingAPI.swift; sourceTree = "<group>"; };
 		AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyHeader.swift; sourceTree = "<group>"; };
 		AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-DemiBold.ttf"; sourceTree = "<group>"; };
-		AB66CC10235F854E00EF71C6 /* SwipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		AB688CB123440E4A00CCDBB3 /* identaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = identaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
-				AB66CC10235F854E00EF71C6 /* SwipeVC.swift */,
 				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
@@ -385,7 +382,6 @@
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB2FF71B2361FF020022D6E9 /* UpdatePasswordVC.swift in Sources */,
 				AB2FF7202361FF020022D6E9 /* UpdateEmailVC.swift in Sources */,
-				AB66CC11235F854E00EF71C6 /* SwipeVC.swift in Sources */,
 				AB2FF71E2361FF020022D6E9 /* AboutVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,

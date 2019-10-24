@@ -62,29 +62,6 @@ class SwipingVC: UIViewController {
         let alertVC = alertService.alert(title: "Information", message: "Identaxy Information Popup", button: "OK")
         present(alertVC, animated: true, completion: nil)
     }
-    
-    @IBAction func settingsButtonTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func onSettings(_ sender: Any) {
-        showSettingsVCWithLeftToRightTransition(settingsVCId: "Settings-Screen")
-    }
-    
-     func showSettingsVCWithLeftToRightTransition(settingsVCId: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: settingsVCId) as! SettingsVC
-        
-        let rightToLeft = CATransition()
-        rightToLeft.duration = 0.5
-        rightToLeft.type = CATransitionType.push
-        rightToLeft.subtype = CATransitionSubtype.fromRight
-        rightToLeft.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(rightToLeft, forKey: kCATransition)
-        
-        controller.modalPresentationStyle = .overFullScreen
-        self.present(controller, animated: false, completion: nil)
-    }
 }
 
 //MARK: KolodaViewDelegate

@@ -17,13 +17,14 @@ class SettingsTableViewCell: UITableViewCell {
             guard let settingItem = setting else {return}
             if let name = settingItem.name {
                 nameLabel.text = name  // Name of setting.
+                if (name == "About") {
+                    self.accessoryType = .detailButton
+                } else if (name != "Dark Mode") {
+                    self.accessoryType = .disclosureIndicator
+                }
             }
             if let img = settingItem.img {
                 leftImageView.image = UIImage(named: img)
-            }
-            if let btnStr = settingItem.btnStr {
-                print("btnStr: \(btnStr)")
-                rightButtonView.titleLabel?.text = btnStr
             }
 
         }
@@ -55,25 +56,15 @@ class SettingsTableViewCell: UITableViewCell {
       return view
     }()
     
-    // Right button.
-    let rightButtonView:UIButton = {
-        let btn = UIButton()
-        btn.setTitle(">", for: .normal)
-        btn.setTitleColor(UIConstants.IDENTAXY_GRAY, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        nameLabel.font = UIConstants.AVENIR_NEXT_REGULAR_15
+        self.tintColor = UIConstants.IDENTAXY_PINK
         // Add the views to the cell.
         self.contentView.addSubview(leftImageView)
         containerView.addSubview(nameLabel)
         self.contentView.addSubview(containerView)
         self.contentView.addSubview(nameLabel)
-        self.contentView.addSubview(rightButtonView)
-//        self.contentView.addSubview(rightSwitchView)
         
         // Auto constraints for each view.
         leftImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
@@ -91,13 +82,6 @@ class SettingsTableViewCell: UITableViewCell {
         nameLabel.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
-        
-        // Right button constraints.
-        rightButtonView.widthAnchor.constraint(equalToConstant:20).isActive = true
-        rightButtonView.heightAnchor.constraint(equalToConstant:20).isActive = true
-        rightButtonView.leadingAnchor.constraint(equalTo:self.containerView.trailingAnchor, constant: 10).isActive = true
-        rightButtonView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-25).isActive = true
-        rightButtonView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
     }
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)

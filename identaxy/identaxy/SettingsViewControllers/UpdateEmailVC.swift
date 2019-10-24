@@ -8,108 +8,103 @@
 
 import UIKit
 
-class UpdateEmailVC: IdentaxyHeader {
+class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
     
     let alertService = AlertService()
     var delegate: UIViewController!
-    var updateButtonBottomAnchorConstraint: NSLayoutConstraint!
-    var updateButtonInitialY: CGFloat!
     
     @IBOutlet weak var emailTextField: IdentaxyTextField!
     @IBOutlet weak var updateButton: PillShapedButton!
     
+    var updateButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var updateButtonInitialY: CGFloat!
+    var updateButtonAboveKeyboardY: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // additional set ups
+        emailTextField.delegate = self
         overrideUserInterfaceStyle = .dark
         self.setHeaderTitle(title: "Update Email Address")
-        emailTextField.setPlaceholder(placeholder: "foo@bar.com")
-        emailTextField.textColor = UIColor.gray
-        
-        let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        
-        // Setup 'Current' label.
-        var pos = (screenWidth / 2) - (screenWidth / 4) + 30
-        let current = UILabel(frame: CGRect(x: pos, y: 5, width: 200, height: 21))
-        current.center = CGPoint(x: pos, y: 120)
-        current.textAlignment = .left
-        current.text = "Current"
-        self.view.addSubview(current)
-                
-        // Setup 'curEmail' label.
-        pos = screenWidth - (screenWidth / 4) - 30
-        let curEmail = UILabel(frame: CGRect(x: pos, y: 5, width: 200, height: 21))
-        curEmail.center = CGPoint(x: pos, y: 120)
-        curEmail.textAlignment = .right
-        curEmail.text = "foo@bar.com"
-        self.view.addSubview(curEmail)
-        
-        // Add the text field.
-        let emailField = IdentaxyTextField()
-        emailField.setup()
-        let emailView = UIView()
-        emailView.addSubview(emailField)
-        emailField.center = emailView.center
-        self.view.addSubview(emailView)
-        
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
-        // Constraints.
-//        settingsTableView.translatesAutoresizingMaskIntoConstraints = false
-        buttonView.translatesAutoresizingMaskIntoConstraints = false
-        
+        emailTextField.setPlaceholder(placeholder: "Enter a new email address to update")
         activateintialConstraints()
         
-        buttonView.addSubview(updateButton)
+        // listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
-        updateButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
-        updateButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
-
-        view.addSubview(buttonView)
-
-        buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
-        buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        buttonView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        emailTextField.becomeFirstResponder()
+    }
+    
+    deinit {
+         // Stop listening for keyboard events
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     func activateintialConstraints() {
             // setting constraints manually in code. Deacrtivate storyboard stuff.
             updateButton.translatesAutoresizingMaskIntoConstraints = false
             
+            updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+        
             NSLayoutConstraint.activate([
                 // MARK: - Login button constraints
                 updateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
                 updateButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
                 updateButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
                 updateButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
                 // MARK: - Forgot password button constraints
                 updateButton.heightAnchor.constraint(equalToConstant: 40)
             ])
-            updateButtonInitialY = updateButton.frame.origin.y
-    //        logoutButtonBottomAnchorConstraint.isActive = true
+        
+        updateButtonBottomAnchorConstraint.isActive = true
+        updateButtonInitialY = updateButton.frame.origin.y
         }
     
 
     @IBAction func updateButtonPressed(_ sender: Any) {
         if (emailTextField.text!.isEmpty) {
-            let alertVC = alertService.alert(title: "Error", message: "Nothing has been entered", button: "Dismiss")
+            let alertVC = alertService.alert(title: "Error", message: "Please enter a valid email address.", button: "OK")
             present(alertVC, animated: true, completion: nil)
         } else {
-            let alertVC = alertService.alert(title: "Success!", message: "Please check & verify your email", button: "OK")
+            let alertVC = alertService.alert(title: "Please check your email", message: "We sent you a verification email.", button: "OK")
             present(alertVC, animated: true, completion: nil)
         }
     }
     
-    // code to dismiss keyboard when user clicks on background
-
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    // MARK: moving buttons above keyboard
+    @objc func keyboardWillchange(notification: NSNotification) {
+        let updateButtonFrame = updateButton.frame
+        print("keyboard will show \(notification.name.rawValue)")
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            updateButton.frame.origin.y = updateButtonFrame.origin.y
+            return
+        }
+        if (notification.name == UIResponder.keyboardWillShowNotification
+            || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
+            // move up
+            if let updateButtonBottomAnchorConstraint = updateButtonBottomAnchorConstraint {
+                if let updateButtonAboveKeyboardY = updateButtonAboveKeyboardY {
+                    updateButton.frame.origin.y = updateButtonAboveKeyboardY
+                }
+                updateButtonBottomAnchorConstraint.isActive = false
+            }
+            updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
+                -keyboardRect.height - 20)
+            updateButtonBottomAnchorConstraint.isActive = true
+            if (notification.name == UIResponder.keyboardWillShowNotification) {
+                updateButtonAboveKeyboardY = updateButton.frame.origin.y
+            }
+        } else {
+            if let updateButtonBottomAnchorConstraint = updateButtonBottomAnchorConstraint {
+                updateButton.frame.origin.y = updateButtonInitialY
+                updateButtonBottomAnchorConstraint.isActive = false
+            }
+            updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            updateButtonBottomAnchorConstraint.isActive = true
+        }
     }
 }
