@@ -96,19 +96,16 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         buttonView.addSubview(logoutButton)
         
         logoutButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
-//        logoutButton.
         logoutButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394).isActive = true
         
         UIGraphicsBeginImageContext(CGSize(width: 300, height: 40))
         if let context = UIGraphicsGetCurrentContext() {
-//            context.setFillColor(color.cgColor)
             context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
             let colorImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             logoutButton.setBackgroundImage(colorImage, for: .normal)
         }
 
-//        logoutButton.
         
         view.addSubview(buttonView)
 
