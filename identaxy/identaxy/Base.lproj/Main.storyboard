@@ -412,17 +412,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Current password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Lg-cf-Adk" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="116" y="75" width="143" height="34"/>
+                                <rect key="frame" x="37.5" y="75" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Bcx-uJ-Wnt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-hs-CZO" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="126" y="150" width="123" height="34"/>
+                                <rect key="frame" x="37.5" y="150" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="esQ-HL-Ugw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Confirm password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBt-X6-P7t" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="114.5" y="225" width="146" height="34"/>
+                                <rect key="frame" x="37.5" y="225" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="i98-hs-Yiv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
@@ -445,18 +454,24 @@
                         <constraints>
                             <constraint firstItem="8Lg-cf-Adk" firstAttribute="top" secondItem="V07-6a-0yt" secondAttribute="top" constant="31" id="0k5-Km-Z6o"/>
                             <constraint firstItem="qV4-hs-CZO" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="3HM-80-ahR"/>
-                            <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="8Lg-cf-Adk" secondAttribute="trailing" constant="116" id="7lG-Ey-chV"/>
+                            <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="8Lg-cf-Adk" secondAttribute="trailing" constant="37.5" id="Cww-h4-8P0"/>
+                            <constraint firstItem="8Lg-cf-Adk" firstAttribute="leading" secondItem="V07-6a-0yt" secondAttribute="leading" constant="37.5" id="E3i-Ht-xQd"/>
                             <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="uMr-B9-IeH" secondAttribute="trailing" constant="162" id="GBJ-N4-3DQ"/>
                             <constraint firstItem="QBt-X6-P7t" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="Hvz-oT-Q45"/>
                             <constraint firstItem="8Lg-cf-Adk" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="JIH-EC-n40"/>
+                            <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="qV4-hs-CZO" secondAttribute="trailing" constant="37.5" id="Kct-gI-4Yz"/>
+                            <constraint firstItem="8Lg-cf-Adk" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="S0g-Hy-Lpp"/>
                             <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="uMr-B9-IeH" secondAttribute="trailing" constant="162" id="Vqr-gk-1Ln"/>
+                            <constraint firstItem="QBt-X6-P7t" firstAttribute="leading" secondItem="V07-6a-0yt" secondAttribute="leading" constant="37.5" id="awk-Cx-8sN"/>
                             <constraint firstItem="uMr-B9-IeH" firstAttribute="top" secondItem="IsU-PH-yIa" secondAttribute="bottom" constant="312" id="dU1-dC-cW2"/>
                             <constraint firstItem="IsU-PH-yIa" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="fTb-gw-kLW"/>
+                            <constraint firstItem="qV4-hs-CZO" firstAttribute="leading" secondItem="V07-6a-0yt" secondAttribute="leading" constant="37.5" id="fd7-df-7Dn"/>
+                            <constraint firstItem="qV4-hs-CZO" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="fqY-Oe-zeB"/>
                             <constraint firstItem="IsU-PH-yIa" firstAttribute="top" secondItem="QBt-X6-P7t" secondAttribute="bottom" constant="41" id="ftQ-ds-nh3"/>
                             <constraint firstItem="uMr-B9-IeH" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="gYC-ME-JS8"/>
                             <constraint firstItem="qV4-hs-CZO" firstAttribute="top" secondItem="8Lg-cf-Adk" secondAttribute="bottom" constant="41" id="jUl-qB-SPV"/>
                             <constraint firstItem="QBt-X6-P7t" firstAttribute="top" secondItem="qV4-hs-CZO" secondAttribute="bottom" constant="41" id="khi-jA-bO8"/>
-                            <constraint firstItem="8Lg-cf-Adk" firstAttribute="leading" secondItem="V07-6a-0yt" secondAttribute="leading" constant="116" id="p7q-oN-9d5"/>
+                            <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="QBt-X6-P7t" secondAttribute="trailing" constant="37.5" id="pvr-ro-TsL"/>
                             <constraint firstItem="uMr-B9-IeH" firstAttribute="leading" secondItem="V07-6a-0yt" secondAttribute="leading" constant="162" id="q3R-He-Pum"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V07-6a-0yt"/>
