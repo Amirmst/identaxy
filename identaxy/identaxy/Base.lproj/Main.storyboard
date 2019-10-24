@@ -280,10 +280,41 @@
                     <view key="view" contentMode="scaleToFill" id="3Bz-sy-Ifb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="foo@bar.com" borderStyle="roundedRect" placeholder="foo@bar.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azO-Jx-rwt" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
+                                <rect key="frame" x="130.5" y="189" width="114" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4Gj-7w-pxV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grt-y2-jLt" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
+                                <rect key="frame" x="162" y="617" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateButtonPressed:" destination="it0-qy-bPp" eventType="touchUpInside" id="KV3-Ss-nHT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pfw-Lf-Qur" firstAttribute="bottom" secondItem="grt-y2-jLt" secondAttribute="bottom" constant="20" id="6EK-0i-A0Z"/>
+                            <constraint firstItem="azO-Jx-rwt" firstAttribute="leading" secondItem="pfw-Lf-Qur" secondAttribute="leading" constant="130.5" id="CYl-SU-Vk9"/>
+                            <constraint firstItem="azO-Jx-rwt" firstAttribute="top" secondItem="pfw-Lf-Qur" secondAttribute="top" constant="145" id="Nfi-Cz-K8B"/>
+                            <constraint firstItem="pfw-Lf-Qur" firstAttribute="trailing" secondItem="grt-y2-jLt" secondAttribute="trailing" constant="162" id="QDz-nn-vBB"/>
+                            <constraint firstItem="azO-Jx-rwt" firstAttribute="centerX" secondItem="3Bz-sy-Ifb" secondAttribute="centerX" id="Zej-Vo-91A"/>
+                            <constraint firstItem="grt-y2-jLt" firstAttribute="leading" secondItem="pfw-Lf-Qur" secondAttribute="leading" constant="162" id="aF9-Yd-0En"/>
+                            <constraint firstItem="grt-y2-jLt" firstAttribute="top" secondItem="azO-Jx-rwt" secondAttribute="bottom" constant="394" id="feS-PX-uP9"/>
+                            <constraint firstItem="pfw-Lf-Qur" firstAttribute="trailing" secondItem="azO-Jx-rwt" secondAttribute="trailing" constant="130.5" id="q12-6e-YGT"/>
+                            <constraint firstItem="grt-y2-jLt" firstAttribute="centerX" secondItem="3Bz-sy-Ifb" secondAttribute="centerX" id="w4K-pi-PVG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pfw-Lf-Qur"/>
                     </view>
                     <navigationItem key="navigationItem" id="2eM-EE-fmw"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="azO-Jx-rwt" id="R49-6p-zsE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0y-Fu-Jj6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,15 +11,20 @@ import UIKit
 class UpdateEmailVC: IdentaxyHeader {
     
     var delegate: UIViewController!
+    
+    let alertService = AlertService()
 
+    @IBOutlet weak var emailTextField: IdentaxyTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         self.setHeaderTitle(title: "Update Email Address")
+        emailTextField.setPlaceholder(placeholder: "foo@bar.com")
+        emailTextField.textColor = UIColor.gray
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
+
         
         // Setup 'Current' label.
         var pos = (screenWidth / 2) - (screenWidth / 4) + 30
@@ -47,4 +52,24 @@ class UpdateEmailVC: IdentaxyHeader {
     }
     
 
+    @IBAction func updateButtonPressed(_ sender: Any) {
+        if (emailTextField.text!.isEmpty) {
+            let alertVC = alertService.alert(title: "Error", message: "Nothing has been entered", button: "Dismiss")
+            present(alertVC, animated: true, completion: nil)
+        } else {
+            let alertVC = alertService.alert(title: "Success!", message: "Please check & verify your email", button: "OK")
+            present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    // code to dismiss keyboard when user clicks on background
+
+    func textFieldShouldReturn(textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
