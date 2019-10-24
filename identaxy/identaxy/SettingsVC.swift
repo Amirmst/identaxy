@@ -75,6 +75,8 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setHeaderTitle(title: "Settings")
+        
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         overrideUserInterfaceStyle = .dark
@@ -139,7 +141,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         
         settingsTableView.alwaysBounceVertical = false  // No scroll
         
-        self.setHeaderTitle(title: "Settings")
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

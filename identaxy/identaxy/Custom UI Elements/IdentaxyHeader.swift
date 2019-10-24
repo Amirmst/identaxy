@@ -28,7 +28,7 @@ class IdentaxyHeader: UIViewController {
     // Sets header title. Not sure why Roboto font won't work...
     func setHeaderTitle(title: String) {
         self.title = title
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white] //NSAttributedString.Key.font: UIConstants.ROBOTO_REGULAR]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIConstants.ROBOTO_REGULAR]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
         
     }

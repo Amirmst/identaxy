@@ -23,6 +23,11 @@
 		C933BE8523616A0C00F43C9A /* HelpSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE8423616A0C00F43C9A /* HelpSupportVC.swift */; };
 		C933BE8723616A3800F43C9A /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE8623616A3800F43C9A /* AboutVC.swift */; };
 		C933BE8923617C3400F43C9A /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE8823617C3400F43C9A /* UpdatePasswordVC.swift */; };
+		C933BE8B2361B68700F43C9A /* HelpOptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE8A2361B68700F43C9A /* HelpOptTableViewCell.swift */; };
+		C933BE8D2361BE2800F43C9A /* ReportBugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE8C2361BE2800F43C9A /* ReportBugVC.swift */; };
+		C933BE932361C44500F43C9A /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C933BE922361C44500F43C9A /* AlertStoryboard.storyboard */; };
+		C933BE952361C47C00F43C9A /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE942361C47C00F43C9A /* AlertService.swift */; };
+		C933BE972361C4A500F43C9A /* IdentaxyAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933BE962361C4A500F43C9A /* IdentaxyAlertViewController.swift */; };
 		C9D204A023615F4E00F62061 /* UpdateEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2049F23615F4E00F62061 /* UpdateEmailVC.swift */; };
 		C9D204A22361608500F62061 /* IdentaxyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D204A12361608500F62061 /* IdentaxyTextField.swift */; };
 		C9E79BC5235CE79600C898AA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E79BC1235CE79600C898AA /* SettingsVC.swift */; };
@@ -51,6 +56,11 @@
 		C933BE8423616A0C00F43C9A /* HelpSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSupportVC.swift; sourceTree = "<group>"; };
 		C933BE8623616A3800F43C9A /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		C933BE8823617C3400F43C9A /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
+		C933BE8A2361B68700F43C9A /* HelpOptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpOptTableViewCell.swift; sourceTree = "<group>"; };
+		C933BE8C2361BE2800F43C9A /* ReportBugVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBugVC.swift; sourceTree = "<group>"; };
+		C933BE922361C44500F43C9A /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
+		C933BE942361C47C00F43C9A /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		C933BE962361C4A500F43C9A /* IdentaxyAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyAlertViewController.swift; sourceTree = "<group>"; };
 		C9D2049F23615F4E00F62061 /* UpdateEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailVC.swift; sourceTree = "<group>"; };
 		C9D204A12361608500F62061 /* IdentaxyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyTextField.swift; sourceTree = "<group>"; };
 		C9E79BC1235CE79600C898AA /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -92,6 +102,7 @@
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				C933BE912361C42900F43C9A /* CustomAlert */,
 				ABD2CB8F234BAA2B001161FD /* UIConstants.swift */,
 				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
@@ -99,6 +110,7 @@
 				C9D204A12361608500F62061 /* IdentaxyTextField.swift */,
 				C9E79BC2235CE79600C898AA /* SettingAPI.swift */,
 				C9E79BC4235CE79600C898AA /* SettingsTableViewCell.swift */,
+				C933BE8A2361B68700F43C9A /* HelpOptTableViewCell.swift */,
 			);
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
@@ -137,6 +149,7 @@
 				C933BE8623616A3800F43C9A /* AboutVC.swift */,
 				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
+				C933BE8C2361BE2800F43C9A /* ReportBugVC.swift */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
 				AB688CC223440E4B00CCDBB3 /* Info.plist */,
@@ -150,6 +163,16 @@
 				AB730DB3234BFF48002EF58D /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C933BE912361C42900F43C9A /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				C933BE922361C44500F43C9A /* AlertStoryboard.storyboard */,
+				C933BE942361C47C00F43C9A /* AlertService.swift */,
+				C933BE962361C4A500F43C9A /* IdentaxyAlertViewController.swift */,
+			);
+			path = CustomAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +239,7 @@
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
+				C933BE932361C44500F43C9A /* AlertStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,16 +294,20 @@
 			files = (
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
+				C933BE972361C4A500F43C9A /* IdentaxyAlertViewController.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				C9D204A22361608500F62061 /* IdentaxyTextField.swift in Sources */,
+				C933BE8B2361B68700F43C9A /* HelpOptTableViewCell.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				C933BE8923617C3400F43C9A /* UpdatePasswordVC.swift in Sources */,
 				C9E79BC7235CE79600C898AA /* IdentaxyHeader.swift in Sources */,
+				C933BE8D2361BE2800F43C9A /* ReportBugVC.swift in Sources */,
 				C9D204A023615F4E00F62061 /* UpdateEmailVC.swift in Sources */,
 				C933BE8523616A0C00F43C9A /* HelpSupportVC.swift in Sources */,
 				C933BE83236169D500F43C9A /* ContactUsVC.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				C9E79BC8235CE79600C898AA /* SettingsTableViewCell.swift in Sources */,
+				C933BE952361C47C00F43C9A /* AlertService.swift in Sources */,
 				C9E79BC6235CE79600C898AA /* SettingAPI.swift in Sources */,
 				C933BE8723616A3800F43C9A /* AboutVC.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
