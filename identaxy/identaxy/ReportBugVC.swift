@@ -17,6 +17,7 @@ class ReportBugVC: IdentaxyHeader {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Report a problem")
+        self.navigationController?.navigationBar.topItem?.title = "Help & Support"
         overrideUserInterfaceStyle = .dark
         reportTextField.textColor = UIColor.lightGray
         reportTextField.placeholder = "Please provide a description of the problem..."

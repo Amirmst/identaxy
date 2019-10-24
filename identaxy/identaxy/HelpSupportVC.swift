@@ -124,6 +124,7 @@ class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate 
                     print("Should not ever reach here")
                     return
             }
+            tableView.deselectRow(at: indexPath, animated: true)
             performSegue(withIdentifier: segueID, sender: self)
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QMg-JF-SzA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTZ-GO-k9w">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -68,62 +68,6 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="TXM-sw-wcc">
-            <objects>
-                <viewController id="Czw-CL-UL2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PYp-4Y-i7s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vl-Hh-A5j" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="97" y="62" width="208" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="settings">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UtT-6o-K0H" kind="show" id="P6e-SD-vly"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7h-uA-F5x">
-                                <rect key="frame" x="143" y="189" width="89" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="update email">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8my-HJ-YUq">
-                                <rect key="frame" x="145" y="529" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-gU-lbZ">
-                                <rect key="frame" x="116" y="433" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Help &amp; support">
-                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIo-Gr-cI6">
-                                <rect key="frame" x="154" y="337" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Password">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="TD7-Rk-uYR"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Aok-lY-lRl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D1E-nT-K7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1017" y="847"/>
-        </scene>
         <!--Sign InVC-->
         <scene sceneID="zoa-CR-vae">
             <objects>
@@ -187,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1016.8" y="136.28185907046478"/>
         </scene>
-        <!--SettingsVC-->
+        <!--Settings-->
         <scene sceneID="Kqr-HA-Hjg">
             <objects>
                 <viewController id="UtT-6o-K0H" customClass="SettingsVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,7 +207,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="an8-OA-Okw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MzH-ya-nZc"/>
+                    <navigationItem key="navigationItem" title="Settings" id="MzH-ya-nZc"/>
                     <connections>
                         <outlet property="logoutButton" destination="enT-bv-V0x" id="Ac9-uL-9n3"/>
                         <outlet property="settingsTableView" destination="Edd-r9-sun" id="Szc-Av-xlx"/>
@@ -271,9 +215,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMm-Hl-DzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="847"/>
+            <point key="canvasLocation" x="2864.8000000000002" y="846.9265367316342"/>
         </scene>
-        <!--Update EmailVC-->
+        <!--Update Email Address-->
         <scene sceneID="LVa-F8-Kf5">
             <objects>
                 <viewController id="it0-qy-bPp" customClass="UpdateEmailVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -311,7 +255,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pfw-Lf-Qur"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2eM-EE-fmw"/>
+                    <navigationItem key="navigationItem" title="Update Email Address" id="2eM-EE-fmw"/>
                     <connections>
                         <outlet property="emailTextField" destination="azO-Jx-rwt" id="R49-6p-zsE"/>
                     </connections>
@@ -320,25 +264,7 @@
             </objects>
             <point key="canvasLocation" x="2809" y="137"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="2iY-Nh-yBc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QMg-JF-SzA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0MX-0H-jxn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Czw-CL-UL2" kind="relationship" relationship="rootViewController" id="OTd-wb-f8K"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="82P-dN-jCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="847"/>
-        </scene>
-        <!--AboutVC-->
+        <!--About-->
         <scene sceneID="W0m-Pp-lm9">
             <objects>
                 <viewController id="w5d-LW-aew" customClass="AboutVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -348,13 +274,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1eW-du-Opk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dQR-Oc-6hx"/>
+                    <navigationItem key="navigationItem" title="About" id="dQR-Oc-6hx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2I-9r-gUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2809" y="1631"/>
         </scene>
-        <!--Report BugVC-->
+        <!--Report a problem-->
         <scene sceneID="byW-Og-AFy">
             <objects>
                 <viewController id="k4Z-8l-8dP" customClass="ReportBugVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -397,7 +323,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v0c-bQ-kSb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5Kp-y0-Dvc"/>
+                    <navigationItem key="navigationItem" title="Report a problem" id="5Kp-y0-Dvc"/>
                     <connections>
                         <outlet property="reportTextField" destination="6R8-Gj-AtP" id="0WP-pG-Tfl"/>
                     </connections>
@@ -406,7 +332,7 @@
             </objects>
             <point key="canvasLocation" x="1016.8" y="2405.8470764617691"/>
         </scene>
-        <!--Contact UsVC-->
+        <!--Contact Us-->
         <scene sceneID="3dp-RX-Qh3">
             <objects>
                 <viewController id="aEi-7v-tNi" customClass="ContactUsVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -416,13 +342,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tD7-Rk-Bj5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pZx-tq-DZz"/>
+                    <navigationItem key="navigationItem" title="Contact Us" id="pZx-tq-DZz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNb-Dm-KO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1926" y="2406"/>
         </scene>
-        <!--Help SupportVC-->
+        <!--Help & Support-->
         <scene sceneID="5ol-KH-T50">
             <objects>
                 <viewController id="NcZ-w9-3hP" customClass="HelpSupportVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -463,7 +389,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Coe-cb-MqH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mPU-Di-BNm"/>
+                    <navigationItem key="navigationItem" title="Help &amp; Support" id="mPU-Di-BNm"/>
                     <connections>
                         <outlet property="optionsTableView" destination="pV8-Ce-oqL" id="jDr-0g-ZqX"/>
                     </connections>
@@ -472,7 +398,7 @@
             </objects>
             <point key="canvasLocation" x="1925.5999999999999" y="1630.4347826086957"/>
         </scene>
-        <!--Update PasswordVC-->
+        <!--Update Password-->
         <scene sceneID="LN5-q8-LyJ">
             <objects>
                 <viewController id="BW8-aM-9Rf" customClass="UpdatePasswordVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
@@ -530,7 +456,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V07-6a-0yt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Zoo-PO-5C8"/>
+                    <navigationItem key="navigationItem" title="Update Password" id="Zoo-PO-5C8">
+                        <barButtonItem key="backBarButtonItem" title="  " id="gFI-12-SO6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmPassTextField" destination="QBt-X6-P7t" id="49t-4b-Llu"/>
                         <outlet property="currentPassTextField" destination="8Lg-cf-Adk" id="tdI-Kj-Qw2"/>
@@ -540,7 +468,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie7-EG-IpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="847"/>
+            <point key="canvasLocation" x="3748" y="846.9265367316342"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lSi-X7-ME7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UTZ-GO-k9w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lkr-p2-rQc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UtT-6o-K0H" kind="relationship" relationship="rootViewController" id="tkh-lW-kYn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIh-nh-chg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925.5999999999999" y="846.9265367316342"/>
         </scene>
     </scenes>
     <resources>

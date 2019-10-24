@@ -17,6 +17,7 @@ class AboutVC: IdentaxyHeader {
         overrideUserInterfaceStyle = .dark
         self.setHeaderTitle(title: "About")
 
+
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         

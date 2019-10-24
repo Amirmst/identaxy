@@ -22,15 +22,14 @@ class IdentaxyHeader: UIViewController {
     
     func setBackButton() {
         // Set the pink '<' back button.
-        self.navigationController?.navigationBar.topItem?.title = " "
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
     }
     
     // Sets header title. Not sure why Roboto font won't work...
     func setHeaderTitle(title: String) {
         self.title = title
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIConstants.ROBOTO_REGULAR]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes
-        
+        self.navigationController?.navigationBar.titleTextAttributes = attributes as [NSAttributedString.Key : Any]
     }
 
 }

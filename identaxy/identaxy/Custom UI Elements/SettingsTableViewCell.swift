@@ -16,12 +16,7 @@ class SettingsTableViewCell: UITableViewCell {
         didSet {
             guard let settingItem = setting else {return}
             if let name = settingItem.name {
-                nameLabel.text = name                      // Name of setting.
-//                if(name != "Dark Mode") {
-//                    rightButtonView.titleLabel?.text = ">"
-//                } else {
-//
-//                }
+                nameLabel.text = name  // Name of setting.
             }
             if let img = settingItem.img {
                 leftImageView.image = UIImage(named: img)
@@ -69,12 +64,6 @@ class SettingsTableViewCell: UITableViewCell {
         return btn
     }()
     
-    // Right switch.
-    let rightSwitchView:UISwitch = {
-        let swtch = UISwitch()
-        return swtch
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -109,14 +98,6 @@ class SettingsTableViewCell: UITableViewCell {
         rightButtonView.leadingAnchor.constraint(equalTo:self.containerView.trailingAnchor, constant: 10).isActive = true
         rightButtonView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-25).isActive = true
         rightButtonView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        
-        // Right switch constraints.
-//        rightSwitchView.widthAnchor.constraint(equalToConstant:20).isActive = true
-//        rightSwitchView.heightAnchor.constraint(equalToConstant:20).isActive = true
-//        rightSwitchView.leadingAnchor.constraint(equalTo:self.containerView.trailingAnchor, constant: 10).isActive = true
-//        rightSwitchView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-25).isActive = true
-//        rightSwitchView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        
     }
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)

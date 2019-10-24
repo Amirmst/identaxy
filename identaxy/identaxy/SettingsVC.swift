@@ -20,7 +20,6 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var logoutButton: PillShapedButton!
     private let settings = SettingAPI.getSettings()
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
@@ -161,6 +160,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
                     print("Should not ever reach here")
                     return
             }
+            tableView.deselectRow(at: indexPath, animated: true)
             performSegue(withIdentifier: segueID, sender: self)
         }
     }
