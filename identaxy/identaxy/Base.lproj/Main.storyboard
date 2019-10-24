@@ -452,22 +452,22 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Current password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Lg-cf-Adk" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
                                 <rect key="frame" x="116" y="75" width="143" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-hs-CZO" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
                                 <rect key="frame" x="126" y="150" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsU-PH-yIa">
-                                <rect key="frame" x="109" y="275" width="157" height="30"/>
+                                <rect key="frame" x="109" y="300" width="157" height="30"/>
                                 <state key="normal" title="Forgot your password?"/>
                                 <connections>
                                     <action selector="forgotPassButtonPressed:" destination="BW8-aM-9Rf" eventType="touchUpInside" id="jBJ-YE-SNF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMr-B9-IeH" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="162" y="617" width="51" height="30"/>
+                                <rect key="frame" x="162" y="642" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="updateButtonPressed:" destination="BW8-aM-9Rf" eventType="touchUpInside" id="Qdm-L1-sRM"/>
@@ -476,7 +476,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Confirm password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBt-X6-P7t" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
                                 <rect key="frame" x="114.5" y="225" width="146" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -490,7 +490,7 @@
                             <constraint firstItem="V07-6a-0yt" firstAttribute="trailing" secondItem="uMr-B9-IeH" secondAttribute="trailing" constant="162" id="Vqr-gk-1Ln"/>
                             <constraint firstItem="uMr-B9-IeH" firstAttribute="top" secondItem="IsU-PH-yIa" secondAttribute="bottom" constant="312" id="dU1-dC-cW2"/>
                             <constraint firstItem="IsU-PH-yIa" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="fTb-gw-kLW"/>
-                            <constraint firstItem="IsU-PH-yIa" firstAttribute="top" secondItem="QBt-X6-P7t" secondAttribute="bottom" constant="16" id="ftQ-ds-nh3"/>
+                            <constraint firstItem="IsU-PH-yIa" firstAttribute="top" secondItem="QBt-X6-P7t" secondAttribute="bottom" constant="41" id="ftQ-ds-nh3"/>
                             <constraint firstItem="uMr-B9-IeH" firstAttribute="centerX" secondItem="hbD-7R-8W7" secondAttribute="centerX" id="gYC-ME-JS8"/>
                             <constraint firstItem="qV4-hs-CZO" firstAttribute="top" secondItem="8Lg-cf-Adk" secondAttribute="bottom" constant="41" id="jUl-qB-SPV"/>
                             <constraint firstItem="QBt-X6-P7t" firstAttribute="top" secondItem="qV4-hs-CZO" secondAttribute="bottom" constant="41" id="khi-jA-bO8"/>
