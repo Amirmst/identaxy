@@ -10,15 +10,17 @@ import UIKit
 
 class SignupVC_Password: UIViewController, UITextFieldDelegate {
 
+    let nameScreenSegue: String = "nameScreenSegue"
+    
     @IBOutlet weak var passwordTextField: IdentaxyTextField!
     
-    @IBOutlet weak var doneButton: RoundedCornerButton!
+    @IBOutlet weak var continueButton: RoundedCornerButton!
     
     @IBOutlet weak var createPassowrdLabel: UILabel!
     
-    var doneButtonBottomAnchorConstraint: NSLayoutConstraint!
-    var doneButtonInitialY: CGFloat!
-    var doneButtonAboveKeyboardY: CGFloat!
+    var continueButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var continueButtonInitialY: CGFloat!
+    var continueButtonAboveKeyboardY: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
         overrideUserInterfaceStyle = .dark
         passwordTextField.delegate = self
         setupPasswordTextField()
-        placeDoneButton()
+        placeContinueButton()
         createPasswordLabelSetup()
         
         // Listen for keyboard events
@@ -46,35 +48,23 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
     
     // MARK: - Logic
     
-    @IBAction func onDone(_ sender: Any) {
-        if let passwordTextField = passwordTextField.text {
-            if (passwordTextField.count >= 6) {
-                showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
-                return
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == nameScreenSegue) {
+            if (passwordTextField.text != nil && passwordTextField.text!.count >= 6) {
+                return true
             }
         }
+        
         let alertService = AlertService()
         print("ALERT!!!")
         let alertVC = alertService.alert(title: "Error", message: "Your password must be at least 6 characters.", button: "OK")
         present(alertVC, animated: true, completion: nil)
+        return false
     }
+    
+    
     
     // MARK: - UI Methods
-    
-     func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingVC
-        
-        let rightToLeft = CATransition()
-        rightToLeft.duration = 0.5
-        rightToLeft.type = CATransitionType.push
-        rightToLeft.subtype = CATransitionSubtype.fromRight
-        rightToLeft.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(rightToLeft, forKey: kCATransition)
-        
-        controller.modalPresentationStyle = .overFullScreen
-        self.present(controller, animated: false, completion: nil)
-    }
     
     private func createPasswordLabelSetup() {
         createPassowrdLabel.text = "Create your Identaxy\npassword"
@@ -86,50 +76,50 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
         passwordTextField.setPlaceholder(placeholder: "Password")
     }
     
-    private func placeDoneButton() {
-        doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButtonBottomAnchorConstraint = doneButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+    private func placeContinueButton() {
+        continueButton.translatesAutoresizingMaskIntoConstraints = false
+        continueButtonBottomAnchorConstraint = continueButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         NSLayoutConstraint.activate([
-            doneButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            doneButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
-            doneButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
-            doneButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-            doneButton.heightAnchor.constraint(equalToConstant: 40),
+            continueButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            continueButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
+            continueButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
+            continueButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            continueButton.heightAnchor.constraint(equalToConstant: 40),
         ])
-        doneButtonBottomAnchorConstraint.isActive = true
-        doneButtonInitialY = doneButton.frame.origin.y
+        continueButtonBottomAnchorConstraint.isActive = true
+        continueButtonInitialY = continueButton.frame.origin.y
     }
     
     // MARK: moving buttons above keyboard
     @objc func keyboardWillchange(notification: NSNotification) {
-        let doneButtonFrame = doneButton.frame
+        let continueButtonFrame = continueButton.frame
         print("keyboard will show \(notification.name.rawValue)")
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            doneButton.frame.origin.y = doneButtonFrame.origin.y
+            continueButton.frame.origin.y = continueButtonFrame.origin.y
             return
         }
         if (notification.name == UIResponder.keyboardWillShowNotification
             || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
             // move up
-            if let doneButtonBottomAnchorConstraint = doneButtonBottomAnchorConstraint {
-                if let doneButtonAboveKeyboardY = doneButtonAboveKeyboardY {
-                    doneButton.frame.origin.y = doneButtonAboveKeyboardY
+            if let continueButtonBottomAnchorConstraint = continueButtonBottomAnchorConstraint {
+                if let continueButtonAboveKeyboardY = continueButtonAboveKeyboardY {
+                    continueButton.frame.origin.y = continueButtonAboveKeyboardY
                 }
-                doneButtonBottomAnchorConstraint.isActive = false
+                continueButtonBottomAnchorConstraint.isActive = false
             }
-            doneButtonBottomAnchorConstraint = doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
+            continueButtonBottomAnchorConstraint = continueButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
                 -keyboardRect.height - 10)
-            doneButtonBottomAnchorConstraint.isActive = true
+            continueButtonBottomAnchorConstraint.isActive = true
             if (notification.name == UIResponder.keyboardWillShowNotification) {
-                doneButtonAboveKeyboardY = doneButton.frame.origin.y
+                continueButtonAboveKeyboardY = continueButton.frame.origin.y
             }
         } else {
-            if let doneButtonBottomAnchorConstraint = doneButtonBottomAnchorConstraint {
-                doneButton.frame.origin.y = doneButtonInitialY
-                doneButtonBottomAnchorConstraint.isActive = false
+            if let continueButtonBottomAnchorConstraint = continueButtonBottomAnchorConstraint {
+                continueButton.frame.origin.y = continueButtonInitialY
+                continueButtonBottomAnchorConstraint.isActive = false
             }
-            doneButtonBottomAnchorConstraint = doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
-            doneButtonBottomAnchorConstraint.isActive = true
+            continueButtonBottomAnchorConstraint = continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            continueButtonBottomAnchorConstraint.isActive = true
         }
     }
 }

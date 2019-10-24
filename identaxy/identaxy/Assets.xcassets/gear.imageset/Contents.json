@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "gear.png",
+      "filename" : "noun_dot menu_2729267.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "gear@2x.png",
+      "filename" : "noun_dot menu_2729267@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "noun_dot menu_2729267@3x.png",
       "scale" : "3x"
     }
   ],

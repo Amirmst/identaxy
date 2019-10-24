@@ -20,13 +20,12 @@ class CustomKolodaView: KolodaView {
 
     override func frameForCard(at index: Int) -> CGRect {
         if index == 0 {
-            let topOffset: CGFloat = defaultTopOffset
             let xOffset: CGFloat = defaultHorizontalOffset
             let width = (self.frame).width - 2 * defaultHorizontalOffset
             let height = width * defaultHeightRatio
-            let yOffset: CGFloat = topOffset
+            // place the card in the center of the view.
+            let yOffset: CGFloat = ((self.frame).height) / 2 - (height / 2)
             let frame = CGRect(x: xOffset, y: yOffset, width: width, height: height)
-            
             return frame
         } else if index == 1 {
             let horizontalMargin = -self.bounds.width * backgroundCardHorizontalMarginMultiplier
