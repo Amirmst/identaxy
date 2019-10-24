@@ -17,10 +17,18 @@ class SettingsTableViewCell: UITableViewCell {
             guard let settingItem = setting else {return}
             if let name = settingItem.name {
                 nameLabel.text = name                      // Name of setting.
-                rightButtonView.titleLabel?.text = ">"
+//                if(name != "Dark Mode") {
+//                    rightButtonView.titleLabel?.text = ">"
+//                } else {
+//
+//                }
             }
             if let img = settingItem.img {
                 leftImageView.image = UIImage(named: img)
+            }
+            if let btnStr = settingItem.btnStr {
+                print("btnStr: \(btnStr)")
+                rightButtonView.titleLabel?.text = btnStr
             }
 
         }
