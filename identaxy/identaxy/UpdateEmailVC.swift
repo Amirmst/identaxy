@@ -10,11 +10,14 @@ import UIKit
 
 class UpdateEmailVC: IdentaxyHeader {
     
-    var delegate: UIViewController!
-    
     let alertService = AlertService()
-
+    var delegate: UIViewController!
+    var updateButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var updateButtonInitialY: CGFloat!
+    
     @IBOutlet weak var emailTextField: IdentaxyTextField!
+    @IBOutlet weak var updateButton: PillShapedButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
@@ -24,7 +27,6 @@ class UpdateEmailVC: IdentaxyHeader {
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
-
         
         // Setup 'Current' label.
         var pos = (screenWidth / 2) - (screenWidth / 4) + 30
@@ -49,7 +51,45 @@ class UpdateEmailVC: IdentaxyHeader {
         emailView.addSubview(emailField)
         emailField.center = emailView.center
         self.view.addSubview(emailView)
+        
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        // Constraints.
+//        settingsTableView.translatesAutoresizingMaskIntoConstraints = false
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        
+        activateintialConstraints()
+        
+        buttonView.addSubview(updateButton)
+        
+        updateButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
+        updateButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
+
+        view.addSubview(buttonView)
+
+        buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
+        buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        buttonView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
     }
+    
+    func activateintialConstraints() {
+            // setting constraints manually in code. Deacrtivate storyboard stuff.
+            updateButton.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                // MARK: - Login button constraints
+                updateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
+                updateButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
+                updateButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
+                updateButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+                // MARK: - Forgot password button constraints
+                updateButton.heightAnchor.constraint(equalToConstant: 40)
+            ])
+            updateButtonInitialY = updateButton.frame.origin.y
+    //        logoutButtonBottomAnchorConstraint.isActive = true
+        }
     
 
     @IBAction func updateButtonPressed(_ sender: Any) {

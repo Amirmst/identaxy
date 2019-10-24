@@ -261,6 +261,7 @@
                     <navigationItem key="navigationItem" title="Update Email Address" id="2eM-EE-fmw"/>
                     <connections>
                         <outlet property="emailTextField" destination="azO-Jx-rwt" id="R49-6p-zsE"/>
+                        <outlet property="updateButton" destination="grt-y2-jLt" id="pQ3-Nu-ai1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0y-Fu-Jj6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
