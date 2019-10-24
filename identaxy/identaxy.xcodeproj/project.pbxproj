@@ -26,6 +26,10 @@
 		AB2FF71E2361FF020022D6E9 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7182361FF020022D6E9 /* AboutVC.swift */; };
 		AB2FF71F2361FF020022D6E9 /* HelpSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7192361FF020022D6E9 /* HelpSupportVC.swift */; };
 		AB2FF7202361FF020022D6E9 /* UpdateEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF71A2361FF020022D6E9 /* UpdateEmailVC.swift */; };
+		AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7212361FFFD0022D6E9 /* SettingsTableViewCell.swift */; };
+		AB2FF7262361FFFD0022D6E9 /* HelpOptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7222361FFFD0022D6E9 /* HelpOptTableViewCell.swift */; };
+		AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */; };
+		AB2FF7282361FFFD0022D6E9 /* IdentaxyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */; };
 		AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */; };
 		AB66CC11235F854E00EF71C6 /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66CC10235F854E00EF71C6 /* SwipeVC.swift */; };
 		AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */; };
@@ -66,6 +70,10 @@
 		AB2FF7182361FF020022D6E9 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		AB2FF7192361FF020022D6E9 /* HelpSupportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpSupportVC.swift; sourceTree = "<group>"; };
 		AB2FF71A2361FF020022D6E9 /* UpdateEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateEmailVC.swift; sourceTree = "<group>"; };
+		AB2FF7212361FFFD0022D6E9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		AB2FF7222361FFFD0022D6E9 /* HelpOptTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpOptTableViewCell.swift; sourceTree = "<group>"; };
+		AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingAPI.swift; sourceTree = "<group>"; };
+		AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyHeader.swift; sourceTree = "<group>"; };
 		AB66CC0B235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-DemiBold.ttf"; sourceTree = "<group>"; };
 		AB66CC10235F854E00EF71C6 /* SwipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		AB688CB123440E4A00CCDBB3 /* identaxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = identaxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +155,10 @@
 				295CED41235D048E00F2363E /* IdentaxyTextField.swift */,
 				ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */,
 				AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */,
+				AB2FF7222361FFFD0022D6E9 /* HelpOptTableViewCell.swift */,
+				AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */,
+				AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */,
+				AB2FF7212361FFFD0022D6E9 /* SettingsTableViewCell.swift */,
 			);
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
@@ -377,11 +389,14 @@
 				7360A7882360144900EA960F /* SwipingVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
+				AB2FF7262361FFFD0022D6E9 /* HelpOptTableViewCell.swift in Sources */,
 				AB2FF71D2361FF020022D6E9 /* SettingsVC.swift in Sources */,
 				AB2FF71F2361FF020022D6E9 /* HelpSupportVC.swift in Sources */,
 				ABB1CDE623614702003CDA22 /* SignupVC_Name.swift in Sources */,
 				ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */,
 				7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */,
+				AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */,
+				AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */,
 				AB2FF71C2361FF020022D6E9 /* ContactUsVC.swift in Sources */,
 				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
 				7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */,
@@ -389,6 +404,7 @@
 				295CED3E235D047A00F2363E /* AlertService.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
 				295CED40235D048200F2363E /* IdentaxyAlertViewController.swift in Sources */,
+				AB2FF7282361FFFD0022D6E9 /* IdentaxyHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
