@@ -91,11 +91,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         // Constraints.
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
         buttonView.translatesAutoresizingMaskIntoConstraints = false
-//        logoutButton.translatesAutoresizingMaskIntoConstraints = false
         
-//        logoutButton.setTitle("LOG OUT", for: .normal)
-//        logoutButton.backgroundColor = UIConstants.IDENTAXY_PINK
-//        logoutButton.center = self.view.center
         activateintialConstraints()
         
         buttonView.addSubview(logoutButton)
@@ -103,23 +99,13 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         logoutButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
         logoutButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
-//        UIGraphicsBeginImageContext(CGSize(width: 300, height: 40))
-//        if let context = UIGraphicsGetCurrentContext() {
-//            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-//            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-//            UIGraphicsEndImageContext()
-//            logoutButton.setBackgroundImage(colorImage, for: .normal)
-//        }
-
         view.addSubview(buttonView)
 
-//        buttonView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
         buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
         buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
         buttonView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         
-        //self.settingsTableView.layoutMargins
         self.settingsTableView.rowHeight = 50
         self.settingsTableView.separatorColor = UIConstants.IDENTAXY_GRAY
         self.settingsTableView.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 20)

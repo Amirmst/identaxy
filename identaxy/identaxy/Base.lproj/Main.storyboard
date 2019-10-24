@@ -329,6 +329,7 @@
                     <navigationItem key="navigationItem" title="Report a problem" id="5Kp-y0-Dvc"/>
                     <connections>
                         <outlet property="reportTextField" destination="6R8-Gj-AtP" id="0WP-pG-Tfl"/>
+                        <outlet property="submitButton" destination="2fu-6F-W4h" id="52Z-0U-5nt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EU-aT-twJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

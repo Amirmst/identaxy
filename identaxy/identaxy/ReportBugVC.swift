@@ -13,7 +13,12 @@ class ReportBugVC: IdentaxyHeader {
     var delegate: UIViewController!
     let alertService = AlertService()
     
+    var submitButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var submitButtonInitialY: CGFloat!
+    
     @IBOutlet weak var reportTextField: IdentaxyTextField!
+    @IBOutlet weak var submitButton: PillShapedButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Report a problem")
@@ -21,8 +26,44 @@ class ReportBugVC: IdentaxyHeader {
         overrideUserInterfaceStyle = .dark
         reportTextField.textColor = UIColor.lightGray
         reportTextField.placeholder = "Please provide a description of the problem..."
-        // Do any additional setup after loading the view.
+        
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+//        settingsTableView.translatesAutoresizingMaskIntoConstraints = false
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        
+        activateintialConstraints()
+        
+        buttonView.addSubview(submitButton)
+        
+        submitButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
+
+        view.addSubview(buttonView)
+
+        buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
+        buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        buttonView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        
     }
+    
+    func activateintialConstraints() {
+            // setting constraints manually in code. Deacrtivate storyboard stuff.
+            submitButton.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                // MARK: - Login button constraints
+                submitButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                submitButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
+                submitButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
+                submitButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
+                submitButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+                // MARK: - Forgot password button constraints
+                submitButton.heightAnchor.constraint(equalToConstant: 40)
+            ])
+            submitButtonInitialY = submitButton.frame.origin.y
+    //        logoutButtonBottomAnchorConstraint.isActive = true
+        }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
         if(reportTextField.text!.isEmpty) {
