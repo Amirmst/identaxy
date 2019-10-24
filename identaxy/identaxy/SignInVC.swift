@@ -23,7 +23,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     var forgotButtonBottomAnchorConstraint: NSLayoutConstraint!
     var forgotButtonInitialY: CGFloat!
     var forgotButtonAboveKeyboardY: CGFloat!
-        
+    
     override func loadView() {
         super.loadView()
         overrideUserInterfaceStyle = .dark
@@ -48,7 +48,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     deinit {
-         // Stop listening for keyboard events
+        // Stop listening for keyboard events
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -73,7 +73,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - UI Methods
-     func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
+    func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingVC
         

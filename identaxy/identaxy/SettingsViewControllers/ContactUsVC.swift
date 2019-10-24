@@ -11,12 +11,12 @@ import UIKit
 class ContactUsVC: IdentaxyHeader {
     
     var delegate: UIViewController!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Contact Us")
         overrideUserInterfaceStyle = .dark
-
+        
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         
@@ -27,7 +27,7 @@ class ContactUsVC: IdentaxyHeader {
         current.textAlignment = .left
         current.text = "Email"
         self.view.addSubview(current)
-                
+        
         // Setup 'curEmail' label.
         pos = screenWidth - (screenWidth / 4) - 30
         let curEmail = UILabel(frame: CGRect(x: pos, y: 5, width: 200, height: 21))
@@ -36,5 +36,5 @@ class ContactUsVC: IdentaxyHeader {
         curEmail.text = "foo@bar.com"
         self.view.addSubview(curEmail)
     }
-
+    
 }

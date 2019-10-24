@@ -73,7 +73,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             // overrideUserInterfaceStyle = .light
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Settings")
@@ -85,7 +85,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         
         // Create Logout button and view it will go in.
         let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
+        
         // Constraints.
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
         buttonView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,9 +96,9 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         
         logoutButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
         logoutButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
-
+        
         view.addSubview(buttonView)
-
+        
         buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
         buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
@@ -108,7 +108,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         self.settingsTableView.separatorColor = UIConstants.IDENTAXY_GRAY
         self.settingsTableView.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 20)
         view.addSubview(settingsTableView)
-
+        
         settingsTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
         settingsTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         settingsTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
@@ -122,7 +122,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "passwordCell")
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "helpCell")
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "aboutCell")
-//        settingsTableView.alwaysBounceVertical = false  // No scroll
+        //        settingsTableView.alwaysBounceVertical = false  // No scroll
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -130,37 +130,37 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.cellForRow(at: indexPath), let identifier = cell.reuseIdentifier {
             var segueID = ""
             switch identifier {
-                case "emailCell":
-                    segueID = "emailSegue"
-                case "passwordCell":
-                    segueID = "passwordSegue"
-                case "helpCell":
-                    segueID = "helpSegue"
-                case "aboutCell":
-                    segueID = "aboutSegue"
-                default:
-                    print("Should not ever reach here")
-                    return
+            case "emailCell":
+                segueID = "emailSegue"
+            case "passwordCell":
+                segueID = "passwordSegue"
+            case "helpCell":
+                segueID = "helpSegue"
+            case "aboutCell":
+                segueID = "aboutSegue"
+            default:
+                print("Should not ever reach here")
+                return
             }
             tableView.deselectRow(at: indexPath, animated: true)
             performSegue(withIdentifier: segueID, sender: self)
         }
     }
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == emailSegueIdentifier {
             let nextVC = segue.destination as! UpdateEmailVC
             nextVC.delegate = self
-
+            
         } else if segue.identifier == passwordSegueIdentifier {
             let nextVC = segue.destination as! UpdatePasswordVC
             nextVC.delegate = self
-
+            
         } else if segue.identifier == helpSegueIdentifier {
             let nextVC = segue.destination as! HelpSupportVC
             nextVC.delegate = self
-
+            
         } else if segue.identifier == aboutSegueIdentifier {
             let nextVC = segue.destination as! AboutVC
             nextVC.delegate = self
@@ -182,7 +182,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             logoutButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         logoutButtonInitialY = logoutButton.frame.origin.y
-//        logoutButtonBottomAnchorConstraint.isActive = true
+        //        logoutButtonBottomAnchorConstraint.isActive = true
     }
     
     

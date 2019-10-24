@@ -38,33 +38,33 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
     }
     
     deinit {
-         // Stop listening for keyboard events
+        // Stop listening for keyboard events
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     func activateintialConstraints() {
-            // setting constraints manually in code. Deacrtivate storyboard stuff.
-            updateButton.translatesAutoresizingMaskIntoConstraints = false
-            
-            updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+        // setting constraints manually in code. Deacrtivate storyboard stuff.
+        updateButton.translatesAutoresizingMaskIntoConstraints = false
         
-            NSLayoutConstraint.activate([
-                // MARK: - Login button constraints
-                updateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                updateButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
-                updateButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
-                updateButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-                // MARK: - Forgot password button constraints
-                updateButton.heightAnchor.constraint(equalToConstant: 40)
-            ])
+        updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+        
+        NSLayoutConstraint.activate([
+            // MARK: - Login button constraints
+            updateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            updateButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
+            updateButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
+            updateButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            // MARK: - Forgot password button constraints
+            updateButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
         
         updateButtonBottomAnchorConstraint.isActive = true
         updateButtonInitialY = updateButton.frame.origin.y
-        }
+    }
     
-
+    
     @IBAction func updateButtonPressed(_ sender: Any) {
         if (emailTextField.text!.isEmpty) {
             let alertVC = alertService.alert(title: "Error", message: "Please enter a valid email address.", button: "OK")

@@ -11,13 +11,13 @@ import UIKit
 class AboutVC: IdentaxyHeader {
     
     var delegate: UIViewController!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         self.setHeaderTitle(title: "About")
-
-
+        
+        
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         
@@ -28,7 +28,7 @@ class AboutVC: IdentaxyHeader {
         versionLabel.textAlignment = .left
         versionLabel.text = "Version"
         self.view.addSubview(versionLabel)
-                
+        
         // Setup 'verNumLabel' label.
         pos = screenWidth - (screenWidth / 4) - 30
         let verNumLabel = UILabel(frame: CGRect(x: pos, y: 5, width: 200, height: 21))
@@ -50,5 +50,5 @@ class AboutVC: IdentaxyHeader {
         self.view.addSubview(descriptionLabel)
     }
     
-
+    
 }

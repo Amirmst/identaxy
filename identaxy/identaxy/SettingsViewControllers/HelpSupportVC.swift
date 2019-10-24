@@ -14,41 +14,41 @@ struct HelpOpt {
 }
 
 class HelpAPI {
- static func getHelpOpts() -> [HelpOpt]{
-   let helpOpts = [
-    HelpOpt(label: "Report a problem"),
-    HelpOpt(label: "Contact us")
-    ]
-   return helpOpts
-  }
+    static func getHelpOpts() -> [HelpOpt]{
+        let helpOpts = [
+            HelpOpt(label: "Report a problem"),
+            HelpOpt(label: "Contact us")
+        ]
+        return helpOpts
+    }
 }
 
 class HelpCell: UITableViewCell {
     
     var cellButton: UIButton!
     var cellLabel: UILabel!
-
+    
     init(frame: CGRect, title: String) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-
-//        cellLabel = UILabel(frame: CGRectMake(self.frame.width - 100, 10, 100.0, 40))
-//        cellLabel.textColor = UIColor.blackColor
-//        cellLabel.font = //set font here
-
-//        cellButton = UIButton(frame: CGRectMake(5, 5, 50, 30))
-//        cellButton.setTitle(title, forState: UIControlState.Normal)
-
-//        addSubview(cellLabel)
-//        addSubview(cellButton)
+        
+        //        cellLabel = UILabel(frame: CGRectMake(self.frame.width - 100, 10, 100.0, 40))
+        //        cellLabel.textColor = UIColor.blackColor
+        //        cellLabel.font = //set font here
+        
+        //        cellButton = UIButton(frame: CGRectMake(5, 5, 50, 30))
+        //        cellButton.setTitle(title, forState: UIControlState.Normal)
+        
+        //        addSubview(cellLabel)
+        //        addSubview(cellButton)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//    }
+    
+    //    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    //        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    //    }
 }
 
 class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate {
@@ -56,11 +56,11 @@ class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate 
     var delegate: UIViewController!
     let reportBugSegueIdentifier = "reportBugSegue"
     let contactUsSegueIdentifier = "contactUsSegue"
-
+    
     @IBOutlet weak var optionsTableView: UITableView!
-//    var opts = ["Report a problem", "Contact Us"]
+    //    var opts = ["Report a problem", "Contact Us"]
     private let opts = HelpAPI.getHelpOpts()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Help & Support")
@@ -87,7 +87,7 @@ class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate 
         optionsTableView.register(HelpOptTableViewCell.self, forCellReuseIdentifier: "reportBugCell")
         optionsTableView.register(HelpOptTableViewCell.self, forCellReuseIdentifier: "contactUsCell")
         
-//        optionsTableView.alwaysBounceVertical = false  // No scroll
+        //        optionsTableView.alwaysBounceVertical = false  // No scroll
         
     }
     
@@ -116,29 +116,29 @@ class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate 
         if let cell = tableView.cellForRow(at: indexPath), let identifier = cell.reuseIdentifier {
             var segueID = ""
             switch identifier {
-                case "reportBugCell":
-                    segueID = "reportBugSegue"
-                case "contactUsCell":
-                    segueID = "contactUsSegue"
-                default:
-                    print("Should not ever reach here")
-                    return
+            case "reportBugCell":
+                segueID = "reportBugSegue"
+            case "contactUsCell":
+                segueID = "contactUsSegue"
+            default:
+                print("Should not ever reach here")
+                return
             }
             tableView.deselectRow(at: indexPath, animated: true)
             performSegue(withIdentifier: segueID, sender: self)
         }
     }
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == reportBugSegueIdentifier {
             let nextVC = segue.destination as! ReportBugVC
             nextVC.delegate = self
-
+            
         } else if segue.identifier == contactUsSegueIdentifier {
             let nextVC = segue.destination as! ContactUsVC
             nextVC.delegate = self
-
+            
         }
     }
     
