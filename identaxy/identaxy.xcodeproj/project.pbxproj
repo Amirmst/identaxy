@@ -43,6 +43,7 @@
 		AB8822E0235ED2A20096FEAE /* AvenirNext-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */; };
 		AB8822E2235ED32D0096FEAE /* SignupVC_EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8822E1235ED32D0096FEAE /* SignupVC_EmailAddress.swift */; };
 		AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8822E3235ED37E0096FEAE /* SignupVC_Password.swift */; };
+		AB95CD3B236203210044062C /* ReportBugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB95CD3A236203210044062C /* ReportBugVC.swift */; };
 		ABB1CDE623614702003CDA22 /* SignupVC_Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1CDE523614702003CDA22 /* SignupVC_Name.swift */; };
 		ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
@@ -89,6 +90,7 @@
 		AB8822DE235ED2A20096FEAE /* AvenirNext-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Regular.ttf"; sourceTree = "<group>"; };
 		AB8822E1235ED32D0096FEAE /* SignupVC_EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC_EmailAddress.swift; sourceTree = "<group>"; };
 		AB8822E3235ED37E0096FEAE /* SignupVC_Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC_Password.swift; sourceTree = "<group>"; };
+		AB95CD3A236203210044062C /* ReportBugVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBugVC.swift; sourceTree = "<group>"; };
 		ABB1CDE523614702003CDA22 /* SignupVC_Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC_Name.swift; sourceTree = "<group>"; };
 		ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */,
 				AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */,
 				AB2FF7212361FFFD0022D6E9 /* SettingsTableViewCell.swift */,
+				AB95CD3A236203210044062C /* ReportBugVC.swift */,
 			);
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				ABB1CDE623614702003CDA22 /* SignupVC_Name.swift in Sources */,
 				ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */,
 				7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */,
+				AB95CD3B236203210044062C /* ReportBugVC.swift in Sources */,
 				AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */,
 				AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */,
 				AB2FF71C2361FF020022D6E9 /* ContactUsVC.swift in Sources */,
