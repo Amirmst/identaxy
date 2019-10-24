@@ -469,6 +469,7 @@
                         <outlet property="currentPassTextField" destination="8Lg-cf-Adk" id="tdI-Kj-Qw2"/>
                         <outlet property="forgotPassButton" destination="IsU-PH-yIa" id="MY6-ID-ctX"/>
                         <outlet property="newPassTextField" destination="qV4-hs-CZO" id="Lls-Zz-NAC"/>
+                        <outlet property="updateButton" destination="uMr-B9-IeH" id="qN1-NL-o1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie7-EG-IpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
