@@ -17,6 +17,9 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     let helpSegueIdentifier = "helpSegue"
     let aboutSegueIdentifier = "aboutSegue"
     
+    var logoutButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var logoutButtonInitialY: CGFloat!
+    
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var logoutButton: PillShapedButton!
     private let settings = SettingAPI.getSettings()
@@ -83,36 +86,36 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         // Create Logout button and view it will go in.
         //let button = PillShapedButton()
 //        let button = UIButton()
-        let buttonView = UIView(frame: CGRect(x: 0, y: 800, width: 500, height: 1000))
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 
         // Constraints.
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
         buttonView.translatesAutoresizingMaskIntoConstraints = false
-        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+//        logoutButton.translatesAutoresizingMaskIntoConstraints = false
         
-        logoutButton.setTitle("LOG OUT", for: .normal)
-        logoutButton.backgroundColor = UIConstants.IDENTAXY_PINK
-        logoutButton.center = self.view.center
+//        logoutButton.setTitle("LOG OUT", for: .normal)
+//        logoutButton.backgroundColor = UIConstants.IDENTAXY_PINK
+//        logoutButton.center = self.view.center
+        activateintialConstraints()
         
         buttonView.addSubview(logoutButton)
         
         logoutButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
-        logoutButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394).isActive = true
-        
-        UIGraphicsBeginImageContext(CGSize(width: 300, height: 40))
-        if let context = UIGraphicsGetCurrentContext() {
-            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            logoutButton.setBackgroundImage(colorImage, for: .normal)
-        }
+        logoutButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
-        
+//        UIGraphicsBeginImageContext(CGSize(width: 300, height: 40))
+//        if let context = UIGraphicsGetCurrentContext() {
+//            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+//            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+//            UIGraphicsEndImageContext()
+//            logoutButton.setBackgroundImage(colorImage, for: .normal)
+//        }
+
         view.addSubview(buttonView)
 
 //        buttonView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
         buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
-         buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
         buttonView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         
@@ -121,9 +124,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         self.settingsTableView.separatorColor = UIConstants.IDENTAXY_GRAY
         self.settingsTableView.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 20)
         view.addSubview(settingsTableView)
-//        NSLayoutConstraint.activate([
-//
-//        ])
+
         settingsTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
         settingsTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         settingsTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
@@ -137,10 +138,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "passwordCell")
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "helpCell")
         settingsTableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "aboutCell")
-        
-        settingsTableView.alwaysBounceVertical = false  // No scroll
-        
-        
+//        settingsTableView.alwaysBounceVertical = false  // No scroll
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -183,5 +181,28 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             let nextVC = segue.destination as! AboutVC
             nextVC.delegate = self
         }
+    }
+    
+    func activateintialConstraints() {
+        // setting constraints manually in code. Deacrtivate storyboard stuff.
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            // MARK: - Login button constraints
+            logoutButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            logoutButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
+            logoutButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
+            logoutButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
+            logoutButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            // MARK: - Forgot password button constraints
+            logoutButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        logoutButtonInitialY = logoutButton.frame.origin.y
+//        logoutButtonBottomAnchorConstraint.isActive = true
+    }
+    
+    
+    @IBAction func logOutButtonPressed(_ sender: Any) {
+        print("Logging out")
     }
 }
