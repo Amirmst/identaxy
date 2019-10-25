@@ -99,7 +99,6 @@ class SignupVC_Name: UIViewController, UITextFieldDelegate {
     // MARK: moving buttons above keyboard
     @objc func keyboardWillchange(notification: NSNotification) {
         let doneButtonFrame = doneButton.frame
-        print("keyboard will show \(notification.name.rawValue)")
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             doneButton.frame.origin.y = doneButtonFrame.origin.y
             return

@@ -219,13 +219,11 @@
 			children = (
 				7360A7802360143300EA960F /* Koloda */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
+				AB7E2788236263530057EAEA /* LoginViewControllers */,
 				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
-				AB1AD21B234C4243003742FC /* SignInVC.swift */,
 				AB2FF7142361FEE80022D6E9 /* SettingsViewControllers */,
-				ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
-				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
@@ -242,6 +240,16 @@
 				AB66CC0F235F818E00EF71C6 /* AvenirNext */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AB7E2788236263530057EAEA /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB688CB823440E4A00CCDBB3 /* LandingPageVC.swift */,
+				AB1AD21B234C4243003742FC /* SignInVC.swift */,
+				ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */,
+			);
+			path = LoginViewControllers;
 			sourceTree = "<group>";
 		};
 		AB8822E5235ED3EE0096FEAE /* SignupViewControllers */ = {
@@ -559,7 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amir.identaxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -578,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amir.identaxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

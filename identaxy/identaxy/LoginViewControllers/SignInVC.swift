@@ -24,6 +24,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     var forgotButtonInitialY: CGFloat!
     var forgotButtonAboveKeyboardY: CGFloat!
     
+    var lock: Bool = false
+    
     override func loadView() {
         super.loadView()
         overrideUserInterfaceStyle = .dark
@@ -36,8 +38,13 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         emailAddressTextField.delegate = self
         passwordTextField.delegate = self
         
+        emailAddressTextField.autocorrectionType = .no
         emailAddressTextField.setPlaceholder(placeholder: "Email address")
+        passwordTextField.autocorrectionType = .no
         passwordTextField.setPlaceholder(placeholder: "Password")
+        
+        emailAddressTextField.textContentType = .oneTimeCode
+        passwordTextField.textContentType = .oneTimeCode
         
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -143,6 +150,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
         if (notification.name == UIResponder.keyboardWillShowNotification
             || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
+            if (lock) {
+                return
+            }
+            lock = true
             // move up
             if let loginButtonBottomAnchorConstraint = loginButtonBottomAnchorConstraint,
                 let forgotButtonBottomAnchorConstraint = forgotButtonBottomAnchorConstraint {
@@ -163,6 +174,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 forgotButtonAboveKeyboardY = forgotPasswordButton.frame.origin.y
             }
         } else {
+            lock = false
             if let loginButtonBottomAnchorConstraint = loginButtonBottomAnchorConstraint, let forgotButtonBottomAnchorConstraint = forgotButtonBottomAnchorConstraint {
                 loginButton.frame.origin.y = loginButtonInitialY
                 forgotPasswordButton.frame.origin.y = forgotButtonInitialY

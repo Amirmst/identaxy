@@ -20,19 +20,40 @@ class UpdatePasswordVC: IdentaxyHeader {
     @IBOutlet weak var forgotPassButton: UIButton!
     @IBOutlet weak var updateButton: PillShapedButton!
     
+    var updateButtonBottomAnchorConstraint: NSLayoutConstraint!
+    var updateButtonInitialY: CGFloat!
+    var updateButtonAboveKeyboardY: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         self.setHeaderTitle(title: "Update Password")
         forgotPassButton.setTitleColor(UIConstants.IDENTAXY_PINK, for: .normal)
         currentPassTextField.setPlaceholder(placeholder: "Enter your current password")
-        
         newPassTextField.setPlaceholder(placeholder: "Enter your new password")
-        
         confirmPassTextField.setPlaceholder(placeholder: "Confirm password")
         
+        currentPassTextField.textContentType = .oneTimeCode
+        newPassTextField.textContentType = .oneTimeCode
+        confirmPassTextField.textContentType = .oneTimeCode
+        
+        currentPassTextField.autocorrectionType = .no
+        newPassTextField.autocorrectionType = .no
+        confirmPassTextField.autocorrectionType = .no
         
         activateintialConstraints()
+        
+        // listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    deinit {
+        // Stop listening for keyboard events
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     func activateintialConstraints() {
@@ -40,17 +61,21 @@ class UpdatePasswordVC: IdentaxyHeader {
         updateButton.translatesAutoresizingMaskIntoConstraints = false
         forgotPassButton.translatesAutoresizingMaskIntoConstraints = false
         
+         updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+        
         NSLayoutConstraint.activate([
             // MARK: - Login button constraints
             updateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            updateButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
-            updateButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
             updateButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             updateButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
             updateButton.heightAnchor.constraint(equalToConstant: 40),
             
+            forgotPassButton.topAnchor.constraint(equalTo: currentPassTextField.bottomAnchor, constant: 12),
             forgotPassButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        updateButtonBottomAnchorConstraint.isActive = true
+        updateButtonInitialY = updateButton.frame.origin.y
     }
     
     
@@ -74,25 +99,36 @@ class UpdatePasswordVC: IdentaxyHeader {
         }
     }
     
-    // code to dismiss keyboard when user clicks on background
-    
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    // MARK: moving buttons above keyboard
+    @objc func keyboardWillchange(notification: NSNotification) {
+        let updateButtonFrame = updateButton.frame
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            updateButton.frame.origin.y = updateButtonFrame.origin.y
+            return
+        }
+        if (notification.name == UIResponder.keyboardWillShowNotification
+            || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
+            // move up
+            if let updateButtonBottomAnchorConstraint = updateButtonBottomAnchorConstraint {
+                if let updateButtonAboveKeyboardY = updateButtonAboveKeyboardY {
+                    updateButton.frame.origin.y = updateButtonAboveKeyboardY
+                }
+                updateButtonBottomAnchorConstraint.isActive = false
+            }
+            updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:
+                -keyboardRect.height - 10)
+            updateButtonBottomAnchorConstraint.isActive = true
+            if (notification.name == UIResponder.keyboardWillShowNotification) {
+                updateButtonAboveKeyboardY = updateButton.frame.origin.y
+            }
+        } else {
+            if let updateButtonBottomAnchorConstraint = updateButtonBottomAnchorConstraint {
+                updateButton.frame.origin.y = updateButtonInitialY
+                updateButtonBottomAnchorConstraint.isActive = false
+            }
+            updateButtonBottomAnchorConstraint = updateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            updateButtonBottomAnchorConstraint.isActive = true
+        }
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

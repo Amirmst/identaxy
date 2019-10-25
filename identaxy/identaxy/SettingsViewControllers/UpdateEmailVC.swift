@@ -29,6 +29,9 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         emailTextField.setPlaceholder(placeholder: "Enter a new email address to update")
         activateintialConstraints()
         
+        emailTextField.textContentType = .oneTimeCode
+        emailTextField.autocorrectionType = .no
+        
         // listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -56,7 +59,6 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
             updateButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
             updateButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             updateButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-            // MARK: - Forgot password button constraints
             updateButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
@@ -78,7 +80,6 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
     // MARK: moving buttons above keyboard
     @objc func keyboardWillchange(notification: NSNotification) {
         let updateButtonFrame = updateButton.frame
-        print("keyboard will show \(notification.name.rawValue)")
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             updateButton.frame.origin.y = updateButtonFrame.origin.y
             return
