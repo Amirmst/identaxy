@@ -159,7 +159,6 @@
 				AB2FF7242361FFFD0022D6E9 /* IdentaxyHeader.swift */,
 				AB2FF7232361FFFD0022D6E9 /* SettingAPI.swift */,
 				AB2FF7212361FFFD0022D6E9 /* SettingsTableViewCell.swift */,
-				AB95CD3A236203210044062C /* ReportBugVC.swift */,
 			);
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
@@ -167,6 +166,7 @@
 		AB2FF7142361FEE80022D6E9 /* SettingsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB95CD3A236203210044062C /* ReportBugVC.swift */,
 				AB2FF7182361FF020022D6E9 /* AboutVC.swift */,
 				AB2FF7162361FF020022D6E9 /* ContactUsVC.swift */,
 				AB2FF7192361FF020022D6E9 /* HelpSupportVC.swift */,

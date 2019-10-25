@@ -70,7 +70,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         if(sender.isOn) {
             overrideUserInterfaceStyle = .dark
         } else {
-            // overrideUserInterfaceStyle = .light
+            overrideUserInterfaceStyle = .light
         }
     }
     
