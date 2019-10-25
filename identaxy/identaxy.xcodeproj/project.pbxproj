@@ -217,8 +217,9 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
-				7360A7802360143300EA960F /* Koloda */,
+				AB730DB2234BFF37002EF58D /* Fonts */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
+				7360A7802360143300EA960F /* Koloda */,
 				AB7E2788236263530057EAEA /* LoginViewControllers */,
 				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
 				AB2FF7142361FEE80022D6E9 /* SettingsViewControllers */,
@@ -228,7 +229,6 @@
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
 				AB688CC223440E4B00CCDBB3 /* Info.plist */,
-				AB730DB2234BFF37002EF58D /* Fonts */,
 			);
 			path = identaxy;
 			sourceTree = "<group>";
