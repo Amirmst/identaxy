@@ -188,5 +188,17 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
         print("Logging out")
+        // comment out later to actually log out
+//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+//        UserDefaults.standard.synchronize()
+        
+        let landingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingPageVC") as! LandingPageVC
+
+        var scenes = UIApplication.shared.connectedScenes
+        let sceneDel:SceneDelegate = scenes.popFirst()?.delegate as! SceneDelegate
+
+        
+        sceneDel.window?.rootViewController = landingVC
+
     }
 }
