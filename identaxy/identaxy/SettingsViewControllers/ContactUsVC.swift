@@ -26,7 +26,9 @@ class ContactUsVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
           mail.setToRecipients(["identaxy@gmail.com"])
           present(mail, animated: true)
         } else {
-          // show failure alert
+            let alertService = AlertService()
+            let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email dricetly to identaxy@gmail.com", button: "OK")
+            present(alertVC, animated: true, completion: nil)
         }
     }
     
