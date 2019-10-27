@@ -27,6 +27,7 @@ class SwipingVC: UIViewController {
 
     @IBOutlet weak var identaxyLabel: UILabel!
     @IBOutlet weak var kolodaView: CustomKolodaView!
+    var user: User!
     
     let alertService = AlertService()
     

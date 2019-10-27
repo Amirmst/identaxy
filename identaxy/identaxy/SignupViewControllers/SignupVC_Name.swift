@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignupVC_Name: UIViewController, UITextFieldDelegate {
     
@@ -19,12 +21,18 @@ class SignupVC_Name: UIViewController, UITextFieldDelegate {
     var doneButtonInitialY: CGFloat!
     var doneButtonAboveKeyboardY: CGFloat!
     
+    var signupEmail: String!
+    var signupPassword: String!
+    var database: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         // Do any additional setup after loading the view.
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
+        database = Database.database().reference()
+
         setupTextFields()
         placeDoneButton()
         
@@ -46,21 +54,37 @@ class SignupVC_Name: UIViewController, UITextFieldDelegate {
     // MARK: - Logic
     
     @IBAction func onDone(_ sender: Any) {
+        let alertService = AlertService()
         if (firstNameTextField.text != nil && firstNameTextField.text != ""
                 && lastNameTextField.text != nil && lastNameTextField.text != "") {
-            showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
+            Auth.auth().createUser(withEmail: signupEmail, password: signupPassword) { authResult, error in
+                if(error == nil) {
+                    // Gets the user's unique id
+                    let uid = Auth.auth().currentUser?.uid
+                    let name = "\(self.firstNameTextField.text!) \(self.lastNameTextField.text!)"
+                    
+                    // Creates the json for sending to our database. Can modify to add objects without changing a schema.
+                    let json = ["name": name] as [String : Any]
+                    self.database.child("users").child(uid!).setValue(json)
+                    
+                    let user = User(_name: name)
+                    self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: user)
+                } else {
+                    let alertVC = alertService.alert(title: "Error", message: "There was an error signing up.", button: "OK")
+                    self.present(alertVC, animated: true, completion: nil)
+                }
+            }
             return
         }
-        
-        let alertService = AlertService()
         print("ALERT!!!")
         let alertVC = alertService.alert(title: "Error", message: "Please enter your name and last name.", button: "OK")
         present(alertVC, animated: true, completion: nil)
     }
     
-     func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
+    func showSwipeVCWithLeftToRightTransition(swipeVCId: String, user: User) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingVC
+        controller.user = user
         
         let rightToLeft = CATransition()
         rightToLeft.duration = 0.5
