@@ -45,7 +45,6 @@ class SignupVC_EmailAddress: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Logic
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == passwordScreenSegue) {
             if (emailAddressTextField.text != nil && emailAddressTextField.text != "") {
@@ -58,6 +57,13 @@ class SignupVC_EmailAddress: UIViewController, UITextFieldDelegate {
         let alertVC = alertService.alert(title: "Error", message: "Please enter a valid email address.", button: "OK")
         present(alertVC, animated: true, completion: nil)
         return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == passwordScreenSegue) {
+            let dest = segue.destination as! SignupVC_Password
+            dest.signupEmail = emailAddressTextField.text
+        }
     }
     
     // MARK: - UI Methods

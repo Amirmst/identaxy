@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignInVC: UIViewController, UITextFieldDelegate {
     
@@ -25,7 +27,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     var forgotButtonAboveKeyboardY: CGFloat!
     
     var lock: Bool = false
-    
+    var database: DatabaseReference!
+
     override func loadView() {
         super.loadView()
         overrideUserInterfaceStyle = .dark
@@ -37,7 +40,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         emailAddressTextField.delegate = self
         passwordTextField.delegate = self
-        
+        database = Database.database().reference()
+
         emailAddressTextField.autocorrectionType = .no
         emailAddressTextField.setPlaceholder(placeholder: "Email address")
         passwordTextField.autocorrectionType = .no
@@ -70,7 +74,22 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 let alertVC = alertService.alert(title: "Error", message: "Unable to log in with provided credentials.", button: "Dismiss")
                 present(alertVC, animated: true, completion: nil)
             } else {
-                showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
+                Auth.auth().signIn(withEmail: emailAddressTextField.text!, password: passwordTextField.text!) { authResult, error in
+                    if(error != nil) {
+                        let alertVC = alertService.alert(title: "Error", message: "Unable to log in with provided credentials.", button: "Dismiss")
+                        self.present(alertVC, animated: true, completion: nil)
+                    } else {
+                        let uid = Auth.auth().currentUser?.uid
+                        self.database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                          // Get user value
+                          let value = snapshot.value as? NSDictionary
+                          let name = value?["name"] as? String ?? ""
+                          let user = User(_name: name)
+                          self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: user)
+                            
+                        })
+                    }
+                }
             }
         } else {
             print("ALERT!!!")
@@ -80,9 +99,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - UI Methods
-    func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
+    func showSwipeVCWithLeftToRightTransition(swipeVCId: String, user: User) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingVC
+        controller.user = user
         
         let rightToLeft = CATransition()
         rightToLeft.duration = 0.5

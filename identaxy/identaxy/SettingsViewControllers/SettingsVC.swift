@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 
 class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
@@ -191,14 +191,21 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         // comment out later to actually log out
 //        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
 //        UserDefaults.standard.synchronize()
-        
-        let landingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingPageVC") as! LandingPageVC
+        do {
+            try Auth.auth().signOut()
+            let landingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingPageVC") as! LandingPageVC
 
-        var scenes = UIApplication.shared.connectedScenes
-        let sceneDel:SceneDelegate = scenes.popFirst()?.delegate as! SceneDelegate
+            var scenes = UIApplication.shared.connectedScenes
+            let sceneDel:SceneDelegate = scenes.popFirst()?.delegate as! SceneDelegate
 
-        
-        sceneDel.window?.rootViewController = landingVC
+            
+            sceneDel.window?.rootViewController = landingVC
+        } catch {
+            let alertService = AlertService()
+            let alertVC = alertService.alert(title: "Error", message: "There was an error signing out.", button: "OK")
+            present(alertVC, animated: true, completion: nil)
+        }
+
 
     }
 }

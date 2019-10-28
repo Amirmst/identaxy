@@ -22,6 +22,8 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
     var continueButtonInitialY: CGFloat!
     var continueButtonAboveKeyboardY: CGFloat!
     
+    var signupEmail: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -62,7 +64,13 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == nameScreenSegue) {
+            let dest = segue.destination as! SignupVC_Name
+            dest.signupEmail = signupEmail
+            dest.signupPassword = passwordTextField.text
+        }
+    }
     
     // MARK: - UI Methods
     
