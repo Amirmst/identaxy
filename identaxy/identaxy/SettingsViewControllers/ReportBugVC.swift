@@ -32,7 +32,8 @@ class ReportBugVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
             present(mail, animated: true)
             } else {
                 let alertService = AlertService()
-                let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email dricetly to identaxy@gmail.com with \"Bug Report\" as the subject", button: "OK")
+                let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email dricetly to identaxy@gmail.com (copied to your clipboard)\nwith \"Bug Report\" as the subject", button: "OK")
+                UIPasteboard.general.string = "identaxy@gmail.com"
                 present(alertVC, animated: true, completion: nil)
         }
     }
