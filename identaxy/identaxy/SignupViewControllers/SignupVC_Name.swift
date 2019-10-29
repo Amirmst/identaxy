@@ -61,13 +61,17 @@ class SignupVC_Name: UIViewController, UITextFieldDelegate {
                 if(error == nil) {
                     // Gets the user's unique id
                     let uid = Auth.auth().currentUser?.uid
-                    let name = "\(self.firstNameTextField.text!) \(self.lastNameTextField.text!)"
+                    let firstName = "\(self.firstNameTextField.text!)"
+                    let lastName = "\(self.lastNameTextField.text!)"
                     
                     // Creates the json for sending to our database. Can modify to add objects without changing a schema.
-                    let json = ["name": name] as [String : Any]
+                    let json = ["first_name": firstName,
+                                "last_name": lastName]
+                                as [String : Any]
+                    
                     self.database.child("users").child(uid!).setValue(json)
                     
-                    let user = User(_name: name)
+                    let user = User(firstName: firstName, lastName: lastName)
                     self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: user)
                 } else {
                     let alertVC = alertService.alert(title: "Error", message: "There was an error signing up.", button: "OK")

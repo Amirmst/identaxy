@@ -9,9 +9,11 @@
 import Foundation
 
 class User {
-    var name: String!
+    var firstName: String!
+    var lastName: String!
     
-    init(_name: String!) {
-        name = _name
+    init(firstName: String!, lastName: String!) {
+        self.firstName = firstName
+        self.lastName = lastName
     }
 }
