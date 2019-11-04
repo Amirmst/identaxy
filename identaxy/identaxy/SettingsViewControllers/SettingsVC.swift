@@ -204,7 +204,10 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             let alertVC = alertService.alert(title: "Error", message: "There was an error signing out.", button: "OK")
             present(alertVC, animated: true, completion: nil)
         }
-
-
     }
+    
+    @IBAction func onClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

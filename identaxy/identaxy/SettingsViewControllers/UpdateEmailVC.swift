@@ -35,7 +35,7 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         emailTextField.textContentType = .oneTimeCode
         emailTextField.autocorrectionType = .no
         
-        curEmailLabel.text = Auth.auth().currentUser?.email!
+        self.curEmailLabel.text = Auth.auth().currentUser?.email!
         
         // listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -43,6 +43,10 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         emailTextField.becomeFirstResponder()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        curEmailLabel.text = Auth.auth().currentUser?.email!
     }
     
     deinit {
@@ -80,11 +84,12 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
             let newEmail = emailTextField.text
             Auth.auth().currentUser?.updateEmail(to: newEmail!) { (error) in
               if let error = error {
-                let alertVC = self.alertService.alert(title: "Error", message: "Please enter a valid email address.", button: "OK")
+                let alertVC = self.alertService.alert(title: "Error", message: error.localizedDescription, button: "OK")
                 self.present(alertVC, animated: true, completion: nil)
               } else {
-                let alertVC = self.alertService.alert(title: "Please check your email", message: "We sent you a verification email.", button: "OK")
+                let alertVC = self.alertService.alert(title: "Email Adress Updated", message: "You have succesfully updated your email address.", button: "OK")
                 self.present(alertVC, animated: true, completion: nil)
+                self.curEmailLabel.text = Auth.auth().currentUser?.email!
               }
             }
         }

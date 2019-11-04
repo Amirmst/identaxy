@@ -109,7 +109,7 @@ class UpdatePasswordVC: IdentaxyHeader {
         
         if(!curPassword.isEmpty && !newPassword.isEmpty && !confirmPassword.isEmpty) {
             if(newPassword != confirmPassword) {
-                updatePasswordAlert(alertMsg: "Passwords do not match", error: true)
+                updatePasswordAlert(alertMsg: "New password and confirm password do not match.", error: true)
             } else {
 
                 let user = Auth.auth().currentUser
@@ -118,14 +118,14 @@ class UpdatePasswordVC: IdentaxyHeader {
 
                 user?.reauthenticate(with: credential) { user, error in
                   if let error = error {
-                    self.updatePasswordAlert(alertMsg: "Password is incorrect", error: true)
+                    self.updatePasswordAlert(alertMsg: "Current password is incorrect.", error: true)
                   } else {
                     // User re-authenticated.
                     Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
                       if let error = error {
                         self.updatePasswordAlert(alertMsg: error.localizedDescription, error: true)
                       } else {
-                        self.updatePasswordAlert(alertMsg: "You have successfully changed your password", error: false)
+                        self.updatePasswordAlert(alertMsg: "You have successfully changed your password.", error: false)
                       }
                     }
                   }
