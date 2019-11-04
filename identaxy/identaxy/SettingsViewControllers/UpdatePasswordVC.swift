@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class UpdatePasswordVC: IdentaxyHeader {
     
@@ -80,23 +82,59 @@ class UpdatePasswordVC: IdentaxyHeader {
     
     
     @IBAction func forgotPassButtonPressed(_ sender: Any) {
-        let alertVC = alertService.alert(title: "Please check your email!", message: "We sent you an email with password reset instruction", button: "OK")
+        // Forgot password.
+        let curEmail = Auth.auth().currentUser?.email
+        Auth.auth().sendPasswordReset(withEmail: curEmail!) { error in
+          if let error = error {
+            print("Could not send password reset: \(error.localizedDescription)")
+          } else {
+            let alertVC = self.alertService.alert(title: "Please check your email!", message: "We sent you an email with password reset instruction", button: "OK")
+            self.present(alertVC, animated: true, completion: nil)
+          }
+        }
+    }
+    
+    func updatePasswordAlert(alertMsg: String, error: Bool) {
+        let alertTitle = error ? "Error" : "Success"
+        let alertButton = error ? "Dismiss" : "OK"
+        let alertVC = alertService.alert(title: alertTitle, message: alertMsg, button: alertButton)
         present(alertVC, animated: true, completion: nil)
     }
     
     @IBAction func updateButtonPressed(_ sender: Any) {
-        if(!currentPassTextField.text!.isEmpty && !newPassTextField.text!.isEmpty && !confirmPassTextField.text!.isEmpty) {
-            if(newPassTextField.text != confirmPassTextField.text) {
-                let alertVC = alertService.alert(title: "Error", message: "Passwords do not match", button: "Dismiss")
-                present(alertVC, animated: true, completion: nil)
+        
+        let curPassword = currentPassTextField.text!
+        let newPassword = newPassTextField.text!
+        let confirmPassword = confirmPassTextField.text!
+        
+        if(!curPassword.isEmpty && !newPassword.isEmpty && !confirmPassword.isEmpty) {
+            if(newPassword != confirmPassword) {
+                updatePasswordAlert(alertMsg: "Passwords do not match", error: true)
             } else {
-                let alertVC = alertService.alert(title: "Success!", message: "You have successfully changed your password", button: "OK")
-                present(alertVC, animated: true, completion: nil)
+
+                let user = Auth.auth().currentUser
+                let curEmail = user?.email!
+                let credential = EmailAuthProvider.credential(withEmail: curEmail!, password: curPassword)
+
+                user?.reauthenticate(with: credential) { user, error in
+                  if let error = error {
+                    self.updatePasswordAlert(alertMsg: "Password is incorrect", error: true)
+                  } else {
+                    // User re-authenticated.
+                    Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+                      if let error = error {
+                        self.updatePasswordAlert(alertMsg: error.localizedDescription, error: true)
+                      } else {
+                        self.updatePasswordAlert(alertMsg: "You have successfully changed your password", error: false)
+                      }
+                    }
+                  }
+                }
             }
         } else {
-            let alertVC = alertService.alert(title: "Error", message: "Please enter all fields", button: "Dismiss")
-            present(alertVC, animated: true, completion: nil)
+            self.updatePasswordAlert(alertMsg: "Please enter all fields", error: true)
         }
+
     }
     
     // MARK: moving buttons above keyboard

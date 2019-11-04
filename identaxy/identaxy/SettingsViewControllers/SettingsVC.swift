@@ -139,7 +139,6 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             case "aboutCell":
                 segueID = "aboutSegue"
             default:
-                print("Should not ever reach here")
                 return
             }
             tableView.deselectRow(at: indexPath, animated: true)

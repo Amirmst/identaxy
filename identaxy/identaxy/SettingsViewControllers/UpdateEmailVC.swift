@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
     
@@ -15,6 +17,7 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: IdentaxyTextField!
     @IBOutlet weak var updateButton: PillShapedButton!
+    @IBOutlet weak var curEmailLabel: UILabel!
     
     var updateButtonBottomAnchorConstraint: NSLayoutConstraint!
     var updateButtonInitialY: CGFloat!
@@ -31,6 +34,8 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         
         emailTextField.textContentType = .oneTimeCode
         emailTextField.autocorrectionType = .no
+        
+        curEmailLabel.text = Auth.auth().currentUser?.email!
         
         // listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -72,8 +77,16 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
             let alertVC = alertService.alert(title: "Error", message: "Please enter a valid email address.", button: "OK")
             present(alertVC, animated: true, completion: nil)
         } else {
-            let alertVC = alertService.alert(title: "Please check your email", message: "We sent you a verification email.", button: "OK")
-            present(alertVC, animated: true, completion: nil)
+            let newEmail = emailTextField.text
+            Auth.auth().currentUser?.updateEmail(to: newEmail!) { (error) in
+              if let error = error {
+                let alertVC = self.alertService.alert(title: "Error", message: "Please enter a valid email address.", button: "OK")
+                self.present(alertVC, animated: true, completion: nil)
+              } else {
+                let alertVC = self.alertService.alert(title: "Please check your email", message: "We sent you a verification email.", button: "OK")
+                self.present(alertVC, animated: true, completion: nil)
+              }
+            }
         }
     }
     
