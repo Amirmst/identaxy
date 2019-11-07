@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-Cf-ihj">
-                                <rect key="frame" x="153.5" y="613" width="68" height="34"/>
+                                <rect key="frame" x="153.5" y="614" width="68" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Msi-TF-Kl3"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-UK-QaT" customClass="PillShapedButton" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="40" y="553" width="295" height="40"/>
+                                <rect key="frame" x="40" y="554" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="394" id="AL4-6h-iY5"/>
                                     <constraint firstAttribute="height" constant="40" id="f3x-A7-dXc"/>
@@ -373,10 +373,10 @@
             </objects>
             <point key="canvasLocation" x="-3436" y="864"/>
         </scene>
-        <!--SwipingVC-->
+        <!--Swiping NewVC-->
         <scene sceneID="7e4-eb-IDR">
             <objects>
-                <viewController storyboardIdentifier="Swipe-Screen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="72T-Ic-j8E" customClass="SwipingVC" customModule="identaxy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Swipe-Screen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="72T-Ic-j8E" customClass="SwipingNewVC" customModule="identaxy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LHc-yW-GU5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,14 +393,14 @@
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="asdf" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1S-al-ru1" userLabel="Info Button">
                                 <rect key="frame" x="16" y="39" width="46" height="24"/>
                                 <connections>
-                                    <action selector="infoButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="dtd-Jd-vnd"/>
+                                    <action selector="infoButtonTapped:" destination="72T-Ic-j8E" eventType="touchUpInside" id="iRt-8y-cOQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-Yr-7OU" userLabel="Settings Button">
-                                <rect key="frame" x="313" y="39" width="46" height="28"/>
+                                <rect key="frame" x="313" y="39" width="46" height="56"/>
                                 <state key="normal" image="gear"/>
                                 <connections>
-                                    <segue destination="UTZ-GO-k9w" kind="show" id="JAK-Td-KpN"/>
+                                    <segue destination="UTZ-GO-k9w" kind="show" id="SH4-oU-NZE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIG-Cj-Ifg" userLabel="Fake Button">
@@ -411,7 +411,7 @@
                                 </constraints>
                                 <state key="normal" image="Nope"/>
                                 <connections>
-                                    <action selector="leftButtonTapped" destination="72T-Ic-j8E" eventType="touchUpInside" id="7Gr-sE-foF"/>
+                                    <action selector="nopePressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="3UH-ir-MAA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-Rq-FUO" userLabel="Real Button">
@@ -422,12 +422,9 @@
                                 </constraints>
                                 <state key="normal" image="Yep"/>
                                 <connections>
-                                    <action selector="rightButtonTapped" destination="72T-Ic-j8E" eventType="touchUpInside" id="rxW-Ab-WR2"/>
+                                    <action selector="yepPressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="ZeG-uJ-68A"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-WZ-MtX" customClass="CustomKolodaView" customModule="identaxy" customModuleProvider="target">
-                                <rect key="frame" x="16" y="96" width="343" height="439"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFU-xk-GSv" userLabel="Undo Button">
                                 <rect key="frame" x="150" y="549" width="75" height="77"/>
                                 <constraints>
@@ -436,14 +433,13 @@
                                 </constraints>
                                 <state key="normal" image="Undo"/>
                                 <connections>
-                                    <action selector="undoButtonTapped" destination="72T-Ic-j8E" eventType="touchUpInside" id="NOP-Ks-9Md"/>
+                                    <action selector="undoPressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="G9l-Kd-WJ5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d1S-al-ru1" firstAttribute="leading" secondItem="acW-f6-2hU" secondAttribute="leading" constant="16" id="1W9-lh-V0q"/>
-                            <constraint firstItem="QIG-Cj-Ifg" firstAttribute="top" secondItem="b6g-WZ-MtX" secondAttribute="bottom" constant="6" id="6XW-h3-v7P"/>
                             <constraint firstItem="EPJ-Yr-7OU" firstAttribute="leading" secondItem="GGA-lc-QPI" secondAttribute="trailing" constant="25.5" id="81y-CV-uWe"/>
                             <constraint firstItem="GGA-lc-QPI" firstAttribute="leading" secondItem="d1S-al-ru1" secondAttribute="trailing" constant="25.5" id="BR9-Kr-eD5"/>
                             <constraint firstItem="bFU-xk-GSv" firstAttribute="centerX" secondItem="LHc-yW-GU5" secondAttribute="centerX" id="Dsq-Lq-WDn"/>
@@ -452,11 +448,8 @@
                             <constraint firstItem="acW-f6-2hU" firstAttribute="trailing" secondItem="EPJ-Yr-7OU" secondAttribute="trailing" constant="16" id="M7A-3O-cQm"/>
                             <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="QIG-Cj-Ifg" secondAttribute="bottom" constant="33" id="MHM-Z3-LmR"/>
                             <constraint firstItem="d1S-al-ru1" firstAttribute="top" secondItem="acW-f6-2hU" secondAttribute="top" constant="39" id="Xv2-J1-G2u"/>
-                            <constraint firstItem="acW-f6-2hU" firstAttribute="trailing" secondItem="b6g-WZ-MtX" secondAttribute="trailing" constant="16" id="aMY-Jh-NKM"/>
                             <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="bFU-xk-GSv" secondAttribute="bottom" constant="41" id="cNz-ER-PU2"/>
-                            <constraint firstItem="b6g-WZ-MtX" firstAttribute="top" secondItem="GGA-lc-QPI" secondAttribute="bottom" constant="25" id="eDm-ef-SXX"/>
                             <constraint firstItem="EPJ-Yr-7OU" firstAttribute="top" secondItem="acW-f6-2hU" secondAttribute="top" constant="39" id="fY3-dP-LQY"/>
-                            <constraint firstItem="b6g-WZ-MtX" firstAttribute="leading" secondItem="acW-f6-2hU" secondAttribute="leading" constant="16" id="n25-x4-hcG"/>
                             <constraint firstItem="bFU-xk-GSv" firstAttribute="leading" secondItem="QIG-Cj-Ifg" secondAttribute="trailing" constant="25" id="nib-RE-ytr"/>
                             <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="MEt-Rq-FUO" secondAttribute="bottom" constant="33" id="wFo-fz-3lH"/>
                             <constraint firstItem="GGA-lc-QPI" firstAttribute="centerX" secondItem="LHc-yW-GU5" secondAttribute="centerX" id="yt3-oR-xIO"/>
@@ -465,13 +458,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="KBN-Kv-zh3"/>
                     <connections>
-                        <outlet property="identaxyLabel" destination="GGA-lc-QPI" id="fhL-Uh-Nrb"/>
-                        <outlet property="kolodaView" destination="b6g-WZ-MtX" id="pf9-ak-b1K"/>
+                        <outlet property="identaxyLabel" destination="GGA-lc-QPI" id="luw-sV-hiU"/>
+                        <outlet property="nopeButton" destination="QIG-Cj-Ifg" id="a5b-bD-gvd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHx-Qq-Z7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="-531.18440779610194"/>
+            <point key="canvasLocation" x="111" y="-530"/>
         </scene>
         <!--SignupVC Name-->
         <scene sceneID="OqP-Ks-zjb">

@@ -18,8 +18,14 @@
 		7360A7882360144900EA960F /* SwipingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7832360144900EA960F /* SwipingVC.swift */; };
 		7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7842360144900EA960F /* CustomKoladaView.swift */; };
 		7360A78A2360144900EA960F /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7360A7852360144900EA960F /* CustomOverlayView.xib */; };
+		A2864C9A237394EF00D1FE64 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C95237394ED00D1FE64 /* Card.swift */; };
+		A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C96237394ED00D1FE64 /* CardContentView.swift */; };
+		A2864C9D237394EF00D1FE64 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C98237394EE00D1FE64 /* CardModel.swift */; };
+		A2864C9E237394EF00D1FE64 /* CardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C99237394EF00D1FE64 /* CardOverlay.swift */; };
+		A291FEB52373884400C01AA0 /* SwipingNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291FEB42373884400C01AA0 /* SwipingNewVC.swift */; };
 		A298B2E62366BBDA00CAB82E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */; };
 		A29EF38523654B8F00647C67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29EF38423654B8E00647C67 /* User.swift */; };
+		A2AE366D23738C7F002F512F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE366C23738C7F002F512F /* UIView+Extensions.swift */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB2FF71B2361FF020022D6E9 /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7152361FF010022D6E9 /* UpdatePasswordVC.swift */; };
@@ -64,8 +70,14 @@
 		7360A7842360144900EA960F /* CustomKoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKoladaView.swift; sourceTree = "<group>"; };
 		7360A7852360144900EA960F /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
+		A2864C95237394ED00D1FE64 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A2864C96237394ED00D1FE64 /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		A2864C98237394EE00D1FE64 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		A2864C99237394EF00D1FE64 /* CardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardOverlay.swift; sourceTree = "<group>"; };
+		A291FEB42373884400C01AA0 /* SwipingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewVC.swift; sourceTree = "<group>"; };
 		A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A29EF38423654B8E00647C67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A2AE366C23738C7F002F512F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
 		AB2FF7152361FF010022D6E9 /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
@@ -151,6 +163,35 @@
 			path = Koloda;
 			sourceTree = "<group>";
 		};
+		A20D7CF0237381F5004D2FFC /* Shuffle */ = {
+			isa = PBXGroup;
+			children = (
+				A291FEB42373884400C01AA0 /* SwipingNewVC.swift */,
+				A2AE366B23738C46002F512F /* Extensions */,
+				A2864C922373949800D1FE64 /* Card UI Elements */,
+			);
+			path = Shuffle;
+			sourceTree = "<group>";
+		};
+		A2864C922373949800D1FE64 /* Card UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				A2864C95237394ED00D1FE64 /* Card.swift */,
+				A2864C96237394ED00D1FE64 /* CardContentView.swift */,
+				A2864C98237394EE00D1FE64 /* CardModel.swift */,
+				A2864C99237394EF00D1FE64 /* CardOverlay.swift */,
+			);
+			path = "Card UI Elements";
+			sourceTree = "<group>";
+		};
+		A2AE366B23738C46002F512F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2AE366C23738C7F002F512F /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +262,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				A20D7CF0237381F5004D2FFC /* Shuffle */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
 				7360A7802360143300EA960F /* Koloda */,
@@ -393,6 +435,8 @@
 			files = (
 				7360A7862360144900EA960F /* BackgroundKolodaAnimator.swift in Sources */,
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
+				A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */,
+				A2864C9A237394EF00D1FE64 /* Card.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB2FF71B2361FF020022D6E9 /* UpdatePasswordVC.swift in Sources */,
@@ -401,6 +445,7 @@
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				A29EF38523654B8F00647C67 /* User.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
+				A2AE366D23738C7F002F512F /* UIView+Extensions.swift in Sources */,
 				7360A7882360144900EA960F /* SwipingVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
@@ -410,6 +455,7 @@
 				ABB1CDE623614702003CDA22 /* SignupVC_Name.swift in Sources */,
 				ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */,
 				7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */,
+				A2864C9E237394EF00D1FE64 /* CardOverlay.swift in Sources */,
 				AB95CD3B236203210044062C /* ReportBugVC.swift in Sources */,
 				AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */,
 				AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */,
@@ -417,8 +463,10 @@
 				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
 				7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */,
 				AB8822E2235ED32D0096FEAE /* SignupVC_EmailAddress.swift in Sources */,
+				A291FEB52373884400C01AA0 /* SwipingNewVC.swift in Sources */,
 				295CED3E235D047A00F2363E /* AlertService.swift in Sources */,
 				AB688CB723440E4A00CCDBB3 /* SceneDelegate.swift in Sources */,
+				A2864C9D237394EF00D1FE64 /* CardModel.swift in Sources */,
 				295CED40235D048200F2363E /* IdentaxyAlertViewController.swift in Sources */,
 				AB2FF7282361FFFD0022D6E9 /* IdentaxyHeader.swift in Sources */,
 			);
