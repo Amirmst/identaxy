@@ -17,7 +17,7 @@ class CardOverlay: UIView {
         overlay.addSubview(leftTextView)
         leftTextView.anchor(top: overlay.topAnchor,
                             right: overlay.rightAnchor,
-                            paddingTop: 30, paddingRight: 14)
+                            paddingTop: 35, paddingRight: 30)
         return overlay
     }
     
@@ -40,8 +40,8 @@ class CardOverlay: UIView {
         overlay.addSubview(rightTextView)
         rightTextView.anchor(top: overlay.topAnchor,
                              left: overlay.leftAnchor,
-                             paddingTop: 26,
-                             paddingLeft: 14)
+                             paddingTop: 31,
+                             paddingLeft: 30)
         return overlay
     }
 }
