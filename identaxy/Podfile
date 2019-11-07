@@ -7,8 +7,8 @@ target 'identaxy' do
 
   # Pods for identaxy
   pod 'PopBounceButton'
-  pod 'pop', '~> 1.0'
   pod "Koloda"
+  pod "Shuffle-iOS"
   
   # Pods for firebase
   pod 'Firebase/Auth'

@@ -25,6 +25,7 @@ class SignupVC_Name: UIViewController, UITextFieldDelegate {
     var signupPassword: String!
     var database: DatabaseReference!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark

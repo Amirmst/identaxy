@@ -1,13 +1,13 @@
 PODS:
-  - Firebase/Auth (6.11.0):
+  - Firebase/Auth (6.12.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.3.1)
-  - Firebase/CoreOnly (6.11.0):
-    - FirebaseCore (= 6.3.2)
-  - Firebase/Database (6.11.0):
+  - Firebase/CoreOnly (6.12.0):
+    - FirebaseCore (= 6.3.3)
+  - Firebase/Database (6.12.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (~> 6.1.1)
-  - Firebase/Storage (6.11.0):
+    - FirebaseDatabase (~> 6.1.2)
+  - Firebase/Storage (6.12.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.4.1)
   - FirebaseAuth (6.3.1):
@@ -17,7 +17,7 @@ PODS:
     - GoogleUtilities/Environment (~> 6.2)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (6.3.2):
+  - FirebaseCore (6.3.3):
     - FirebaseCoreDiagnostics (~> 1.0)
     - FirebaseCoreDiagnosticsInterop (~> 1.0)
     - GoogleUtilities/Environment (~> 6.2)
@@ -28,8 +28,8 @@ PODS:
     - GoogleUtilities/Environment (~> 6.2)
     - GoogleUtilities/Logger (~> 6.2)
     - nanopb (~> 0.3.901)
-  - FirebaseCoreDiagnosticsInterop (1.0.0)
-  - FirebaseDatabase (6.1.1):
+  - FirebaseCoreDiagnosticsInterop (1.1.0)
+  - FirebaseDatabase (6.1.2):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
     - leveldb-library (~> 1.22)
@@ -67,14 +67,15 @@ PODS:
   - pop (1.0.12)
   - PopBounceButton (1.2.2):
     - pop (~> 1.0)
+  - Shuffle-iOS (0.1.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
   - Koloda
-  - pop (~> 1.0)
   - PopBounceButton
+  - Shuffle-iOS
 
 SPEC REPOS:
   trunk:
@@ -95,15 +96,16 @@ SPEC REPOS:
     - nanopb
     - pop
     - PopBounceButton
+    - Shuffle-iOS
 
 SPEC CHECKSUMS:
-  Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
+  Firebase: da031bc7012374e3bed17a6731b89327b29863b9
   FirebaseAuth: b401a012cc33b04df3b52bb308b04e8766f2693e
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: beeff42c07c30ea94702471d99db2089b594fbbd
+  FirebaseCore: bcd6c112429249d7921e907d661e8955a3549e26
   FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
-  FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
-  FirebaseDatabase: 524802f7694268c79d34aeac3d67997593e1a0c9
+  FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
+  FirebaseDatabase: 963515d232ded06f36f6ce830507c94551866170
   FirebaseStorage: b7c6d00997bc21d4465453bdcc5cc65513110fed
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
@@ -114,7 +116,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PopBounceButton: 34105a012678222f058f8d2621672724a3d5c9fb
+  Shuffle-iOS: d1b64066af844e075e97619f80cda10b9c0a04b0
 
-PODFILE CHECKSUM: 11030f2052fbd4286b11adfeb0ef25b109852f46
+PODFILE CHECKSUM: 793d1b40321ed8233df3a290be3ed7b38fac96f9
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.3
