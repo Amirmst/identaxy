@@ -55,6 +55,8 @@
 		ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
+		C35649292374C00000303075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35649282374C00000303075 /* ViewController.swift */; };
+		C356492B2374C01300303075 /* LogoAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356492A2374C01300303075 /* LogoAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		C35649282374C00000303075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C356492A2374C01300303075 /* LogoAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationView.swift; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -275,6 +279,8 @@
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
+				C35649282374C00000303075 /* ViewController.swift */,
+				C356492A2374C01300303075 /* LogoAnimationView.swift */,
 				AB688CC223440E4B00CCDBB3 /* Info.plist */,
 				A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */,
 			);
@@ -451,6 +457,7 @@
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB2FF7262361FFFD0022D6E9 /* HelpOptTableViewCell.swift in Sources */,
 				AB2FF71D2361FF020022D6E9 /* SettingsVC.swift in Sources */,
+				C35649292374C00000303075 /* ViewController.swift in Sources */,
 				AB2FF71F2361FF020022D6E9 /* HelpSupportVC.swift in Sources */,
 				ABB1CDE623614702003CDA22 /* SignupVC_Name.swift in Sources */,
 				ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */,
@@ -458,6 +465,7 @@
 				A2864C9E237394EF00D1FE64 /* CardOverlay.swift in Sources */,
 				AB95CD3B236203210044062C /* ReportBugVC.swift in Sources */,
 				AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */,
+				C356492B2374C01300303075 /* LogoAnimationView.swift in Sources */,
 				AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */,
 				AB2FF71C2361FF020022D6E9 /* ContactUsVC.swift in Sources */,
 				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
