@@ -17,8 +17,9 @@ import UIKit
 import Koloda
 import pop
 import FirebaseStorage
+import FirebaseDatabase
+import FirebaseAuth
 
-private let numberOfCards: Int = 5
 private let frameAnimationSpringBounciness: CGFloat = 9
 private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
@@ -26,18 +27,36 @@ private let kolodaAlphaValueSemiTransparent: CGFloat = 0
 
 let path: String = "images/sample_pic_"
 
+enum Response : String {
+    case REAL
+    case FAKE
+    case UNSPECIFIED
+}
 
 class SwipingVC: UIViewController {
 
-    var images: [UIImage] = []
+    var images: Array<IdentaxyImage> = Array<IdentaxyImage>(repeating: IdentaxyImage(), count: 6)
+    
+    var responses: [String : Response] = [:]
+    
+    var imagesLoaded: Bool = false {
+        didSet {
+            kolodaView.reloadData()
+        }
+    }
     
     @IBOutlet weak var identaxyLabel: UILabel!
     @IBOutlet weak var kolodaView: CustomKolodaView!
     var user: User!
+    var database: DatabaseReference!
+    var numLoaded: Int = 0
     
     let storage = Storage.storage()
     
     let alertService = AlertService()
+    
+    let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
+    
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -48,6 +67,7 @@ class SwipingVC: UIViewController {
         kolodaView.delegate = self
         kolodaView.dataSource = self
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
+        database = Database.database().reference()
         identaxyLabel.textColor = UIColor.white
         overrideUserInterfaceStyle = .dark
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
@@ -65,10 +85,24 @@ class SwipingVC: UIViewController {
                     print("***ERROR*** PIC:\(i) " + error.localizedDescription)
                 } else {
                     print("***SUCCESS*** PIC:\(i)")
+                    self.numLoaded += 1
                     let image = UIImage(data: data!)
-                    self.images.append(image!)
+                    self.images[i] = IdentaxyImage(imageObject: image!, imageId: "\(i)")
+                    if (self.numLoaded == self.images.count) {
+                        self.imagesLoaded = true
+                    }
                 }
             }
+        }
+    }
+    
+    func storeResponses() {
+        print("STORING")
+        let mapCopy = responses
+        let uid = Auth.auth().currentUser?.uid
+        for (imageId, response) in mapCopy {
+            let json = ["response": response.rawValue] as [String : Any]
+            self.database.child("responses").child(uid!).child(imageId).setValue(json)
         }
     }
     
@@ -97,12 +131,29 @@ extension SwipingVC: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("RELOAD")
+        bgTaskQueue.async {
+            self.storeResponses()
+        }
         loadImages()
         kolodaView.resetCurrentCardIndex()
     }
     
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        let imageId = images[index].getId()
+        var response = Response.UNSPECIFIED
+        switch direction {
+        case .right:
+            response = .REAL
+        case .left:
+            response = .FAKE
+        default:
+            response = .UNSPECIFIED
+        }
+        print("ID: \(imageId): \(response.rawValue)")
+        responses[imageId] = response
+    }
+    
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-//        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
@@ -133,11 +184,11 @@ extension SwipingVC: KolodaViewDataSource {
     }
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return numberOfCards
+        return images.count
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: UIImage(named: "User Pic\(index + 1)"))
+        return UIImageView(image: images[index].getImage())
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {

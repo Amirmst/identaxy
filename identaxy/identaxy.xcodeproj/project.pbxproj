@@ -49,6 +49,7 @@
 		ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
+		ABF4413E2373B1FF0098418D /* IdentaxyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4413D2373B1FF0098418D /* IdentaxyImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		ABF4413D2373B1FF0098418D /* IdentaxyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyImage.swift; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				ABF4413C2373B1DD0098418D /* Model */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
 				7360A7802360143300EA960F /* Koloda */,
@@ -229,7 +232,6 @@
 				AB2FF7142361FEE80022D6E9 /* SettingsViewControllers */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
 				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
-				A29EF38423654B8E00647C67 /* User.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
@@ -266,6 +268,15 @@
 				ABB1CDE523614702003CDA22 /* SignupVC_Name.swift */,
 			);
 			path = SignupViewControllers;
+			sourceTree = "<group>";
+		};
+		ABF4413C2373B1DD0098418D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A29EF38423654B8E00647C67 /* User.swift */,
+				ABF4413D2373B1FF0098418D /* IdentaxyImage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +411,7 @@
 				AB2FF71E2361FF020022D6E9 /* AboutVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
 				A29EF38523654B8F00647C67 /* User.swift in Sources */,
+				ABF4413E2373B1FF0098418D /* IdentaxyImage.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				7360A7882360144900EA960F /* SwipingVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
