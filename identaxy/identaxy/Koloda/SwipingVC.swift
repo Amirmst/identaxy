@@ -16,6 +16,7 @@
 import UIKit
 import Koloda
 import pop
+import FirebaseStorage
 
 private let numberOfCards: Int = 5
 private let frameAnimationSpringBounciness: CGFloat = 9
@@ -23,11 +24,18 @@ private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0
 
+let path: String = "images/sample_pic_"
+
+
 class SwipingVC: UIViewController {
 
+    var images: [UIImage] = []
+    
     @IBOutlet weak var identaxyLabel: UILabel!
     @IBOutlet weak var kolodaView: CustomKolodaView!
     var user: User!
+    
+    let storage = Storage.storage()
     
     let alertService = AlertService()
     
@@ -43,6 +51,25 @@ class SwipingVC: UIViewController {
         identaxyLabel.textColor = UIColor.white
         overrideUserInterfaceStyle = .dark
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        print("LOADING VIEW")
+        loadImages()
+    }
+    
+    func loadImages() {
+        let storageRef = storage.reference()
+
+        for i in 0...5 {
+            let picRef = storageRef.child("images/\(i).png")
+            picRef.getData(maxSize: INT64_MAX) { (data, error) in
+                if let error = error {
+                    print("***ERROR*** PIC:\(i) " + error.localizedDescription)
+                } else {
+                    print("***SUCCESS*** PIC:\(i)")
+                    let image = UIImage(data: data!)
+                    self.images.append(image!)
+                }
+            }
+        }
     }
     
     
@@ -70,6 +97,7 @@ extension SwipingVC: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("RELOAD")
+        loadImages()
         kolodaView.resetCurrentCardIndex()
     }
     
