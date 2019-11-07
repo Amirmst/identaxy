@@ -68,6 +68,7 @@ PODS:
   - PopBounceButton (1.2.2):
     - pop (~> 1.0)
   - Shuffle-iOS (0.1.0)
+  - SwiftyGif (5.2.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - Koloda
   - PopBounceButton
   - Shuffle-iOS
+  - SwiftyGif
 
 SPEC REPOS:
   trunk:
@@ -97,6 +99,7 @@ SPEC REPOS:
     - pop
     - PopBounceButton
     - Shuffle-iOS
+    - SwiftyGif
 
 SPEC CHECKSUMS:
   Firebase: da031bc7012374e3bed17a6731b89327b29863b9
@@ -117,7 +120,8 @@ SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PopBounceButton: 34105a012678222f058f8d2621672724a3d5c9fb
   Shuffle-iOS: d1b64066af844e075e97619f80cda10b9c0a04b0
+  SwiftyGif: b85c6b33a9411859d9e1db998b6a8214aea942df
 
-PODFILE CHECKSUM: 793d1b40321ed8233df3a290be3ed7b38fac96f9
+PODFILE CHECKSUM: 89450bf77815c4f0c1c986c6ad1bb24097daa75f
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4
