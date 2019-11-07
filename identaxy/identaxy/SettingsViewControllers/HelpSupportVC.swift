@@ -16,7 +16,7 @@ struct HelpOpt {
 class HelpAPI {
     static func getHelpOpts() -> [HelpOpt]{
         let helpOpts = [
-            HelpOpt(label: "Report a problem"),
+            HelpOpt(label: "Report a bug"),
             HelpOpt(label: "Contact us")
         ]
         return helpOpts

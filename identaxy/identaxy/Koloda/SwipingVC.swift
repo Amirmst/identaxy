@@ -13,6 +13,7 @@
 //  Copyright (c) 2015 CocoaPods. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Koloda
 import pop
@@ -47,6 +48,7 @@ class SwipingVC: UIViewController {
     
     @IBOutlet weak var identaxyLabel: UILabel!
     @IBOutlet weak var kolodaView: CustomKolodaView!
+    
     var user: User!
     var database: DatabaseReference!
     var numLoaded: Int = 0
