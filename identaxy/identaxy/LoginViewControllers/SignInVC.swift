@@ -83,8 +83,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                         self.database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
                           // Get user value
                           let value = snapshot.value as? NSDictionary
-                          let name = value?["name"] as? String ?? ""
-                          let user = User(_name: name)
+                          let firstName = value?["first_name"] as? String ?? ""
+                          let lastName = value?["last_name"] as? String ?? ""
+
+                          let user = User(firstName: firstName, lastName: lastName)
                           self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: user)
                             
                         })
