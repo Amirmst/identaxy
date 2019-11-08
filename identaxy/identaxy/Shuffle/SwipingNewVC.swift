@@ -42,16 +42,6 @@ class SwipingNewVC: UIViewController {
     }
     let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
     
-    
-    private let cardModels = [
-        CardModel(image: UIImage(named: "User Pic")),
-        CardModel(image: UIImage(named: "User Pic1")),
-        CardModel(image: UIImage(named: "User Pic2")),
-        CardModel(image: UIImage(named: "User Pic3")),
-        CardModel(image: UIImage(named: "User Pic4")),
-        CardModel(image: UIImage(named: "User Pic5")),
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         database = Database.database().reference()
@@ -62,7 +52,6 @@ class SwipingNewVC: UIViewController {
         overrideUserInterfaceStyle = .dark
         identaxyLabel.textColor = UIColor.white
         // Do any additional setup after loading the view.
-        print("LOADING IMAGES")
         loadImages()
     }
     
@@ -75,7 +64,6 @@ class SwipingNewVC: UIViewController {
                 if let error = error {
                     print("***ERROR*** PIC:\(i) " + error.localizedDescription)
                 } else {
-                    print("***SUCCESS*** PIC:\(i)")
                     self.numLoaded += 1
                     let image = UIImage(data: data!)
                     self.images[i] = IdentaxyImage(imageObject: image!, imageId: "\(i)")
@@ -89,7 +77,6 @@ class SwipingNewVC: UIViewController {
     }
     
     func storeResponses() {
-        print("STORING")
         let mapCopy = responses
         let uid = Auth.auth().currentUser?.uid
         for (imageId, response) in mapCopy {
@@ -130,7 +117,7 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
     
     func numberOfCards(in cardStack: SwipeCardStack) -> Int {
-        return cardModels.count
+        return images.count
     }
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {

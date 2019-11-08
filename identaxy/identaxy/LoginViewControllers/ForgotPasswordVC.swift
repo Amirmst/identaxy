@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ForgotPasswordVC: UIViewController {
 
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     
+    let alertService = AlertService()
     @IBOutlet weak var emailTextField: IdentaxyTextField!
         
     override func viewDidLoad() {
@@ -54,13 +56,20 @@ class ForgotPasswordVC: UIViewController {
     
     @objc func onResetPressed(sender: UIButton) {
         print("RESET PRESSED")
-        let alertService = AlertService()
         if let emailText = emailTextField.text {
-            // send email
             if (emailText.count > 0) {
                 let alertVC = alertService.alert(title: "Please check your email!",
                                                  message: "We sent you an email with password reset\ninstructions.", button: "OK")
                 present(alertVC, animated: true, completion: nil)
+                Auth.auth().sendPasswordReset(withEmail: emailText) { error in
+                  if let error = error {
+                    let alertVC = self.alertService.alert(title: "Error", message: error.localizedDescription, button: "Dismiss")
+                    self.present(alertVC, animated: true, completion: nil)
+                  } else {
+                    let alertVC = self.alertService.alert(title: "Please check your email!", message: "We sent you an email with password reset instruction", button: "OK")
+                    self.present(alertVC, animated: true, completion: nil)
+                  }
+                }
                 return
             }
         }
