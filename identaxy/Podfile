@@ -13,4 +13,7 @@ target 'identaxy' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+
+  # Pod for loading indicator
+  pod 'LoadingIndicator', :path => '~/identaxy/identaxy/identaxy/Loading/'
 end
