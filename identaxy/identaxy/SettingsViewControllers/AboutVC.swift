@@ -52,7 +52,7 @@ class AboutVC: IdentaxyHeader {
         let verNumLabel = UILabel(frame: CGRect(x: pos, y: 5, width: 200, height: 21))
         verNumLabel.center = CGPoint(x: pos, y: view.frame.origin.y + 30)
         verNumLabel.textAlignment = .right
-        verNumLabel.text = "0.1 𝝰"
+        verNumLabel.text = "0.2 β"
         self.view.addSubview(verNumLabel)
         
         // Setup About Identaxy label.

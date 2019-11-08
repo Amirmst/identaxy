@@ -13,11 +13,6 @@
 		295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CED41235D048E00F2363E /* IdentaxyTextField.swift */; };
 		295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 295CED43235D04FD00F2363E /* Roboto-Bold.ttf */; };
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
-		7360A7862360144900EA960F /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7812360144900EA960F /* BackgroundKolodaAnimator.swift */; };
-		7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7822360144900EA960F /* CustomOverlayView.swift */; };
-		7360A7882360144900EA960F /* SwipingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7832360144900EA960F /* SwipingVC.swift */; };
-		7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360A7842360144900EA960F /* CustomKoladaView.swift */; };
-		7360A78A2360144900EA960F /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7360A7852360144900EA960F /* CustomOverlayView.xib */; };
 		A2864C9A237394EF00D1FE64 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C95237394ED00D1FE64 /* Card.swift */; };
 		A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C96237394ED00D1FE64 /* CardContentView.swift */; };
 		A2864C9D237394EF00D1FE64 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C98237394EE00D1FE64 /* CardModel.swift */; };
@@ -66,11 +61,6 @@
 		295CED41235D048E00F2363E /* IdentaxyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyTextField.swift; sourceTree = "<group>"; };
 		295CED43235D04FD00F2363E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7360A7812360144900EA960F /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
-		7360A7822360144900EA960F /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
-		7360A7832360144900EA960F /* SwipingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipingVC.swift; sourceTree = "<group>"; };
-		7360A7842360144900EA960F /* CustomKoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKoladaView.swift; sourceTree = "<group>"; };
-		7360A7852360144900EA960F /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
 		A2864C95237394ED00D1FE64 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A2864C96237394ED00D1FE64 /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
@@ -153,18 +143,6 @@
 				2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7360A7802360143300EA960F /* Koloda */ = {
-			isa = PBXGroup;
-			children = (
-				7360A7812360144900EA960F /* BackgroundKolodaAnimator.swift */,
-				7360A7842360144900EA960F /* CustomKoladaView.swift */,
-				7360A7832360144900EA960F /* SwipingVC.swift */,
-				7360A7852360144900EA960F /* CustomOverlayView.xib */,
-				7360A7822360144900EA960F /* CustomOverlayView.swift */,
-			);
-			path = Koloda;
 			sourceTree = "<group>";
 		};
 		A20D7CF0237381F5004D2FFC /* Shuffle */ = {
@@ -280,7 +258,6 @@
 				A20D7CF0237381F5004D2FFC /* Shuffle */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
-				7360A7802360143300EA960F /* Koloda */,
 				AB7E2788236263530057EAEA /* LoginViewControllers */,
 				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
 				AB2FF7142361FEE80022D6E9 /* SettingsViewControllers */,
@@ -395,7 +372,6 @@
 			files = (
 				AB688CC123440E4B00CCDBB3 /* LaunchScreen.storyboard in Resources */,
 				AB66CC0C235F7E7A00EF71C6 /* AvenirNext-DemiBold.ttf in Resources */,
-				7360A78A2360144900EA960F /* CustomOverlayView.xib in Resources */,
 				AB688CBE23440E4B00CCDBB3 /* Assets.xcassets in Resources */,
 				295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
@@ -456,7 +432,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7360A7862360144900EA960F /* BackgroundKolodaAnimator.swift in Sources */,
 				AB0406D92374E3F600FF1208 /* IdentaxyImage.swift in Sources */,
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */,
@@ -471,7 +446,6 @@
 				A29EF38523654B8F00647C67 /* User.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				A2AE366D23738C7F002F512F /* UIView+Extensions.swift in Sources */,
-				7360A7882360144900EA960F /* SwipingVC.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
 				ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */,
 				AB2FF7262361FFFD0022D6E9 /* HelpOptTableViewCell.swift in Sources */,
@@ -479,14 +453,12 @@
 				AB2FF71F2361FF020022D6E9 /* HelpSupportVC.swift in Sources */,
 				ABB1CDE623614702003CDA22 /* SignupVC_Name.swift in Sources */,
 				ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */,
-				7360A7872360144900EA960F /* CustomOverlayView.swift in Sources */,
 				A2864C9E237394EF00D1FE64 /* CardOverlay.swift in Sources */,
 				AB95CD3B236203210044062C /* ReportBugVC.swift in Sources */,
 				AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */,
 				AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */,
 				AB2FF71C2361FF020022D6E9 /* ContactUsVC.swift in Sources */,
 				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
-				7360A7892360144900EA960F /* CustomKoladaView.swift in Sources */,
 				AB8822E2235ED32D0096FEAE /* SignupVC_EmailAddress.swift in Sources */,
 				A291FEB52373884400C01AA0 /* SwipingNewVC.swift in Sources */,
 				295CED3E235D047A00F2363E /* AlertService.swift in Sources */,
