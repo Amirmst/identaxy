@@ -9,14 +9,38 @@
 import UIKit
 import Shuffle_iOS
 import PopBounceButton
+import FirebaseStorage
+import FirebaseDatabase
+import FirebaseAuth
+
+enum Response : String {
+    case REAL
+    case FAKE
+    case UNSPECIFIED
+}
 
 class SwipingNewVC: UIViewController {
-    private let cardStack = SwipeCardStack()
+    let path: String = "images/"
+    static let kLoadCount: Int = 6
     
+    private let cardStack = SwipeCardStack()
     let alertService = AlertService()
+    let storage = Storage.storage()
+    
     
     @IBOutlet weak var identaxyLabel: UILabel!
     @IBOutlet weak var nopeButton: UIButton!
+    var database: DatabaseReference!
+    
+    var images: Array<IdentaxyImage> = Array<IdentaxyImage>(repeating: IdentaxyImage(), count: kLoadCount)
+    var responses: [String : Response] = [:]
+    var numLoaded: Int = 0
+    var imagesLoaded: Bool = false {
+        didSet {
+            cardStack.reloadData()
+        }
+    }
+    let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
     
     
     private let cardModels = [
@@ -30,7 +54,7 @@ class SwipingNewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        database = Database.database().reference()
         cardStack.delegate = self
         cardStack.dataSource = self
         
@@ -38,6 +62,40 @@ class SwipingNewVC: UIViewController {
         overrideUserInterfaceStyle = .dark
         identaxyLabel.textColor = UIColor.white
         // Do any additional setup after loading the view.
+        print("LOADING IMAGES")
+        loadImages()
+    }
+    
+    func loadImages() {
+        let storageRef = storage.reference()
+
+        for i in 0..<SwipingNewVC.kLoadCount {
+            let picRef = storageRef.child("\(path)\(i).png")
+            picRef.getData(maxSize: INT64_MAX) { (data, error) in
+                if let error = error {
+                    print("***ERROR*** PIC:\(i) " + error.localizedDescription)
+                } else {
+                    print("***SUCCESS*** PIC:\(i)")
+                    self.numLoaded += 1
+                    let image = UIImage(data: data!)
+                    self.images[i] = IdentaxyImage(imageObject: image!, imageId: "\(i)")
+                    if (self.numLoaded == self.images.count) {
+                        self.imagesLoaded = true
+                        self.numLoaded = 0
+                    }
+                }
+            }
+        }
+    }
+    
+    func storeResponses() {
+        print("STORING")
+        let mapCopy = responses
+        let uid = Auth.auth().currentUser?.uid
+        for (imageId, response) in mapCopy {
+            let json = ["response": response.rawValue] as [String : String]
+            self.database.child("responses").child(uid!).child(imageId).setValue(json)
+        }
     }
     
     private func layoutCardStackView() {
@@ -68,8 +126,7 @@ class SwipingNewVC: UIViewController {
 
 extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     func cardStack(_ cardStack: SwipeCardStack, cardForIndexAt index: Int) -> SwipeCard {
-        
-        return Card(model: cardModels[index])
+        return Card(model: CardModel(image: images[index].getImage()))
     }
     
     func numberOfCards(in cardStack: SwipeCardStack) -> Int {
@@ -77,15 +134,32 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
+        print("RELOAD")
+        bgTaskQueue.async {
+            self.storeResponses()
+        }
+        loadImages()
         cardStack.reloadData()
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
-        print("Undo \(direction) swipe on \(cardModels[index])")
+        print("Undo \(direction) swipe on \(images[index].getId())")
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
-        print("Swiped \(direction) on \(cardModels[index])")
+        print("Swiped \(direction) on \(images[index].getId())")
+        let imageId = images[index].getId()
+        var response = Response.UNSPECIFIED
+        switch direction {
+        case .right:
+            response = .REAL
+        case .left:
+            response = .FAKE
+        default:
+            response = .UNSPECIFIED
+        }
+        print("ID: \(imageId): \(response.rawValue)")
+        responses[imageId] = response
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
