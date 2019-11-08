@@ -56,6 +56,7 @@
 		ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
+		C364B8E22375106F00D2ACCC /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C364B8E12375106F00D2ACCC /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		C364B8E12375106F00D2ACCC /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +275,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				C364B8E023750AA600D2ACCC /* Loading */,
 				AB0406D72374E3B900FF1208 /* Model */,
 				A20D7CF0237381F5004D2FFC /* Shuffle */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
@@ -320,6 +323,15 @@
 			);
 			path = SignupViewControllers;
 			sourceTree = "<group>";
+		};
+		C364B8E023750AA600D2ACCC /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				C364B8E12375106F00D2ACCC /* SpinnerViewController.swift */,
+			);
+			name = Loading;
+			path = /Users/acepak/identaxy/identaxy/identaxy/Loading;
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
@@ -450,6 +462,7 @@
 				A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */,
 				A2864C9A237394EF00D1FE64 /* Card.swift in Sources */,
 				AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */,
+				C364B8E22375106F00D2ACCC /* SpinnerViewController.swift in Sources */,
 				AB688CB923440E4A00CCDBB3 /* LandingPageVC.swift in Sources */,
 				AB2FF71B2361FF020022D6E9 /* UpdatePasswordVC.swift in Sources */,
 				AB2FF7202361FF020022D6E9 /* UpdateEmailVC.swift in Sources */,
