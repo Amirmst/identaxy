@@ -25,8 +25,6 @@ private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0
 
-let path: String = "images/sample_pic_"
-
 
 class SwipingVC: UIViewController {
 

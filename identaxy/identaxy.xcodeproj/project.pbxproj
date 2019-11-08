@@ -26,6 +26,7 @@
 		A298B2E62366BBDA00CAB82E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */; };
 		A29EF38523654B8F00647C67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29EF38423654B8E00647C67 /* User.swift */; };
 		A2AE366D23738C7F002F512F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE366C23738C7F002F512F /* UIView+Extensions.swift */; };
+		AB0406D92374E3F600FF1208 /* IdentaxyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0406D82374E3F600FF1208 /* IdentaxyImage.swift */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
 		AB2FA902234C36E5008E6E24 /* PillShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */; };
 		AB2FF71B2361FF020022D6E9 /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF7152361FF010022D6E9 /* UpdatePasswordVC.swift */; };
@@ -78,6 +79,7 @@
 		A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A29EF38423654B8E00647C67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2AE366C23738C7F002F512F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AB0406D82374E3F600FF1208 /* IdentaxyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyImage.swift; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AB2FA901234C36E5008E6E24 /* PillShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapedButton.swift; sourceTree = "<group>"; };
 		AB2FF7152361FF010022D6E9 /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AB0406D72374E3B900FF1208 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB0406D82374E3F600FF1208 /* IdentaxyImage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AB2FA900234C36C0008E6E24 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				AB0406D72374E3B900FF1208 /* Model */,
 				A20D7CF0237381F5004D2FFC /* Shuffle */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
 				AB2FA900234C36C0008E6E24 /* Custom UI Elements */,
@@ -270,8 +281,8 @@
 				AB8822E5235ED3EE0096FEAE /* SignupViewControllers */,
 				AB2FF7142361FEE80022D6E9 /* SettingsViewControllers */,
 				AB688CB423440E4A00CCDBB3 /* AppDelegate.swift */,
-				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
 				A29EF38423654B8E00647C67 /* User.swift */,
+				AB688CB623440E4A00CCDBB3 /* SceneDelegate.swift */,
 				AB688CBA23440E4A00CCDBB3 /* Main.storyboard */,
 				AB688CBD23440E4B00CCDBB3 /* Assets.xcassets */,
 				AB688CBF23440E4B00CCDBB3 /* LaunchScreen.storyboard */,
@@ -434,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7360A7862360144900EA960F /* BackgroundKolodaAnimator.swift in Sources */,
+				AB0406D92374E3F600FF1208 /* IdentaxyImage.swift in Sources */,
 				ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */,
 				A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */,
 				A2864C9A237394EF00D1FE64 /* Card.swift in Sources */,
