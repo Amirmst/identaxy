@@ -139,7 +139,6 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
             self.storeResponses()
         }
         loadImages()
-        cardStack.reloadData()
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
