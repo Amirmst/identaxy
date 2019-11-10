@@ -1,0 +1,26 @@
+{
+  "name": "LoadingIndicator",
+  "version": "0.0.1",
+  "summary": "It is just a basic loading indicator that can be inserted wherever we do work in our codebase.",
+  "source_files": [
+    "Classes",
+    "Classes/**/*.{h,m}"
+  ],
+  "description": "hi",
+  "homepage": "http://github.com/lexicepak/identaxy/",
+  "license": "MIT",
+  "authors": {
+    "Lexi Cepak": "CepakA@advisory.com"
+  },
+  "source": {
+    "git": "https://github.com/lexicepak/LoadingIndicator.git",
+    "tag": "0.0.1"
+  },
+  "exclude_files": "Classes/Exclude",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

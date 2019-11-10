@@ -17,19 +17,19 @@ Pod::Spec.new do |spec|
 
   spec.name         = "LoadingIndicator"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of LoadingIndicator."
-  s.source_files = "identaxy/identaxy/identaxy/Loading/SpinnerViewController.swift""
+  spec.summary      = "It is just a basic loading indicator that can be inserted wherever we do work in our codebase."
+  spec.source_files = "identaxy/identaxy/identaxy/Loading/SpinnerViewController.swift"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
+  spec.description  = <<-DESC "hi"
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/LoadingIndicator"
-  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  spec.homepage     = "http://github.com/lexicepak/identaxy/"
+  # spec.screenshots  = "www.github.com/lexicepak/identaxy/screenshots_1.gif"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
+  spec.license      = "MIT"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/LoadingIndicator.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/lexicepak/LoadingIndicator.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
