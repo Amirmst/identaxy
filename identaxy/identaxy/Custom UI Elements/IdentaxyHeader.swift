@@ -11,11 +11,29 @@ import UIKit
 // A view controller must inherit.
 // Must be embedded in a navigation controller.
 class IdentaxyHeader: UIViewController {
+    
+    var darkModeOn:Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIConstants.IDENTAXY_PINK
         setBackButton()
+        let darkModeOn = UserDefaults.standard.bool(forKey:"darkModeOn")
+        if(darkModeOn) {
+            UserDefaults.standard.set(true, forKey:"darkModeOn")
+            print("set initial dark mode")
+        }
+        setColorMode()
+    }
+    
+    func setColorMode() {
+        let darkModeOn = UserDefaults.standard.bool(forKey:"darkModeOn")
+        if(darkModeOn) {
+            overrideUserInterfaceStyle = .dark
+        } else {
+            overrideUserInterfaceStyle = .light
+        }
+        print("darkmodeone: \(darkModeOn)")
     }
     
     func setBackButton() {

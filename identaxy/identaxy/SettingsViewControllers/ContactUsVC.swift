@@ -16,7 +16,7 @@ class ContactUsVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Contact Us")
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
     }
     
     @IBAction func emailClicked(_ sender: Any) {
@@ -27,7 +27,7 @@ class ContactUsVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
           present(mail, animated: true)
         } else {
             let alertService = AlertService()
-            let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email dricetly to identaxy@gmail.com", button: "OK")
+            let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email directly to identaxy@gmail.com", button: "OK")
             present(alertVC, animated: true, completion: nil)
         }
     }

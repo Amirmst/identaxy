@@ -68,20 +68,21 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     // To set dark/light mode.
     @objc func switchChanged(_ sender : UISwitch!) {
         if(sender.isOn) {
-            overrideUserInterfaceStyle = .dark
+            UserDefaults.standard.set(true, forKey:"darkModeOn")
         } else {
-            overrideUserInterfaceStyle = .light
+            UserDefaults.standard.set(false, forKey:"darkModeOn")
         }
+        super.setColorMode()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setColorMode()
         self.setHeaderTitle(title: "Settings")
         
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.separatorColor = UIConstants.IDENTAXY_LIGHT_PINK
-        overrideUserInterfaceStyle = .dark
         
         // Create Logout button and view it will go in.
         let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

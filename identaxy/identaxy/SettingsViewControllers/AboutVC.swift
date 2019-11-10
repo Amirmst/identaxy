@@ -14,7 +14,7 @@ class AboutVC: IdentaxyHeader {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         self.setHeaderTitle(title: "About")
         
         

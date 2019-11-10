@@ -27,7 +27,7 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         super.viewDidLoad()
         // additional set ups
         emailTextField.delegate = self
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         self.setHeaderTitle(title: "Update Email Address")
         emailTextField.setPlaceholder(placeholder: "Enter a new email address to update")
         activateintialConstraints()

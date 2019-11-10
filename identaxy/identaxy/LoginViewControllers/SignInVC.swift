@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class SignInVC: UIViewController, UITextFieldDelegate {
+class SignInVC: IdentaxyHeader, UITextFieldDelegate {
     
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var emailAddressTextField: IdentaxyTextField!
@@ -31,12 +31,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 
     override func loadView() {
         super.loadView()
-        overrideUserInterfaceStyle = .dark
         activateintialConstraints()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setColorMode()
         // Do any additional setup after loading the view.
         emailAddressTextField.delegate = self
         passwordTextField.delegate = self

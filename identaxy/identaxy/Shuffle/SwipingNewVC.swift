@@ -19,7 +19,7 @@ enum Response : String {
     case UNSPECIFIED
 }
 
-class SwipingNewVC: UIViewController {
+class SwipingNewVC: IdentaxyHeader {
     let path: String = "images/"
     static let kLoadCount: Int = 6
     
@@ -44,6 +44,7 @@ class SwipingNewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setColorMode()
         database = Database.database().reference()
         cardStack.delegate = self
         cardStack.dataSource = self

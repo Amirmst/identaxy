@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ForgotPasswordVC: UIViewController {
+class ForgotPasswordVC: IdentaxyHeader {
 
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
@@ -19,7 +19,7 @@ class ForgotPasswordVC: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         // Do any additional setup after loading the view.
         setupNavigationBar()
         writeLabels()
