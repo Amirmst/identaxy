@@ -11,7 +11,7 @@ import Shuffle_iOS
 class Card: SwipeCard {
     
     override var swipeDirections: [SwipeDirection] {
-        return [.left, .right]
+        return [.left, .right, .up]
     }
     
     init(model: CardModel) {
@@ -32,8 +32,8 @@ class Card: SwipeCard {
         switch direction {
         case .left:
             return CardOverlay.left()
-//        case .up:
-//            return CardOverlay.up()
+        case .up:
+            return CardOverlay.up()
         case.right:
             return CardOverlay.right()
         default:

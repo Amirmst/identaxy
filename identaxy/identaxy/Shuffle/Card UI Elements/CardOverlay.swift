@@ -21,16 +21,16 @@ class CardOverlay: UIView {
         return overlay
     }
     
-//    static func up() -> UIView {
-//        let overlay = UIView()
-//        let upTextView = SampleOverlayLabelView(title: "LOVE",
-//                                                color: .sampleBlue,
-//                                                rotation: -CGFloat.pi/20)
-//        overlay.addSubview(upTextView)
-//        upTextView.anchor(bottom: overlay.bottomAnchor, paddingBottom: 20)
-//        upTextView.centerXAnchor.constraint(equalTo: overlay.centerXAnchor).isActive = true
-//        return overlay
-//    }
+    static func up() -> UIView {
+        let overlay = UIView()
+        let upTextView = SampleOverlayLabelView(title: "UNKNOWN",
+                                                color: .sampleBlue,
+                                                rotation: -CGFloat.pi/20)
+        overlay.addSubview(upTextView)
+        upTextView.anchor(bottom: overlay.bottomAnchor, paddingBottom: 20)
+        upTextView.centerXAnchor.constraint(equalTo: overlay.centerXAnchor).isActive = true
+        return overlay
+    }
     
     static func right() -> UIView {
         let overlay = UIView()

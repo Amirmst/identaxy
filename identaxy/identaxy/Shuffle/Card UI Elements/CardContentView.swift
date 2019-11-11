@@ -18,7 +18,7 @@ class CardContentView: UIView {
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleToFill
         return iv
     }()
     
