@@ -67,6 +67,19 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     
     // MARK: - Logic
     @IBAction func loginButtonPressed(_ sender: Any) {
+        login()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            passwordTextField.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            login()
+        }
+        return false
+    }
+    
+    func login() {
         let alertService = AlertService()
         if let emailAddress = emailAddressTextField.text, let password = passwordTextField.text {
             if (emailAddress == "" || password == "") {
@@ -104,7 +117,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     func showSwipeVCWithLeftToRightTransition(swipeVCId: String, user: User) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingNewVC
-//        controller.user = user    
         
         let rightToLeft = CATransition()
         rightToLeft.duration = 0.5
