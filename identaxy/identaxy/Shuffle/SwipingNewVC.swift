@@ -110,7 +110,7 @@ class SwipingNewVC: IdentaxyHeader, ColorMode {
     }
     
     @IBAction func infoButtonTapped(_ sender: Any) {
-        let alertVC = alertService.alert(title: "Information", message: "Identaxy Information Popup", button: "OK")
+        let alertVC = alertService.alert(title: "Swiping Information", message: "Swipe Right 👉🏻 REAL\nSwipe Left 👉🏿 FAKE\nSwipe Up 👉 UNSURE", button: "OK")
         present(alertVC, animated: true, completion: nil)
     }
     
