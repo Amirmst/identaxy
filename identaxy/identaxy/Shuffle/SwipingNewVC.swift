@@ -67,6 +67,8 @@ class SwipingNewVC: IdentaxyHeader, ColorMode {
         
         layoutCardStackView()
         
+        print(UserDefaults.standard.string(forKey: "firstName")!)
+        print(UserDefaults.standard.string(forKey: "lastName")!)
         // Do any additional setup after loading the view.
         loadImages()
     }
