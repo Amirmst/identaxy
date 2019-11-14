@@ -19,7 +19,11 @@ enum Response : String {
     case UNSPECIFIED
 }
 
-class SwipingNewVC: IdentaxyHeader {
+protocol ColorMode {
+    func adjustColor()
+}
+
+class SwipingNewVC: IdentaxyHeader, ColorMode {
     let path: String = "images/"
     static let kLoadCount: Int = 6
     
@@ -42,16 +46,27 @@ class SwipingNewVC: IdentaxyHeader {
     }
     let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
     
+    override func setColorMode() {
+        super.setColorMode()
+        let darkModeOn = UserDefaults.standard.bool(forKey:"darkModeOn")
+        if(darkModeOn) {
+            self.view.backgroundColor = UIColor.black
+            identaxyLabel.textColor = UIColor.white
+        } else {
+            self.view.backgroundColor = UIColor.white
+            identaxyLabel.textColor = UIColor.black
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setColorMode()
+        self.setColorMode()
         database = Database.database().reference()
         cardStack.delegate = self
         cardStack.dataSource = self
         
         layoutCardStackView()
-        overrideUserInterfaceStyle = .dark
-        identaxyLabel.textColor = UIColor.white
+        
         // Do any additional setup after loading the view.
         loadImages()
     }
@@ -109,6 +124,23 @@ class SwipingNewVC: IdentaxyHeader {
     
     @IBAction func yepPressed(_ sender: Any) {
         cardStack.swipe(.right, animated: true)
+    }
+    
+    @IBAction func settingsPressed(_ sender: Any) {
+        print("settings pressed")
+        self.performSegue(withIdentifier: "settingsSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("here?")
+        if segue.identifier == "settingsSegue",
+            let nextVC = segue.destination as? SettingsVC {
+                nextVC.delegate = self
+                print("entered prepare for segue")
+        }
+    }
+    func adjustColor() {
+        setColorMode()
     }
 }
 

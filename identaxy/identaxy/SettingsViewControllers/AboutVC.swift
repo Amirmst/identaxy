@@ -14,8 +14,8 @@ class AboutVC: IdentaxyHeader {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setColorMode()
         self.setHeaderTitle(title: "About")
+        super.setColorMode()
         
         
         let screenSize: CGRect = UIScreen.main.bounds

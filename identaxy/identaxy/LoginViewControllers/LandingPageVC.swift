@@ -23,7 +23,9 @@ class LandingPageVC: IdentaxyHeader {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loginButtonSetup()
-        super.setColorMode()
+        UserDefaults.standard.set(true, forKey:"darkModeOn")
+//        super.setColorMode()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

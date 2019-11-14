@@ -28,8 +28,8 @@ class UpdatePasswordVC: IdentaxyHeader {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setColorMode()
         self.setHeaderTitle(title: "Update Password")
+        super.setColorMode()
         forgotPassButton.setTitleColor(UIConstants.IDENTAXY_PINK, for: .normal)
         currentPassTextField.setPlaceholder(placeholder: "Enter your current password")
         newPassTextField.setPlaceholder(placeholder: "Enter your new password")

@@ -17,6 +17,8 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     let helpSegueIdentifier = "helpSegue"
     let aboutSegueIdentifier = "aboutSegue"
     
+    var delegate: IdentaxyHeader!
+    
     var logoutButtonBottomAnchorConstraint: NSLayoutConstraint!
     var logoutButtonInitialY: CGFloat!
     
@@ -34,7 +36,13 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.font = UIConstants.ROBOTO_REGULAR
             cell.setting = settings[indexPath.row]
             let switchView = UISwitch(frame: .zero)
-            switchView.setOn(true, animated: true)
+            // Set the Dark Mode switch to be on/off.
+            if(UserDefaults.standard.bool(forKey:"darkModeOn")) {
+                // Dark mode is on.
+                switchView.setOn(true, animated: true)
+            } else {
+                switchView.setOn(false, animated: true)
+            }
             switchView.tag = indexPath.row // for detect which row switch Changed
             switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
             cell.accessoryView = switchView
@@ -67,18 +75,27 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     
     // To set dark/light mode.
     @objc func switchChanged(_ sender : UISwitch!) {
+        let prevVC = delegate as! ColorMode
         if(sender.isOn) {
             UserDefaults.standard.set(true, forKey:"darkModeOn")
         } else {
             UserDefaults.standard.set(false, forKey:"darkModeOn")
         }
+        prevVC.adjustColor()
+        self.setColorMode()
+    }
+    
+    override func setColorMode() {
         super.setColorMode()
+//        navigationController?.navigationBar.tintColor = UIColor.systemGray2
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setColorMode()
         self.setHeaderTitle(title: "Settings")
+        self.setColorMode()
+
         
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
