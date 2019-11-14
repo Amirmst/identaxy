@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class SignupVC_Name: UIViewController, UITextFieldDelegate {
+class SignupVC_Name: IdentaxyHeader, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: IdentaxyTextField!
     @IBOutlet weak var lastNameTextField: IdentaxyTextField!
@@ -28,7 +28,7 @@ class SignupVC_Name: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         // Do any additional setup after loading the view.
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self

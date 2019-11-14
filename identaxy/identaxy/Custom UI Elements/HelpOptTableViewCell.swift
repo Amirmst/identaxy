@@ -23,7 +23,6 @@ class HelpOptTableViewCell: UITableViewCell {
     let titleLabel:UILabel = {
             let label = UILabel()
             label.font = UIConstants.ROBOTO_REGULAR
-            label.textColor =  UIColor.white
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
     }()

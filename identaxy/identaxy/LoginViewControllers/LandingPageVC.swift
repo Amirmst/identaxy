@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class LandingPageVC: UIViewController {
+class LandingPageVC: IdentaxyHeader {
 
     @IBOutlet weak var signupButton: PillShapedButton!
     @IBOutlet weak var loginButton: UIButton!
@@ -23,6 +23,9 @@ class LandingPageVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loginButtonSetup()
+        UserDefaults.standard.set(true, forKey:"darkModeOn")
+//        super.setColorMode()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupVC_Password: UIViewController, UITextFieldDelegate {
+class SignupVC_Password: IdentaxyHeader, UITextFieldDelegate {
 
     let nameScreenSegue: String = "nameScreenSegue"
     
@@ -27,7 +27,7 @@ class SignupVC_Password: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         passwordTextField.delegate = self
         setupPasswordTextField()
         placeContinueButton()

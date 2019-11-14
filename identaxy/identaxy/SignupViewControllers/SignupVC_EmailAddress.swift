@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupVC_EmailAddress: UIViewController, UITextFieldDelegate {
+class SignupVC_EmailAddress: IdentaxyHeader, UITextFieldDelegate {
 
     @IBOutlet weak var emailAddressTextField: IdentaxyTextField!
     
@@ -24,7 +24,7 @@ class SignupVC_EmailAddress: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // hide the default NavBar border.
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         emailAddressTextField.delegate = self
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)

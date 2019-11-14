@@ -41,10 +41,9 @@ class SettingsTableViewCell: UITableViewCell {
     }()
     
     // Name of setting.
-    let nameLabel:UILabel = {
+    var nameLabel:UILabel = {
             let label = UILabel()
             label.font = UIConstants.ROBOTO_REGULAR
-            label.textColor =  UIColor.white
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
     }()
@@ -60,6 +59,7 @@ class SettingsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         nameLabel.font = UIConstants.AVENIR_NEXT_REGULAR_15
         self.tintColor = UIConstants.IDENTAXY_PINK
+
         // Add the views to the cell.
         self.contentView.addSubview(leftImageView)
         containerView.addSubview(nameLabel)

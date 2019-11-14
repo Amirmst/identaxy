@@ -19,7 +19,11 @@ enum Response : String {
     case UNSPECIFIED
 }
 
-class SwipingNewVC: UIViewController {
+protocol ColorMode {
+    func adjustColor()
+}
+
+class SwipingNewVC: IdentaxyHeader, ColorMode {
     let path: String = "images/"
     static let kLoadCount: Int = 6
     
@@ -42,15 +46,27 @@ class SwipingNewVC: UIViewController {
     }
     let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
     
+    override func setColorMode() {
+        super.setColorMode()
+        let darkModeOn = UserDefaults.standard.bool(forKey:"darkModeOn")
+        if(darkModeOn) {
+            self.view.backgroundColor = UIColor.black
+            identaxyLabel.textColor = UIColor.white
+        } else {
+            self.view.backgroundColor = UIColor.white
+            identaxyLabel.textColor = UIColor.black
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setColorMode()
         database = Database.database().reference()
         cardStack.delegate = self
         cardStack.dataSource = self
         
         layoutCardStackView()
-        overrideUserInterfaceStyle = .dark
-        identaxyLabel.textColor = UIColor.white
+        
         // Do any additional setup after loading the view.
         loadImages()
     }
@@ -94,7 +110,7 @@ class SwipingNewVC: UIViewController {
     }
     
     @IBAction func infoButtonTapped(_ sender: Any) {
-        let alertVC = alertService.alert(title: "Information", message: "Identaxy Information Popup", button: "OK")
+        let alertVC = alertService.alert(title: "Swiping Information", message: "Swipe Right 👉🏻 REAL\nSwipe Left 👉🏿 FAKE\nSwipe Up 👉 UNSURE", button: "OK")
         present(alertVC, animated: true, completion: nil)
     }
     
@@ -108,6 +124,22 @@ class SwipingNewVC: UIViewController {
     
     @IBAction func yepPressed(_ sender: Any) {
         cardStack.swipe(.right, animated: true)
+    }
+    
+    @IBAction func settingsPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "settingsSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settingsSegue",
+            let navVC = segue.destination as? UINavigationController {
+            let nextVC = navVC.viewControllers.first as! SettingsVC
+                nextVC.delegate = self
+        }
+    }
+    
+    func adjustColor() {
+        setColorMode()
     }
 }
 

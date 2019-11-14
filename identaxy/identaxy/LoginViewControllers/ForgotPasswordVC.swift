@@ -19,7 +19,7 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .dark
+        super.setColorMode()
         // Do any additional setup after loading the view.
         emailTextField.delegate = self
         setupNavigationBar()

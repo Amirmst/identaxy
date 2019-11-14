@@ -64,8 +64,7 @@ class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Help & Support")
-        overrideUserInterfaceStyle = .dark
-        
+        super.setColorMode()
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         
@@ -88,7 +87,6 @@ class HelpSupportVC: IdentaxyHeader, UITableViewDataSource, UITableViewDelegate 
         optionsTableView.register(HelpOptTableViewCell.self, forCellReuseIdentifier: "contactUsCell")
         
         //        optionsTableView.alwaysBounceVertical = false  // No scroll
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

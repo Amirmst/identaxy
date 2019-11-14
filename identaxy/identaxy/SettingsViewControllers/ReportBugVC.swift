@@ -18,8 +18,8 @@ class ReportBugVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setColorMode()
         self.navigationController?.navigationBar.topItem?.title = "Help & Support"
-        overrideUserInterfaceStyle = .dark
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
@@ -32,7 +32,7 @@ class ReportBugVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
             present(mail, animated: true)
             } else {
                 let alertService = AlertService()
-                let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email dricetly to identaxy@gmail.com (copied to your clipboard)\nwith \"Bug Report\" as the subject", button: "OK")
+                let alertVC = alertService.alert(title: "Mail settings not configured", message: "Please send an email directly to identaxy@gmail.com (copied to your clipboard)\nwith \"Bug Report\" as the subject", button: "OK")
                 UIPasteboard.general.string = "identaxy@gmail.com"
                 present(alertVC, animated: true, completion: nil)
         }

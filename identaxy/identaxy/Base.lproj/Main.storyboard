@@ -397,10 +397,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-Yr-7OU" userLabel="Settings Button">
-                                <rect key="frame" x="313" y="39" width="46" height="56"/>
+                                <rect key="frame" x="313" y="39" width="46" height="28"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
-                                    <segue destination="UTZ-GO-k9w" kind="show" id="SH4-oU-NZE"/>
+                                    <action selector="settingsPressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="MDZ-mW-58E"/>
+                                    <segue destination="UTZ-GO-k9w" kind="show" identifier="settingsSegue" id="w8y-1u-uYu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIG-Cj-Ifg" userLabel="Fake Button">
@@ -947,6 +948,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lSi-X7-ME7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIh-nh-chg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="UTZ-GO-k9w" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5U7-CZ-tnb"/>
@@ -960,7 +962,6 @@
                         <segue destination="UtT-6o-K0H" kind="relationship" relationship="rootViewController" id="tkh-lW-kYn"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QIh-nh-chg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="913"/>
         </scene>
