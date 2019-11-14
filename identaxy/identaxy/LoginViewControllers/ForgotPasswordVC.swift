@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
+class ForgotPasswordVC: IdentaxyHeader, UITextFieldDelegate {
 
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
