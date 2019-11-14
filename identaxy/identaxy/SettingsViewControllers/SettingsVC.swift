@@ -183,17 +183,16 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            // MARK: - Login button constraints
+            // MARK: - Log out button constraints
             logoutButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             logoutButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
             logoutButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
             logoutButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             logoutButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
             // MARK: - Forgot password button constraints
-            logoutButton.heightAnchor.constraint(equalToConstant: 40)
+            logoutButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         logoutButtonInitialY = logoutButton.frame.origin.y
-        //        logoutButtonBottomAnchorConstraint.isActive = true
     }
     
     
