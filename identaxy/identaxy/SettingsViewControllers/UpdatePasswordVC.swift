@@ -118,6 +118,7 @@ class UpdatePasswordVC: IdentaxyHeader {
 
                 user?.reauthenticate(with: credential) { user, error in
                   if let error = error {
+                    print("\(error)")
                     self.updatePasswordAlert(alertMsg: "Current password is incorrect.", error: true)
                   } else {
                     // User re-authenticated.
