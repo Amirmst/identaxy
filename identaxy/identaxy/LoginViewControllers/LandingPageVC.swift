@@ -39,8 +39,10 @@ class LandingPageVC: IdentaxyHeader {
                 let firstName = value?["first_name"] as? String ?? ""
                 let lastName = value?["last_name"] as? String ?? ""
                 
-                let userData = User(firstName: firstName, lastName: lastName)
-                self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: userData)
+                UserDefaults.standard.set(firstName, forKey: "firstName")
+                UserDefaults.standard.set(lastName, forKey: "lastName")
+                
+                self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
             })
         }
         
@@ -54,7 +56,7 @@ class LandingPageVC: IdentaxyHeader {
     }
     
     // MARK: - UI Methods
-    func showSwipeVCWithLeftToRightTransition(swipeVCId: String, user: User) {
+    func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingNewVC
         

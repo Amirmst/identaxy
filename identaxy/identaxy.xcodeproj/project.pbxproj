@@ -19,7 +19,6 @@
 		A2864C9E237394EF00D1FE64 /* CardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C99237394EF00D1FE64 /* CardOverlay.swift */; };
 		A291FEB52373884400C01AA0 /* SwipingNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291FEB42373884400C01AA0 /* SwipingNewVC.swift */; };
 		A298B2E62366BBDA00CAB82E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */; };
-		A29EF38523654B8F00647C67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29EF38423654B8E00647C67 /* User.swift */; };
 		A2AE366D23738C7F002F512F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE366C23738C7F002F512F /* UIView+Extensions.swift */; };
 		AB0406D92374E3F600FF1208 /* IdentaxyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0406D82374E3F600FF1208 /* IdentaxyImage.swift */; };
 		AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1AD21B234C4243003742FC /* SignInVC.swift */; };
@@ -67,7 +66,6 @@
 		A2864C99237394EF00D1FE64 /* CardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardOverlay.swift; sourceTree = "<group>"; };
 		A291FEB42373884400C01AA0 /* SwipingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewVC.swift; sourceTree = "<group>"; };
 		A298B2E52366BBDA00CAB82E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A29EF38423654B8E00647C67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2AE366C23738C7F002F512F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AB0406D82374E3F600FF1208 /* IdentaxyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentaxyImage.swift; sourceTree = "<group>"; };
 		AB1AD21B234C4243003742FC /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		AB0406D72374E3B900FF1208 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A29EF38423654B8E00647C67 /* User.swift */,
 				AB0406D82374E3F600FF1208 /* IdentaxyImage.swift */,
 			);
 			path = Model;
@@ -430,7 +427,6 @@
 				AB2FF7202361FF020022D6E9 /* UpdateEmailVC.swift in Sources */,
 				AB2FF71E2361FF020022D6E9 /* AboutVC.swift in Sources */,
 				AB688CB523440E4A00CCDBB3 /* AppDelegate.swift in Sources */,
-				A29EF38523654B8F00647C67 /* User.swift in Sources */,
 				AB1AD21C234C4243003742FC /* SignInVC.swift in Sources */,
 				A2AE366D23738C7F002F512F /* UIView+Extensions.swift in Sources */,
 				295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */,
