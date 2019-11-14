@@ -82,19 +82,13 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.set(false, forKey:"darkModeOn")
         }
         prevVC.adjustColor()
-        self.setColorMode()
-    }
-    
-    override func setColorMode() {
         super.setColorMode()
-//        navigationController?.navigationBar.tintColor = UIColor.systemGray2
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Settings")
-        self.setColorMode()
+        super.setColorMode()
 
         
         settingsTableView.delegate = self

@@ -127,18 +127,17 @@ class SwipingNewVC: IdentaxyHeader, ColorMode {
     }
     
     @IBAction func settingsPressed(_ sender: Any) {
-        print("settings pressed")
         self.performSegue(withIdentifier: "settingsSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("here?")
         if segue.identifier == "settingsSegue",
-            let nextVC = segue.destination as? SettingsVC {
+            let navVC = segue.destination as? UINavigationController {
+            let nextVC = navVC.viewControllers.first as! SettingsVC
                 nextVC.delegate = self
-                print("entered prepare for segue")
         }
     }
+    
     func adjustColor() {
         setColorMode()
     }

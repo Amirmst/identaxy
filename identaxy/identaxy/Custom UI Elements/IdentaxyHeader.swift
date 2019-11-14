@@ -32,14 +32,10 @@ class IdentaxyHeader: UIViewController {
             overrideUserInterfaceStyle = .dark
             navigationController?.navigationBar.barTintColor = UIColor.systemGray6
             self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-            
-            print("dark mode")
         } else {
             overrideUserInterfaceStyle = .light
             self.navigationController?.navigationBar.barTintColor = UIColor.white
             self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-            
-            print("light mode")
         }
         setBackButton()
     }
