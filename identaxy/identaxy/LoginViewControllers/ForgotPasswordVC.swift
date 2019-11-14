@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ForgotPasswordVC: IdentaxyHeader {
+class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
@@ -21,6 +21,7 @@ class ForgotPasswordVC: IdentaxyHeader {
         super.viewDidLoad()
         super.setColorMode()
         // Do any additional setup after loading the view.
+        emailTextField.delegate = self
         setupNavigationBar()
         writeLabels()
         emailTextField.setPlaceholder(placeholder: "Email address")
@@ -55,6 +56,15 @@ class ForgotPasswordVC: IdentaxyHeader {
     }
     
     @objc func onResetPressed(sender: UIButton) {
+        resetPassowrd()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resetPassowrd()
+        return false
+    }
+    
+    func resetPassowrd() {
         print("RESET PRESSED")
         if let emailText = emailTextField.text {
             if (emailText.count > 0) {

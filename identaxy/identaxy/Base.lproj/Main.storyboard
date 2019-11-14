@@ -246,7 +246,7 @@
                                     <action selector="loginButtonPressed:" destination="vor-Ia-HDz" eventType="touchUpInside" id="2nu-mo-NGc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-Mk-PqQ" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-Mk-PqQ" customClass="IdentaxyTextField" customModule="identaxy" customModuleProvider="target">
                                 <rect key="frame" x="45" y="244" width="285" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

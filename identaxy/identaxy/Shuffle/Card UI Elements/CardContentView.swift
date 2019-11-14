@@ -12,13 +12,13 @@ class CardContentView: UIView {
     private let backgroundView: UIView = {
         let background = UIView()
         background.clipsToBounds = true
-        background.layer.cornerRadius = 10
+        background.layer.cornerRadius = 15
         return background
     }()
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleToFill
         return iv
     }()
     

@@ -173,6 +173,8 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
             response = .REAL
         case .left:
             response = .FAKE
+        case .up:
+            response = .UNSPECIFIED
         default:
             response = .UNSPECIFIED
         }
