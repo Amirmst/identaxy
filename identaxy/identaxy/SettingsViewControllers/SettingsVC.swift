@@ -207,7 +207,9 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
 
             var scenes = UIApplication.shared.connectedScenes
             let sceneDel:SceneDelegate = scenes.popFirst()?.delegate as! SceneDelegate
-
+            
+            UserDefaults.standard.removeObject(forKey: "firstName")
+            UserDefaults.standard.removeObject(forKey: "lastName")
             
             sceneDel.window?.rootViewController = landingVC
         } catch {

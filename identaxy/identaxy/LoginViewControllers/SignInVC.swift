@@ -94,14 +94,15 @@ class SignInVC: IdentaxyHeader, UITextFieldDelegate {
                     } else {
                         let uid = Auth.auth().currentUser?.uid
                         self.database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                          // Get user value
-                          let value = snapshot.value as? NSDictionary
-                          let firstName = value?["first_name"] as? String ?? ""
-                          let lastName = value?["last_name"] as? String ?? ""
-
-                          let user = User(firstName: firstName, lastName: lastName)
-                          self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: user)
                             
+                              let value = snapshot.value as? NSDictionary
+                              let firstName = value?["first_name"] as? String ?? ""
+                              let lastName = value?["last_name"] as? String ?? ""
+                         
+                              UserDefaults.standard.set(firstName, forKey: "firstName")
+                              UserDefaults.standard.set(lastName, forKey: "lastName")
+                            
+                              self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
                         })
                     }
                 }
@@ -114,7 +115,7 @@ class SignInVC: IdentaxyHeader, UITextFieldDelegate {
     }
     
     // MARK: - UI Methods
-    func showSwipeVCWithLeftToRightTransition(swipeVCId: String, user: User) {
+    func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingNewVC
         

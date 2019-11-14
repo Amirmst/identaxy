@@ -72,8 +72,10 @@ class SignupVC_Name: IdentaxyHeader, UITextFieldDelegate {
                     
                     self.database.child("users").child(uid!).setValue(json)
                     
-                    let user = User(firstName: firstName, lastName: lastName)
-                    self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen", user: user)
+                    UserDefaults.standard.set(firstName, forKey: "firstName")
+                    UserDefaults.standard.set(lastName, forKey: "lastName")
+                    
+                    self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
                 } else {
                     let alertVC = alertService.alert(title: "Error", message: "There was an error signing up.", button: "OK")
                     self.present(alertVC, animated: true, completion: nil)
@@ -86,7 +88,7 @@ class SignupVC_Name: IdentaxyHeader, UITextFieldDelegate {
         present(alertVC, animated: true, completion: nil)
     }
     
-    func showSwipeVCWithLeftToRightTransition(swipeVCId: String, user: User) {
+    func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingNewVC
         
