@@ -23,7 +23,7 @@ protocol ColorMode {
     func adjustColor()
 }
 
-class SwipingNewVC: IdentaxyHeader, ColorMode {
+class SwipingNewVC: UIViewController, ColorMode {
     let path: String = "images/"
     static let kLoadCount: Int = 6
     
@@ -46,13 +46,15 @@ class SwipingNewVC: IdentaxyHeader, ColorMode {
     }
     let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
     
-    override func setColorMode() {
-        super.setColorMode()
+    func setColorMode() {
+        //super.setColorMode()
         let darkModeOn = UserDefaults.standard.bool(forKey:"darkModeOn")
         if(darkModeOn) {
+            overrideUserInterfaceStyle = .dark
             self.view.backgroundColor = UIColor.black
             identaxyLabel.textColor = UIColor.white
         } else {
+            overrideUserInterfaceStyle = .light
             self.view.backgroundColor = UIColor.white
             identaxyLabel.textColor = UIColor.black
         }
@@ -67,8 +69,8 @@ class SwipingNewVC: IdentaxyHeader, ColorMode {
         
         layoutCardStackView()
         
-        print(UserDefaults.standard.string(forKey: "firstName")!)
-        print(UserDefaults.standard.string(forKey: "lastName")!)
+        //print(UserDefaults.standard.string(forKey: "firstName")!)
+        //print(UserDefaults.standard.string(forKey: "lastName")!)
         // Do any additional setup after loading the view.
         loadImages()
     }

@@ -17,10 +17,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
     let helpSegueIdentifier = "helpSegue"
     let aboutSegueIdentifier = "aboutSegue"
     
-    var delegate: IdentaxyHeader!
-    
-    var logoutButtonBottomAnchorConstraint: NSLayoutConstraint!
-    var logoutButtonInitialY: CGFloat!
+    var delegate: UIViewController!
     
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var logoutButton: PillShapedButton!
@@ -82,39 +79,19 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.set(false, forKey:"darkModeOn")
         }
         prevVC.adjustColor()
-        super.setColorMode()
+        self.setColorMode()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Settings")
-        super.setColorMode()
 
-        
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.separatorColor = UIConstants.IDENTAXY_LIGHT_PINK
         
-        // Create Logout button and view it will go in.
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
-        // Constraints.
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
-        buttonView.translatesAutoresizingMaskIntoConstraints = false
-        
         activateintialConstraints()
-        
-        buttonView.addSubview(logoutButton)
-        
-        logoutButton.centerXAnchor.constraint(equalTo:buttonView.centerXAnchor).isActive = true
-        logoutButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        
-        view.addSubview(buttonView)
-        
-        buttonView.heightAnchor.constraint(equalToConstant:40).isActive = true
-        buttonView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        buttonView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        buttonView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         
         self.settingsTableView.rowHeight = 50
         self.settingsTableView.separatorColor = UIConstants.IDENTAXY_GRAY
@@ -124,7 +101,7 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         settingsTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
         settingsTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         settingsTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        settingsTableView.bottomAnchor.constraint(equalTo:buttonView.topAnchor, constant: -10).isActive = true
+        settingsTableView.bottomAnchor.constraint(equalTo:logoutButton.topAnchor, constant: -10).isActive = true
         settingsTableView.dataSource = self
         
         // Register Static cell names for segue to different VC's
@@ -185,22 +162,16 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         NSLayoutConstraint.activate([
             // MARK: - Log out button constraints
             logoutButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            logoutButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -55),
-            logoutButton.widthAnchor.constraint(lessThanOrEqualToConstant: 394),
+            logoutButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             logoutButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             logoutButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-            // MARK: - Forgot password button constraints
-            logoutButton.heightAnchor.constraint(equalToConstant: 50)
+            logoutButton.heightAnchor.constraint(equalToConstant: 40)
         ])
-        logoutButtonInitialY = logoutButton.frame.origin.y
     }
     
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
         print("Logging out")
-        // comment out later to actually log out
-//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-//        UserDefaults.standard.synchronize()
         do {
             try Auth.auth().signOut()
             let landingVC = self.storyboard?.instantiateViewController(withIdentifier: "LandingPageVC") as! LandingPageVC
