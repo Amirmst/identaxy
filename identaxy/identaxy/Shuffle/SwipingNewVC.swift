@@ -34,6 +34,9 @@ class SwipingNewVC: UIViewController, ColorMode {
     
     @IBOutlet weak var identaxyLabel: UILabel!
     @IBOutlet weak var nopeButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var yepButton: UIButton!
+
     var database: DatabaseReference!
     
     var images: Array<IdentaxyImage> = Array<IdentaxyImage>(repeating: IdentaxyImage(), count: kLoadCount)
@@ -53,10 +56,25 @@ class SwipingNewVC: UIViewController, ColorMode {
             overrideUserInterfaceStyle = .dark
             self.view.backgroundColor = UIColor.black
             identaxyLabel.textColor = UIColor.white
+            // Dark mode is on.
+            let nope = UIImage(named: "Nope")
+            let yep = UIImage(named: "Yep")
+            let undo = UIImage(named: "Undo")
+            
+            nopeButton.setImage(nope, for: .normal)
+            yepButton.setImage(yep, for: .normal)
+            undoButton.setImage(undo, for: .normal)
         } else {
             overrideUserInterfaceStyle = .light
             self.view.backgroundColor = UIColor.white
             identaxyLabel.textColor = UIColor.black
+            let nope = UIImage(named: "Nope_light")
+            let yep = UIImage(named: "Yep_light")
+            let undo = UIImage(named: "Undo_light")
+            
+            nopeButton.setImage(nope, for: .normal)
+            yepButton.setImage(yep, for: .normal)
+            undoButton.setImage(undo, for: .normal)
         }
     }
     
