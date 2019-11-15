@@ -130,10 +130,6 @@ class SwipingNewVC: UIViewController, ColorMode {
         cardStack.swipe(.right, animated: true)
     }
     
-    @IBAction func settingsPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "settingsSegue", sender: self)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settingsSegue",
             let navVC = segue.destination as? UINavigationController {
