@@ -88,6 +88,11 @@ class SignupVC_Name: IdentaxyHeader, UITextFieldDelegate {
         present(alertVC, animated: true, completion: nil)
     }
     
+    @IBAction func onClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func showSwipeVCWithLeftToRightTransition(swipeVCId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: swipeVCId) as! SwipingNewVC

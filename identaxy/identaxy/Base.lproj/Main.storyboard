@@ -397,11 +397,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-Yr-7OU" userLabel="Settings Button">
-                                <rect key="frame" x="313" y="39" width="46" height="56"/>
+                                <rect key="frame" x="313" y="39" width="46" height="28"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
-                                    <action selector="settingsPressed:" destination="72T-Ic-j8E" eventType="touchUpInside" id="MDZ-mW-58E"/>
-                                    <segue destination="UTZ-GO-k9w" kind="show" identifier="settingsSegue" id="w8y-1u-uYu"/>
+                                    <segue destination="UTZ-GO-k9w" kind="show" identifier="settingsSegue" id="C1z-qT-hR8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIG-Cj-Ifg" userLabel="Fake Button">
@@ -461,6 +460,8 @@
                     <connections>
                         <outlet property="identaxyLabel" destination="GGA-lc-QPI" id="luw-sV-hiU"/>
                         <outlet property="nopeButton" destination="QIG-Cj-Ifg" id="a5b-bD-gvd"/>
+                        <outlet property="undoButton" destination="bFU-xk-GSv" id="tTL-qu-Xyy"/>
+                        <outlet property="yepButton" destination="MEt-Rq-FUO" id="bbY-r1-Z8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHx-Qq-Z7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -523,7 +524,7 @@
                         <barButtonItem key="leftBarButtonItem" image="Close" id="v5R-FO-QF7">
                             <color key="tintColor" red="0.92151176930000001" green="0.33270913359999998" blue="0.91376858949999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="onClose:" destination="9qC-Uf-b6Z" id="k1C-gH-qJZ"/>
+                                <action selector="onClose:" destination="9qC-Uf-b6Z" id="JDH-w4-T5J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
