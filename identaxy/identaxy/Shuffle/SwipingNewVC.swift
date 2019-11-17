@@ -44,7 +44,6 @@ class SwipingNewVC: UIViewController, ColorMode {
     var numLoaded: Int = 0
     var imagesLoaded: Bool = false {
         didSet {
-            //self.createSpinnerView()
             cardStack.isHidden = false
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.cardStack.reloadData()
