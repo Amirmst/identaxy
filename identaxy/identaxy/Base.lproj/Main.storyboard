@@ -397,14 +397,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-Yr-7OU" userLabel="Settings Button">
-                                <rect key="frame" x="313" y="39" width="46" height="28"/>
+                                <rect key="frame" x="313" y="39" width="46" height="56"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
                                     <segue destination="UTZ-GO-k9w" kind="show" identifier="settingsSegue" id="C1z-qT-hR8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIG-Cj-Ifg" userLabel="Fake Button">
-                                <rect key="frame" x="35" y="541" width="90" height="93"/>
+                                <rect key="frame" x="35" y="546" width="90" height="93"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="93" id="VnT-5x-hu3"/>
                                     <constraint firstAttribute="width" constant="90" id="WJi-Pf-ZXQ"/>
@@ -415,7 +415,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-Rq-FUO" userLabel="Real Button">
-                                <rect key="frame" x="250" y="541" width="90" height="93"/>
+                                <rect key="frame" x="250" y="546" width="90" height="93"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="gOA-AV-zzB"/>
                                     <constraint firstAttribute="height" constant="93" id="zc3-uP-UVL"/>
@@ -426,7 +426,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFU-xk-GSv" userLabel="Undo Button">
-                                <rect key="frame" x="150" y="549" width="75" height="77"/>
+                                <rect key="frame" x="150" y="554" width="75" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="SAq-Xy-AZg"/>
                                     <constraint firstAttribute="width" constant="75" id="mev-0X-VB0"/>
@@ -446,12 +446,12 @@
                             <constraint firstItem="MEt-Rq-FUO" firstAttribute="leading" secondItem="bFU-xk-GSv" secondAttribute="trailing" constant="25" id="Fac-He-5l4"/>
                             <constraint firstItem="GGA-lc-QPI" firstAttribute="top" secondItem="acW-f6-2hU" secondAttribute="top" constant="38" id="Kp3-0B-rP1"/>
                             <constraint firstItem="acW-f6-2hU" firstAttribute="trailing" secondItem="EPJ-Yr-7OU" secondAttribute="trailing" constant="16" id="M7A-3O-cQm"/>
-                            <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="QIG-Cj-Ifg" secondAttribute="bottom" constant="33" id="MHM-Z3-LmR"/>
+                            <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="QIG-Cj-Ifg" secondAttribute="bottom" constant="28" id="MHM-Z3-LmR"/>
                             <constraint firstItem="d1S-al-ru1" firstAttribute="top" secondItem="acW-f6-2hU" secondAttribute="top" constant="39" id="Xv2-J1-G2u"/>
-                            <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="bFU-xk-GSv" secondAttribute="bottom" constant="41" id="cNz-ER-PU2"/>
+                            <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="bFU-xk-GSv" secondAttribute="bottom" constant="36" id="cNz-ER-PU2"/>
                             <constraint firstItem="EPJ-Yr-7OU" firstAttribute="top" secondItem="acW-f6-2hU" secondAttribute="top" constant="39" id="fY3-dP-LQY"/>
                             <constraint firstItem="bFU-xk-GSv" firstAttribute="leading" secondItem="QIG-Cj-Ifg" secondAttribute="trailing" constant="25" id="nib-RE-ytr"/>
-                            <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="MEt-Rq-FUO" secondAttribute="bottom" constant="33" id="wFo-fz-3lH"/>
+                            <constraint firstItem="acW-f6-2hU" firstAttribute="bottom" secondItem="MEt-Rq-FUO" secondAttribute="bottom" constant="28" id="wFo-fz-3lH"/>
                             <constraint firstItem="GGA-lc-QPI" firstAttribute="centerX" secondItem="LHc-yW-GU5" secondAttribute="centerX" id="yt3-oR-xIO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="acW-f6-2hU"/>

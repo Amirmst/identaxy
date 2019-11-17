@@ -32,6 +32,11 @@ struct UIConstants {
     green: 57.0 / 255.0,
     blue: 57.0 / 255.0,
     alpha: 1.0)
+    static let IDENTAXY_WHITE: UIColor = UIColor(
+    red: 243.0 / 255.0,
+    green: 244.0 / 255.0,
+    blue: 248.0 / 255.0,
+    alpha: 1.0)
     
     // Constant fonts
     static let ROBOTO_REGULAR = UIFont(name: "Roboto-Regular", size: 18)

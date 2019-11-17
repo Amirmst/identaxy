@@ -66,11 +66,11 @@ class SwipingNewVC: UIViewController, ColorMode {
             undoButton.setImage(undo, for: .normal)
         } else {
             overrideUserInterfaceStyle = .light
-            self.view.backgroundColor = UIColor.white
+            self.view.backgroundColor = UIConstants.IDENTAXY_WHITE
             identaxyLabel.textColor = UIColor.black
-            let nope = UIImage(named: "Nope_light")
-            let yep = UIImage(named: "Yep_light")
-            let undo = UIImage(named: "Undo_light")
+            let nope = UIImage(named: "Nope_light_1")
+            let yep = UIImage(named: "Yep_light_1")
+            let undo = UIImage(named: "Undo_light_1")
             
             nopeButton.setImage(nope, for: .normal)
             yepButton.setImage(yep, for: .normal)
@@ -157,7 +157,7 @@ class SwipingNewVC: UIViewController, ColorMode {
     }
     
     func adjustColor() {
-        setColorMode()
+        self.setColorMode()
     }
 }
 
