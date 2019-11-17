@@ -101,8 +101,11 @@ class SignInVC: IdentaxyHeader, UITextFieldDelegate {
                          
                               UserDefaults.standard.set(firstName, forKey: "firstName")
                               UserDefaults.standard.set(lastName, forKey: "lastName")
-                            
-                              self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
+                                
+                              self.createSpinnerView()
+                              DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                self.showSwipeVCWithLeftToRightTransition(swipeVCId: "Swipe-Screen")
+                              }
                         })
                     }
                 }
@@ -220,6 +223,31 @@ class SignInVC: IdentaxyHeader, UITextFieldDelegate {
             forgotButtonBottomAnchorConstraint = forgotPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
             loginButtonBottomAnchorConstraint.isActive = true
             forgotButtonBottomAnchorConstraint.isActive = true
+        }
+    }
+    
+    // MARK: loading indicator
+    func createSpinnerView() {
+
+        print("we have a spinner")
+        let child = SpinnerViewController()
+            
+        DispatchQueue.main.async {
+            
+            child.view.frame = super.view.frame
+            super.view.addSubview(child.view)
+            child.view.superview?.bringSubviewToFront(child.view)
+            child.didMove(toParent: self)
+
+        }
+
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            print("we remove the spinner")
+            // then remove the spinner view controller
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
         }
     }
 }
