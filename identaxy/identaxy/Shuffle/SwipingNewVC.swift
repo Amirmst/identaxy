@@ -44,10 +44,7 @@ class SwipingNewVC: UIViewController, ColorMode {
     var numLoaded: Int = 0
     var imagesLoaded: Bool = false {
         didSet {
-            self.createSpinnerView()
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.cardStack.reloadData()
-            }
+            cardStack.reloadData()
         }
     }
     let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
@@ -206,21 +203,5 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
         print("Card tapped")
     }
-
-    // MARK: loading indicator
-    func createSpinnerView() {
-        let child = SpinnerViewController()
-        DispatchQueue.main.async {
-            child.view.frame = super.view.frame
-            super.view.addSubview(child.view)
-            child.view.superview?.bringSubviewToFront(child.view)
-            child.didMove(toParent: self)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            child.willMove(toParent: nil)
-            child.view.removeFromSuperview()
-            child.removeFromParent()
-        }
-    }
+    
 }
-
