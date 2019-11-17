@@ -44,7 +44,11 @@ class SwipingNewVC: UIViewController, ColorMode {
     var numLoaded: Int = 0
     var imagesLoaded: Bool = false {
         didSet {
+            self.createSpinnerView()
             cardStack.isHidden = false
+            nopeButton.isUserInteractionEnabled = true
+            yepButton.isUserInteractionEnabled = true
+            undoButton.isUserInteractionEnabled = true
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.cardStack.reloadData()
             }
@@ -90,7 +94,9 @@ class SwipingNewVC: UIViewController, ColorMode {
         
         layoutCardStackView()
         cardStack.isHidden = true
-        
+        nopeButton.isUserInteractionEnabled = false
+        yepButton.isUserInteractionEnabled = false
+        undoButton.isUserInteractionEnabled = false
         //print(UserDefaults.standard.string(forKey: "firstName")!)
         //print(UserDefaults.standard.string(forKey: "lastName")!)
         // Do any additional setup after loading the view.
@@ -176,6 +182,9 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
         cardStack.isHidden = true
+        nopeButton.isUserInteractionEnabled = false
+        yepButton.isUserInteractionEnabled = false
+        undoButton.isUserInteractionEnabled = false
         print("RELOAD")
         bgTaskQueue.async {
             self.storeResponses()
