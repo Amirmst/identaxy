@@ -44,7 +44,8 @@ class SwipingNewVC: UIViewController, ColorMode {
     var numLoaded: Int = 0
     var imagesLoaded: Bool = false {
         didSet {
-            self.createSpinnerView()
+            //self.createSpinnerView()
+            cardStack.isHidden = false
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.cardStack.reloadData()
             }
@@ -89,6 +90,7 @@ class SwipingNewVC: UIViewController, ColorMode {
         cardStack.dataSource = self
         
         layoutCardStackView()
+        cardStack.isHidden = true
         
         //print(UserDefaults.standard.string(forKey: "firstName")!)
         //print(UserDefaults.standard.string(forKey: "lastName")!)
@@ -174,6 +176,7 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
+        cardStack.isHidden = true
         print("RELOAD")
         bgTaskQueue.async {
             self.storeResponses()
