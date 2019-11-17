@@ -46,8 +46,15 @@ class SwipingNewVC: UIViewController, ColorMode {
     var cachedDirection: SwipeDirection = .down
     var imagesLoaded: Bool = false {
         didSet {
-            cardStack.reloadData()
-            cardStack.swipe(cachedDirection, animated: false)
+            self.createSpinnerView()
+            cardStack.isHidden = false
+            nopeButton.isUserInteractionEnabled = true
+            yepButton.isUserInteractionEnabled = true
+            undoButton.isUserInteractionEnabled = true
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.cardStack.reloadData()
+                self.cardStack.swipe(self.cachedDirection, animated: false)
+            }
         }
     }
     let bgTaskQueue = DispatchQueue(label: "responseStoring", qos: .background)
@@ -89,7 +96,10 @@ class SwipingNewVC: UIViewController, ColorMode {
         cardStack.dataSource = self
 
         layoutCardStackView()
-        
+        cardStack.isHidden = true
+        nopeButton.isUserInteractionEnabled = false
+        yepButton.isUserInteractionEnabled = false
+        undoButton.isUserInteractionEnabled = false
         //print(UserDefaults.standard.string(forKey: "firstName")!)
         //print(UserDefaults.standard.string(forKey: "lastName")!)
         // Do any additional setup after loading the view.
@@ -184,6 +194,10 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
+        cardStack.isHidden = true
+        nopeButton.isUserInteractionEnabled = false
+        yepButton.isUserInteractionEnabled = false
+        undoButton.isUserInteractionEnabled = false
         print("RELOAD")
         cachedImage = images[SwipingNewVC.kLoadCount - 1]
         bgTaskQueue.async {
@@ -223,5 +237,21 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
         print("Card tapped")
     }
-    
+
+    // MARK: loading indicator
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+        DispatchQueue.main.async {
+            child.view.frame = super.view.frame
+            super.view.addSubview(child.view)
+            child.view.superview?.bringSubviewToFront(child.view)
+            child.didMove(toParent: self)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
+    }
 }
+

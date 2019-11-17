@@ -1,4 +1,3 @@
-  
 //
 //  SpinnerViewController.swift
 //  identaxy
@@ -14,13 +13,12 @@ class SpinnerViewController: UIViewController {
     override func loadView() {
         view = UIView()
         view.backgroundColor = UIColor(white: 0, alpha: 0.7)
-
+        spinner.color = UIColor(red: 235/255, green: 90/255, blue: 233/255, alpha: 1)
         spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
         view.addSubview(spinner)
 
-//        spinner.center = view.center
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
