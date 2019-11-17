@@ -44,7 +44,7 @@ class SwipingNewVC: UIViewController, ColorMode {
     var numLoaded: Int = 0
     var imagesLoaded: Bool = false {
         didSet {
-            self.createSpinnerView()
+            self.createLoadingImageView()
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.cardStack.reloadData()
             }
@@ -208,8 +208,8 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
 
     // MARK: loading indicator
-    func createSpinnerView() {
-        let child = SpinnerViewController()
+    func createLoadingImageView() {
+        let child = ImageViewController()
         DispatchQueue.main.async {
             child.view.frame = super.view.frame
             super.view.addSubview(child.view)
