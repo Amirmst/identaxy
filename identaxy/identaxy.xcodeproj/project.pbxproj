@@ -13,6 +13,7 @@
 		295CED42235D048E00F2363E /* IdentaxyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CED41235D048E00F2363E /* IdentaxyTextField.swift */; };
 		295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 295CED43235D04FD00F2363E /* Roboto-Bold.ttf */; };
 		3FB70B1E508C08706BBCEC85 /* Pods_identaxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */; };
+		732A42002381E643009F57D6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732A41FF2381E643009F57D6 /* SpinnerViewController.swift */; };
 		A2864C9A237394EF00D1FE64 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C95237394ED00D1FE64 /* Card.swift */; };
 		A2864C9B237394EF00D1FE64 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C96237394ED00D1FE64 /* CardContentView.swift */; };
 		A2864C9D237394EF00D1FE64 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2864C98237394EE00D1FE64 /* CardModel.swift */; };
@@ -59,6 +60,7 @@
 		295CED41235D048E00F2363E /* IdentaxyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentaxyTextField.swift; sourceTree = "<group>"; };
 		295CED43235D04FD00F2363E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_identaxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		732A41FF2381E643009F57D6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		9CE9FD0EF6D738EA07DBD77F /* Pods-identaxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.release.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.release.xcconfig"; sourceTree = "<group>"; };
 		A2864C95237394ED00D1FE64 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A2864C96237394ED00D1FE64 /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 				2DD7EC5384D236CAC1269274 /* Pods_identaxy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		732A41FE2381E624009F57D6 /* Loading Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				732A41FF2381E643009F57D6 /* SpinnerViewController.swift */,
+			);
+			path = "Loading Indicator";
 			sourceTree = "<group>";
 		};
 		A20D7CF0237381F5004D2FFC /* Shuffle */ = {
@@ -248,6 +258,7 @@
 		AB688CB323440E4A00CCDBB3 /* identaxy */ = {
 			isa = PBXGroup;
 			children = (
+				732A41FE2381E624009F57D6 /* Loading Indicator */,
 				AB0406D72374E3B900FF1208 /* Model */,
 				A20D7CF0237381F5004D2FFC /* Shuffle */,
 				AB730DB2234BFF37002EF58D /* Fonts */,
@@ -439,6 +450,7 @@
 				A2864C9E237394EF00D1FE64 /* CardOverlay.swift in Sources */,
 				AB95CD3B236203210044062C /* ReportBugVC.swift in Sources */,
 				AB2FF7272361FFFD0022D6E9 /* SettingAPI.swift in Sources */,
+				732A42002381E643009F57D6 /* SpinnerViewController.swift in Sources */,
 				AB2FF7252361FFFD0022D6E9 /* SettingsTableViewCell.swift in Sources */,
 				AB2FF71C2361FF020022D6E9 /* ContactUsVC.swift in Sources */,
 				AB8822E4235ED37E0096FEAE /* SignupVC_Password.swift in Sources */,
