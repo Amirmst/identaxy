@@ -131,12 +131,72 @@ class SwipingNewVC: UIViewController, ColorMode {
         }
     }
     
-    func storeResponses() {
-        let mapCopy = responses
+    func directionToResponse(direction: SwipeDirection) -> Response {
+        var response: Response
+        switch direction {
+        case .right:
+            response = .REAL
+        case .left:
+            response = .FAKE
+        case .up:
+            response = .UNSPECIFIED
+        default:
+            response = .UNSPECIFIED
+        }
+        return response
+    }
+    
+    func storeResponse(imageId: String, response: Response) {
         let uid = Auth.auth().currentUser?.uid
-        for (imageId, response) in mapCopy {
-            let json = ["response": response.rawValue] as [String : String]
+        self.database.child("responses").child(uid!).child(imageId).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            var json: [String: Int] = [:]
+            if(value != nil) {
+              json["yes"] = value?["yes"] as? Int
+              json["no"] = value?["no"] as? Int
+              json["unspecified"] = value?["unspecified"] as? Int
+            } else {
+              json = ["yes": 0, "no" : 0, "unspecified": 0]
+            }
+            
+            switch response {
+            case .REAL:
+                json["yes"]! += 1
+            case .FAKE:
+                json["no"]! += 1
+            default:
+                json["unspecified"]! += 1
+            }
+            
             self.database.child("responses").child(uid!).child(imageId).setValue(json)
+          // ...
+          }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func undoResponse(imageId: String, response: Response) {
+        let uid = Auth.auth().currentUser?.uid
+        self.database.child("responses").child(uid!).child(imageId).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            var json: [String: Int] = [:]
+            json["yes"] = value?["yes"] as? Int
+            json["no"] = value?["no"] as? Int
+            json["unspecified"] = value?["unspecified"] as? Int
+                        
+            switch response {
+            case .REAL:
+                json["yes"]! -= 1
+            case .FAKE:
+                json["no"]! -= 1
+            default:
+                json["unspecified"]! -= 1
+            }
+            
+            self.database.child("responses").child(uid!).child(imageId).setValue(json)
+          // ...
+          }) { (error) in
+            print(error.localizedDescription)
         }
     }
     
@@ -160,7 +220,6 @@ class SwipingNewVC: UIViewController, ColorMode {
     }
     
     @IBAction func undoPressed(_ sender: Any) {
-        cachedDirection = .up
         cardStack.undoLastSwipe(animated: true)
         undoButton.isEnabled = false
     }
@@ -200,37 +259,42 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
         undoButton.isUserInteractionEnabled = false
         print("RELOAD")
         cachedImage = images[SwipingNewVC.kLoadCount - 1]
-        bgTaskQueue.async {
-            self.storeResponses()
-        }
         loadImages()
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
         print("Undo \(direction) swipe on \(images[index].getId())")
+        let imageId = images[index].getId()
+        var response: Response
+        if(index == 0) {
+            response = directionToResponse(direction: cachedDirection)
+        } else {
+            response = directionToResponse(direction: direction)
+        }
+        
+        bgTaskQueue.async {
+            self.undoResponse(imageId: imageId, response: response)
+        }
+        
         undoButton.isEnabled = false
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
-        print("Swiped \(direction) on \(images[index].getId())")
-        let imageId = images[index].getId()
-        var response = Response.UNSPECIFIED
-        switch direction {
-        case .right:
-            response = .REAL
-        case .left:
-            response = .FAKE
-        case .up:
-            response = .UNSPECIFIED
-        default:
-            response = .UNSPECIFIED
-        }
-        print("ID: \(imageId): \(response.rawValue)")
-        responses[imageId] = response
-        
         cachedDirection = direction
-        if(direction != .down) {
-            undoButton.isEnabled = true
+        if(index < SwipingNewVC.kLoadCount - 1) {
+            print("Swiped \(direction) on \(images[index].getId())")
+            let imageId = images[index].getId()
+            if(imageId != "-1") {
+                undoButton.isEnabled = true
+                let response = directionToResponse(direction: direction)
+                print("ID: \(imageId): \(response.rawValue)")
+                
+                bgTaskQueue.async {
+                    self.storeResponse(imageId: imageId, response: response)
+                }
+            } else {
+                undoButton.isEnabled = false
+            }
         }
     }
     
