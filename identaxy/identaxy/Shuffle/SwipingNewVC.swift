@@ -25,7 +25,7 @@ protocol ColorMode {
 
 class SwipingNewVC: UIViewController, ColorMode {
     let path: String = "images/"
-    static let kLoadCount: Int = 6
+    static var kLoadCount: Int = 7
     
     private let cardStack = SwipeCardStack()
     let alertService = AlertService()
@@ -42,6 +42,8 @@ class SwipingNewVC: UIViewController, ColorMode {
     var images: Array<IdentaxyImage> = Array<IdentaxyImage>(repeating: IdentaxyImage(), count: kLoadCount)
     var responses: [String : Response] = [:]
     var numLoaded: Int = 0
+    var cachedImage: IdentaxyImage!
+    var cachedDirection: SwipeDirection = .down
     var imagesLoaded: Bool = false {
         didSet {
             self.createSpinnerView()
@@ -51,6 +53,7 @@ class SwipingNewVC: UIViewController, ColorMode {
             undoButton.isUserInteractionEnabled = true
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.cardStack.reloadData()
+                self.cardStack.swipe(self.cachedDirection, animated: false)
             }
         }
     }
@@ -91,7 +94,7 @@ class SwipingNewVC: UIViewController, ColorMode {
         database = Database.database().reference()
         cardStack.delegate = self
         cardStack.dataSource = self
-        
+
         layoutCardStackView()
         cardStack.isHidden = true
         nopeButton.isUserInteractionEnabled = false
@@ -100,21 +103,25 @@ class SwipingNewVC: UIViewController, ColorMode {
         //print(UserDefaults.standard.string(forKey: "firstName")!)
         //print(UserDefaults.standard.string(forKey: "lastName")!)
         // Do any additional setup after loading the view.
+        cachedImage = IdentaxyImage(imageObject: UIImage(), imageId: "-1")
         loadImages()
+        undoButton.isEnabled = false
     }
     
     func loadImages() {
         let storageRef = storage.reference()
 
-        for i in 0..<SwipingNewVC.kLoadCount {
-            let picRef = storageRef.child("\(path)\(i).png")
+        self.images[0] = cachedImage
+        self.numLoaded += 1
+        for i in 1..<SwipingNewVC.kLoadCount {
+            let picRef = storageRef.child("\(path)\(i - 1).png")
             picRef.getData(maxSize: INT64_MAX) { (data, error) in
                 if let error = error {
-                    print("***ERROR*** PIC:\(i) " + error.localizedDescription)
+                    print("***ERROR*** PIC:\(i - 1) " + error.localizedDescription)
                 } else {
                     self.numLoaded += 1
                     let image = UIImage(data: data!)
-                    self.images[i] = IdentaxyImage(imageObject: image!, imageId: "\(i)")
+                    self.images[i] = IdentaxyImage(imageObject: image!, imageId: "\(i - 1)")
                     if (self.numLoaded == self.images.count) {
                         self.imagesLoaded = true
                         self.numLoaded = 0
@@ -147,15 +154,21 @@ class SwipingNewVC: UIViewController, ColorMode {
     }
     
     @IBAction func nopePressed(_ sender: Any) {
+        cachedDirection = .left
         cardStack.swipe(.left, animated: true)
+        undoButton.isEnabled = true
     }
     
     @IBAction func undoPressed(_ sender: Any) {
+        cachedDirection = .up
         cardStack.undoLastSwipe(animated: true)
+        undoButton.isEnabled = false
     }
     
     @IBAction func yepPressed(_ sender: Any) {
+        cachedDirection = .right
         cardStack.swipe(.right, animated: true)
+        undoButton.isEnabled = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -186,6 +199,7 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
         yepButton.isUserInteractionEnabled = false
         undoButton.isUserInteractionEnabled = false
         print("RELOAD")
+        cachedImage = images[SwipingNewVC.kLoadCount - 1]
         bgTaskQueue.async {
             self.storeResponses()
         }
@@ -194,6 +208,7 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     
     func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
         print("Undo \(direction) swipe on \(images[index].getId())")
+        undoButton.isEnabled = false
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
@@ -212,6 +227,11 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
         }
         print("ID: \(imageId): \(response.rawValue)")
         responses[imageId] = response
+        
+        cachedDirection = direction
+        if(direction != .down) {
+            undoButton.isEnabled = true
+        }
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
