@@ -247,7 +247,7 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
             child.view.superview?.bringSubviewToFront(child.view)
             child.didMove(toParent: self)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             child.willMove(toParent: nil)
             child.view.removeFromSuperview()
             child.removeFromParent()
