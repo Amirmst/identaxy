@@ -28,7 +28,7 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         // additional set ups
         emailTextField.delegate = self
         self.setHeaderTitle(title: "Update Email Address")
-        super.setColorMode()
+        self.setColorMode()
         emailTextField.setPlaceholder(placeholder: "Enter a new email address to update")
         activateintialConstraints()
         
@@ -43,6 +43,11 @@ class UpdateEmailVC: IdentaxyHeader, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         emailTextField.becomeFirstResponder()
+    }
+    
+    override func setColorMode() {
+        super.setColorMode()
+        super.adjustButtonColor(button: updateButton)
     }
     
     override func viewDidAppear(_ animated: Bool) {

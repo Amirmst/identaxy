@@ -82,6 +82,11 @@ class SettingsVC: IdentaxyHeader, UITableViewDelegate, UITableViewDataSource {
         self.setColorMode()
     }
     
+    override func setColorMode() {
+        super.setColorMode()
+        super.adjustButtonColor(button: logoutButton)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Settings")
