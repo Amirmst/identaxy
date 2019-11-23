@@ -29,14 +29,15 @@ class ImageViewController: UIViewController {
 
     override func loadView() {
         view = UIView()
-        view.backgroundColor = UIColor(white: 0, alpha: 0.7)
-        spinner.color = UIColor(red: 235/255, green: 90/255, blue: 233/255, alpha: 1)
-        spinner.hidesWhenStopped = true
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.startAnimating()
-        view.addSubview(spinner)
-
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.backgroundColor = UIColor(white: 0, alpha: 0)
+        
+        let image = UIImage(named: "logo")
+        let imageView = UIImageView(image: image!)
+        
+        view.addSubview(imageView)
+        imageView.center = view.center
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.centerXAnchor.constraint(lessThanOrEqualTo: imageView.superview!.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(lessThanOrEqualTo: imageView.superview!.centerYAnchor).isActive = true
     }
 }
