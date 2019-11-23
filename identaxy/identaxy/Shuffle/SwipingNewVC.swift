@@ -46,11 +46,11 @@ class SwipingNewVC: UIViewController, ColorMode {
     var cachedDirection: SwipeDirection = .down
     var imagesLoaded: Bool = false {
         didSet {
+            self.createSpinnerView()
             cardStack.isHidden = false
             nopeButton.isUserInteractionEnabled = true
             yepButton.isUserInteractionEnabled = true
             undoButton.isUserInteractionEnabled = true
-            self.createLoadingImageView()
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.cardStack.reloadData()
                 self.cardStack.swipe(self.cachedDirection, animated: false)
@@ -303,15 +303,15 @@ extension SwipingNewVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
 
     // MARK: loading indicator
-    func createLoadingImageView() {
-        let child = ImageViewController()
+    func createSpinnerView() {
+        let child = SpinnerViewController()
         DispatchQueue.main.async {
             child.view.frame = super.view.frame
             super.view.addSubview(child.view)
             child.view.superview?.bringSubviewToFront(child.view)
             child.didMove(toParent: self)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             child.willMove(toParent: nil)
             child.view.removeFromSuperview()
             child.removeFromParent()

@@ -51,7 +51,6 @@
 		ABCE8F27235FAEFE00526922 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */; };
 		ABD2CB90234BAA2B001161FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB8F234BAA2B001161FD /* UIConstants.swift */; };
 		ABD2CB92234BAC2C001161FD /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */; };
-		C33E66892389CB730012143C /* identaxy_logo_rocket_3in.gif in Resources */ = {isa = PBXBuildFile; fileRef = C33E66882389CB730012143C /* identaxy_logo_rocket_3in.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +101,6 @@
 		ABCE8F26235FAEFE00526922 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		ABD2CB8F234BAA2B001161FD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABD2CB91234BAC2C001161FD /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
-		C33E66882389CB730012143C /* identaxy_logo_rocket_3in.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = identaxy_logo_rocket_3in.gif; sourceTree = "<group>"; };
 		FDBFB5679C15C396309A0BB7 /* Pods-identaxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-identaxy.debug.xcconfig"; path = "Target Support Files/Pods-identaxy/Pods-identaxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +146,6 @@
 		732A41FE2381E624009F57D6 /* Loading Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				C33E66882389CB730012143C /* identaxy_logo_rocket_3in.gif */,
 				732A41FF2381E643009F57D6 /* SpinnerViewController.swift */,
 			);
 			path = "Loading Indicator";
@@ -375,7 +372,6 @@
 				295CED44235D04FD00F2363E /* Roboto-Bold.ttf in Resources */,
 				AB730DB4234BFF48002EF58D /* Roboto-Regular.ttf in Resources */,
 				AB688CBC23440E4A00CCDBB3 /* Main.storyboard in Resources */,
-				C33E66892389CB730012143C /* identaxy_logo_rocket_3in.gif in Resources */,
 				AB8822E0235ED2A20096FEAE /* AvenirNext-Regular.ttf in Resources */,
 				A298B2E62366BBDA00CAB82E /* GoogleService-Info.plist in Resources */,
 				295CED3C235D047000F2363E /* AlertStoryboard.storyboard in Resources */,

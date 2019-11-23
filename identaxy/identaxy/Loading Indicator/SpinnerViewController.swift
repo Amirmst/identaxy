@@ -6,7 +6,6 @@
 //  Copyright © 2019 amir. All rights reserved.
 //
 import UIKit
-import SwiftGifOrigin
 
 class SpinnerViewController: UIViewController {
     var spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
@@ -22,25 +21,5 @@ class SpinnerViewController: UIViewController {
 
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-}
-
-class ImageViewController: UIViewController {
-    var spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-
-    override func loadView() {
-        view = UIView()
-        view.backgroundColor = UIColor(white: 0, alpha: 0)
-        
-//        let image = UIImage(named: "logo")
-//        let imageView = UIImageView(image: image!)
-        let imageView = UIImageView()
-        imageView.loadGif(name: "identaxy_logo_rocket_3in")
-    
-        view.addSubview(imageView)
-        imageView.center = view.center
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.centerXAnchor.constraint(lessThanOrEqualTo: imageView.superview!.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(lessThanOrEqualTo: imageView.superview!.centerYAnchor).isActive = true
     }
 }
