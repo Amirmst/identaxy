@@ -129,7 +129,7 @@ class SignInVC: IdentaxyHeader, UITextFieldDelegate {
         rightToLeft.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(rightToLeft, forKey: kCATransition)
         
-        controller.modalPresentationStyle = .overFullScreen
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: false, completion: nil)
     }
     
