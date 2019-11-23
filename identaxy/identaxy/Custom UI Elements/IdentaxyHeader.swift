@@ -40,6 +40,16 @@ class IdentaxyHeader: UIViewController {
         setBackButton()
     }
     
+    func adjustButtonColor(button: UIButton) {
+        // Fix button color.
+        let darkModeOn = UserDefaults.standard.bool(forKey:"darkModeOn")
+        if(darkModeOn) {
+            button.setTitleColor(UIColor.black, for: .normal)
+        } else {
+            button.setTitleColor(UIColor.white, for: .normal)
+        }
+    }
+    
     func setBackButton() {
         // Set the pink '<' back button.
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)

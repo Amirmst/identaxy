@@ -18,8 +18,13 @@ class ReportBugVC: IdentaxyHeader, MFMailComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setColorMode()
+        self.setColorMode()
         self.navigationController?.navigationBar.topItem?.title = "Help & Support"
+    }
+    
+    override func setColorMode() {
+        super.setColorMode()
+        super.adjustButtonColor(button: submitButton)
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
