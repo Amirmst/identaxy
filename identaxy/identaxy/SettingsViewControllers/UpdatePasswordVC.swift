@@ -29,7 +29,7 @@ class UpdatePasswordVC: IdentaxyHeader {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setHeaderTitle(title: "Update Password")
-        super.setColorMode()
+        self.setColorMode()
         forgotPassButton.setTitleColor(UIConstants.IDENTAXY_PINK, for: .normal)
         currentPassTextField.setPlaceholder(placeholder: "Enter your current password")
         newPassTextField.setPlaceholder(placeholder: "Enter your new password")
@@ -50,6 +50,11 @@ class UpdatePasswordVC: IdentaxyHeader {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillchange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
+    
+    override func setColorMode() {
+         super.setColorMode()
+         super.adjustButtonColor(button: updateButton)
+     }
     
     deinit {
         // Stop listening for keyboard events
